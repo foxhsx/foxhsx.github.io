@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的hexo博客 | Hexo</title>
+  <title>常见的几种网页进度条及如何判断页面已经加载完毕 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的hexo博客– 内容">
+  <meta name="description" content="首先推荐一个自动生成gif图标的一个网址：[Server] preloaders.net">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,html,css,css3,用户体验">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的hexo博客">
+<meta property="og:title" content="常见的几种网页进度条及如何判断页面已经加载完毕">
 <meta property="og:url" content="http://yoursite.com/2019/10/14/我的hexo博客/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="这是我的hexo博客– 内容">
+<meta property="og:site_name" content="何生鑫的博客">
+<meta property="og:description" content="首先推荐一个自动生成gif图标的一个网址：[Server] preloaders.net">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-13T16:03:52.470Z">
+<meta property="og:image" content="http://yoursite.com/images/loading.png">
+<meta property="og:image" content="http://yoursite.com/images/loadingdown.png">
+<meta property="og:image" content="http://yoursite.com/images/loading-c3.png">
+<meta property="og:image" content="http://yoursite.com/images/loading-num.png">
+<meta property="og:updated_time" content="2019-10-14T16:31:24.184Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的hexo博客">
-<meta name="twitter:description" content="这是我的hexo博客– 内容">
+<meta name="twitter:title" content="常见的几种网页进度条及如何判断页面已经加载完毕">
+<meta name="twitter:description" content="首先推荐一个自动生成gif图标的一个网址：[Server] preloaders.net">
+<meta name="twitter:image" content="http://yoursite.com/images/loading.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -50,8 +56,10 @@
 			<img src="" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">cecil_He何生鑫</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">请继续学习</p>
 		
 
 		<nav class="header-menu">
@@ -108,8 +116,10 @@
 				<img src="" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">cecil_He何生鑫</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>请继续学习<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +171,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的hexo博客
+      常见的几种网页进度条及如何判断页面已经加载完毕
     </h1>
   
 
@@ -174,7 +184,56 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="这是我的hexo博客"><a href="#这是我的hexo博客" class="headerlink" title="这是我的hexo博客"></a>这是我的hexo博客</h2><p>– 内容</p>
+        <p>首先推荐一个自动生成gif图标的一个网址：[Server] preloaders.net</p>
+<a id="more"></a>
+
+<img src="/images/loading.png" class="[]">
+
+<p>在里面挑选好加载的效果图以后，点击下载：</p>
+<img src="/images/loadingdown.png" class="[]">
+
+<p>下载完成以后把gif图片保存到你项目的img文件夹中，方便使用。</p>
+<h3 id="loading方法"><a href="#loading方法" class="headerlink" title="loading方法"></a>loading方法</h3><p>1.很low的方法——直接使用定时器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;常见的网页进度条1&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		.loading&#123;</span><br><span class="line">			width: 100%;</span><br><span class="line">			height: 100%;</span><br><span class="line">			position: fixed;</span><br><span class="line">			top:0;</span><br><span class="line">			left: 0;</span><br><span class="line">			z-index: 100;</span><br><span class="line">			background-color: <span class="comment">#fff;</span></span><br><span class="line">		&#125;</span><br><span class="line">		.loading .pic&#123;</span><br><span class="line">			width: 64px;</span><br><span class="line">			height: 64px;</span><br><span class="line">			background:url(images/loading.gif);</span><br><span class="line">			position: absolute;</span><br><span class="line">			top: 0;</span><br><span class="line">			left: 0;</span><br><span class="line">			bottom: 0;</span><br><span class="line">			right: 0;</span><br><span class="line">			margin: auto;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;script src=<span class="string">"js/jquery-1.11.3.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		$(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">			//可使用jquery动态添加遮罩及loading效果</span><br><span class="line">			// var loading = <span class="string">'&lt;div class="loading"&gt;&lt;div class="pic"&gt;&lt;/div&gt;&lt;/div&gt;'</span>;</span><br><span class="line">			//$(<span class="string">"body"</span>).append(loading);</span><br><span class="line">			//启动一个定时器</span><br><span class="line">			setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">				$(<span class="string">".loading"</span>).fadeOut();//3秒之后影藏</span><br><span class="line">			&#125;,3000)</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=<span class="string">"loading"</span>&gt;</span><br><span class="line">		&lt;div class=<span class="string">"pic"</span>&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;p&gt;使用定时器的方法（不会判断页面加载，只是在定时器完成之后将也面显示出来）&lt;/p&gt;</span><br><span class="line">	&lt;img src=<span class="string">""</span> /&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这种方法是直接给一个时间，等结束以后，加载效果消失。但是这种方法并不能判断页面是否已经加载完毕，虽然简单粗暴，但显然这并不是我们想要的结果；</p>
+<p>2.根据页面是否加载完毕来关闭loading效果：<br>首先，咱们要想知道页面是否加载完毕，需要知道以下几点：</p>
+<ul>
+<li>document.onreadystatechange 页面加载状态改变时的事件</li>
+<li>document.readyState 页面当前文档的状态<ul>
+<li>.uninitialized 还未开始载入</li>
+<li>.loading 载入中</li>
+<li>.interactive 已加载，文档可以开始交互</li>
+<li>.complete 载入完成<br>这里我们就不使用定时器的那种方法了，我们直接来判断页面是否加载完毕去决定loading效果的关闭与否，那么直接将第一个方法的js改为：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.onreadystatechange = <span class="function"><span class="title">function</span></span> () &#123;//即在加载的过程中执行下面的代码</span><br><span class="line">	<span class="keyword">if</span>(document.readyState==<span class="string">"complete"</span>)&#123;//complete加载完成</span><br><span class="line">		$(<span class="string">".loading"</span>).fadeOut();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方法是咱们用到的最多的方法了，因为它能判断出来页面是否真的已经加载完毕。</p>
+<p>3.用C3做进度条的效果<br>这个就要用transform属性以及animation动画了，上面两个方法里，都是用的gif图，那么这样一个加载的效果我们用C3怎么去实现呢？</p>
+<img src="/images/loading-c3.png" class="[]">
+
+<p>说下大概思路吧，首先你肯定得写一个容器把进度条装进去：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"loading"</span>&gt;</span><br><span class="line">	&lt;div class=<span class="string">"pic"</span>&gt;</span><br><span class="line">		&lt;i&gt;&lt;/i&gt;</span><br><span class="line">		&lt;i&gt;&lt;/i&gt;</span><br><span class="line">		&lt;i&gt;&lt;/i&gt;</span><br><span class="line">		&lt;i&gt;&lt;/i&gt;</span><br><span class="line">		&lt;i&gt;&lt;/i&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后再修改样式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.loading&#123;width: 100%;height: 100%;position: fixed;top:0;left: 0;z-index: 100;background-color: <span class="comment">#fff;&#125;</span></span><br><span class="line">.loading .pic&#123;width: 50px;height: 50px;position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin: auto;&#125;</span><br><span class="line">.loading .pic i&#123;display: block;<span class="built_in">float</span>: left;width: 6px;height: 50px;background-color: <span class="comment">#399;margin: 0 2px;transform: scaleY(.4);animation: load 1.2s infinite;</span></span><br><span class="line">&#125;</span><br><span class="line">.loading .pic i:nth-child(1)&#123;&#125;</span><br><span class="line">.loading .pic i:nth-child(2)&#123;animation-delay: .1s; &#125;</span><br><span class="line">.loading .pic i:nth-child(3)&#123;animation-delay: .2s;&#125;</span><br><span class="line">.loading .pic i:nth-child(4)&#123;animation-delay: .3s;&#125;</span><br><span class="line">.loading .pic i:nth-child(5)&#123;animation-delay: .4s;&#125;</span><br><span class="line">@keyframes load&#123;</span><br><span class="line">	0%,40%,100%&#123;transform: scaleY(.4);&#125;</span><br><span class="line">	20%&#123;transform: scaleY(1);&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>写好这些以后，动画就已经产生了。<br>再下来将第二种方法的js粘贴过来，就达到了用CSS3来实现页面加载的一个动画效果了。</p>
+<p>4.还有一种加载方式时，实时获取加载数据，就是百分数的那种效果，比如这样：</p>
+<img src="/images/loading-num.png" class="[]">
+
+<p>这种效果在页面中也比较常见，也是用css3做的，代码如下：<br>首先，先给一个容器用来装进度条：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"loading"</span>&gt;</span><br><span class="line">	&lt;div class=<span class="string">"pic"</span>&gt;</span><br><span class="line">		&lt;span&gt;&lt;/span&gt;</span><br><span class="line">		&lt;b&gt;0%&lt;/b&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后写对应的样式及动画：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">		margin:0;</span><br><span class="line">		padding: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.loading&#123;width: 100%;height: 100%;position: fixed;top:0;left: 0;z-index: 100;background-color: <span class="comment">#fff;&#125;</span></span><br><span class="line">	.loading .pic&#123;width: 100px;height: 100px;position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin: auto;font-size: 30px;text-align: center;line-height: 100px;&#125;</span><br><span class="line">	.loading .pic span&#123;display: block;width: 80px;height: 80px;position: absolute;top: 10px;left: 10px;border-radius: 50%;box-shadow: 0 3px 0 <span class="comment">#666;animation: rotate 1s infinite linear;-webkit-animation: rotate 1s infinite linear;</span></span><br><span class="line">	&#125;</span><br><span class="line">	@-webkit-keyframes rotate&#123;</span><br><span class="line">		0%&#123;-webkit-transform: rotate(0deg);&#125;</span><br><span class="line">		100%&#123;-webkit-transform: rotate(360deg);&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	@keyframes rotate&#123;</span><br><span class="line">		100%&#123;transform: rotate(360deg);&#125;</span><br><span class="line">	&#125;；</span><br></pre></td></tr></table></figure>
+
+<p>那么现在打开浏览器以后呈现在眼前的是一个单调的转圈的动画，所以接下来我们还得写js：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	var img = $(<span class="string">"img"</span>);//首先获取所有的Img对象</span><br><span class="line">	var num = 0;//定义一个变量，赋值给b标签用</span><br><span class="line">	img.each(<span class="keyword">function</span>(i)&#123;//遍历获取到的所有img</span><br><span class="line">		var oImg = new Image();//new一个新对象</span><br><span class="line">		oImg.onload = <span class="function"><span class="title">function</span></span>()&#123;//使用onload方法，在加载完成后执行</span><br><span class="line">			oImg.onload = null;//首先清除掉缓存</span><br><span class="line">			num++;//每次加载的过程中num++，即执行次数</span><br><span class="line">			$(<span class="string">".loading b"</span>).html(parseInt(num/$(<span class="string">"img"</span>).size()*100)+<span class="string">"%"</span>);//改变b标签的内容，用num除以img的个数，再乘以100，再取整，这就是加载的百分数</span><br><span class="line">				<span class="keyword">if</span>(num &gt;= i)&#123;</span><br><span class="line">					$(<span class="string">".loading"</span>).fadeOut();//当num的值大于等于个数时隐藏</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			oImg.src = img[i].src;//预加载，先指定一个img.src，当onload成功以后可以将数据指定到某一个元素或者图片上，或者返回一个结果</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>OK，完成（一定记得要引jQuery，当然用原生就不用引了）。</p>
 
       
 
@@ -269,8 +328,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/10/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/10/13/vue下载及安装的三种方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue.js下载及安装的三种方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -313,7 +372,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2019 cecil_He何生鑫
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
