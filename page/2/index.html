@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue里router-link在IE里的兼容 | 何生鑫的博客</title>
+  <title>何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
-<meta name="keywords" content="vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue里router-link在IE里的兼容">
-<meta property="og:url" content="http://yoursite.com/2019/10/28/vue里router-link在IE里的兼容/index.html">
+  <meta name="description" content="不要怕，耍起来再说">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="何生鑫的博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
+<meta property="og:description" content="不要怕，耍起来再说">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T16:01:31.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue里router-link在IE里的兼容">
-<meta name="twitter:description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
+<meta name="twitter:title" content="何生鑫的博客">
+<meta name="twitter:description" content="不要怕，耍起来再说">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -159,57 +158,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue里router-link在IE里的兼容" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-vue下载及安装的三种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      vue里router-link在IE里的兼容
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/13/vue下载及安装的三种方式/">vue.js下载及安装的三种方法</a>
     </h1>
   
 
         
-        <a href="/2019/10/28/vue里router-link在IE里的兼容/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+        <a href="/2019/10/13/vue下载及安装的三种方式/" class="archive-article-date">
+  	<time datetime="2019-10-13T15:47:41.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。<br>有两个解决方法。<br>第一个，直接在渲染的时候去执行一个兼容浏览器的方法：<a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  template: <span class="string">'&lt;Layout/&gt;'</span>,</span><br><span class="line">  components: &#123; Layout &#125;,</span><br><span class="line">  render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'-ms-scroll-limit'</span> <span class="keyword">in</span> document.documentElement.style &amp;&amp; <span class="string">'-ms-ime-align'</span> <span class="keyword">in</span> document.documentElement.style) &#123;</span><br><span class="line">      window.addEventListener(<span class="string">'hashchange'</span>, () =&gt; &#123;</span><br><span class="line">        var currentPath = window.location.hash.slice(1)</span><br><span class="line">        <span class="keyword">if</span> (this.<span class="variable">$route</span>.path !== currentPath) &#123;</span><br><span class="line">          this.<span class="variable">$router</span>.push(currentPath)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="literal">false</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> createElement(Layout);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>第二个，使用混入 (mixin) ，将该兼容方法挂到vue实例上：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">const IE11RouterFix = &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        hashChangeHandler: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">			this.<span class="variable">$router</span>.push(window.location.hash.substring(1, window.location.hash.length)); </span><br><span class="line">		&#125;,</span><br><span class="line">        isIE11: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">			<span class="built_in">return</span> !!window.MSInputMethodContext &amp;&amp; !!document.documentMode; </span><br><span class="line">		&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">		<span class="keyword">if</span> ( this.isIE11() ) &#123;</span><br><span class="line">			window.addEventListener(<span class="string">'hashchange'</span>, this.hashChangeHandler); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;,</span><br><span class="line">    destroyed: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> ( this.isIE11() ) &#123; </span><br><span class="line">			window.removeEventListener(<span class="string">'hashchange'</span>, this.hashChangeHandler); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    mixins: [IE11RouterFix],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>如果改完之后还是不能跳转，那就清下缓存或者重启浏览器。</p>
-
+        <p>要下载安装vue首先得下载安装node.js和npm。下载安装好这两样以后就可以安装vue了，下面给大家介绍三种安装vue的方法。</p>
+<h3 id="1-直接在官网上下载"><a href="#1-直接在官网上下载" class="headerlink" title="1.直接在官网上下载"></a>1.直接在官网上下载</h3><p>在官网上下载vue.js。并用script标签引入。
+        
+          <a class="article-more-a" href="/2019/10/13/vue下载及安装的三种方式/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -229,84 +206,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/13/vue下载及安装的三种方式/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/28/vue里router-link在IE里的兼容/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/10/29/serve-Node-js轻量级服务/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          serve Node.js轻量级服务
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用canvas画一个简单的圆（带进度条效果）</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -326,14 +235,12 @@
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -356,8 +263,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

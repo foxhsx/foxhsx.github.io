@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue里router-link在IE里的兼容 | 何生鑫的博客</title>
+  <title>serve Node.js轻量级服务 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
-<meta name="keywords" content="vue">
+  <meta name="description" content="可以在本地起一个轻量级服务，安装简单，使用简单。 1npm install serve -g  安装完成之后，在项目文件夹使用命令行并输入: serve 就可以了">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue里router-link在IE里的兼容">
-<meta property="og:url" content="http://yoursite.com/2019/10/28/vue里router-link在IE里的兼容/index.html">
+<meta property="og:title" content="serve Node.js轻量级服务">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/serve-Node-js轻量级服务/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
+<meta property="og:description" content="可以在本地起一个轻量级服务，安装简单，使用简单。 1npm install serve -g  安装完成之后，在项目文件夹使用命令行并输入: serve 就可以了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T16:01:31.755Z">
+<meta property="og:updated_time" content="2019-10-29T14:16:18.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue里router-link在IE里的兼容">
-<meta name="twitter:description" content="还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。有两个解决方法。第一个，直接在渲染的时候去执行一个兼容浏览器的方法：">
+<meta name="twitter:title" content="serve Node.js轻量级服务">
+<meta name="twitter:description" content="可以在本地起一个轻量级服务，安装简单，使用简单。 1npm install serve -g  安装完成之后，在项目文件夹使用命令行并输入: serve 就可以了">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -159,33 +159,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue里router-link在IE里的兼容" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-serve-Node-js轻量级服务" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue里router-link在IE里的兼容
+      serve Node.js轻量级服务
     </h1>
   
 
         
-        <a href="/2019/10/28/vue里router-link在IE里的兼容/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+        <a href="/2019/10/29/serve-Node-js轻量级服务/" class="archive-article-date">
+  	<time datetime="2019-10-29T14:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>还是IE的兼容，在IE浏览器中，router-link的跳转是失效的，主要是因为当url的hash变化的时候，浏览器没有做出相应的反应。这时候需要当浏览器是IE的时候手动给url加一个hashChange事件了。<br>有两个解决方法。<br>第一个，直接在渲染的时候去执行一个兼容浏览器的方法：<a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  template: <span class="string">'&lt;Layout/&gt;'</span>,</span><br><span class="line">  components: &#123; Layout &#125;,</span><br><span class="line">  render: <span class="keyword">function</span> (createElement) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">'-ms-scroll-limit'</span> <span class="keyword">in</span> document.documentElement.style &amp;&amp; <span class="string">'-ms-ime-align'</span> <span class="keyword">in</span> document.documentElement.style) &#123;</span><br><span class="line">      window.addEventListener(<span class="string">'hashchange'</span>, () =&gt; &#123;</span><br><span class="line">        var currentPath = window.location.hash.slice(1)</span><br><span class="line">        <span class="keyword">if</span> (this.<span class="variable">$route</span>.path !== currentPath) &#123;</span><br><span class="line">          this.<span class="variable">$router</span>.push(currentPath)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="literal">false</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> createElement(Layout);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <p>可以在本地起一个轻量级服务，安装简单，使用简单。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install serve -g</span><br></pre></td></tr></table></figure>
 
-<p>第二个，使用混入 (mixin) ，将该兼容方法挂到vue实例上：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">const IE11RouterFix = &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        hashChangeHandler: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">			this.<span class="variable">$router</span>.push(window.location.hash.substring(1, window.location.hash.length)); </span><br><span class="line">		&#125;,</span><br><span class="line">        isIE11: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">			<span class="built_in">return</span> !!window.MSInputMethodContext &amp;&amp; !!document.documentMode; </span><br><span class="line">		&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted: <span class="function"><span class="title">function</span></span>() &#123; </span><br><span class="line">		<span class="keyword">if</span> ( this.isIE11() ) &#123;</span><br><span class="line">			window.addEventListener(<span class="string">'hashchange'</span>, this.hashChangeHandler); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;,</span><br><span class="line">    destroyed: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">		<span class="keyword">if</span> ( this.isIE11() ) &#123; </span><br><span class="line">			window.removeEventListener(<span class="string">'hashchange'</span>, this.hashChangeHandler); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">    mixins: [IE11RouterFix],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>如果改完之后还是不能跳转，那就清下缓存或者重启浏览器。</p>
+<p>安装完成之后，在项目文件夹使用命令行并输入: serve 就可以了</p>
 
       
 
@@ -220,7 +217,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -276,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/28/vue里router-link在IE里的兼容/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/serve-Node-js轻量级服务/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/29/serve-Node-js轻量级服务/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          serve Node.js轻量级服务
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用canvas画一个简单的圆（带进度条效果）</div>
+    <a href="/2019/10/28/vue里router-link在IE里的兼容/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue里router-link在IE里的兼容</div>
       <i class="icon-circle-right"></i>
     </a>
   
