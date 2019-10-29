@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: vue | 何生鑫的博客</title>
+  <title>vue项目在IE11下空白 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不要怕，耍起来再说">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="何生鑫的博客">
-<meta property="og:url" content="http://yoursite.com/tags/vue/index.html">
+  <meta name="description" content="今天遇到了vue项目在IE11下显示空白的地方，第一个反应是兼容性，然后仔细检查了一下项目，然后发现没有去安装babel-polyfill，所以就第一时间去安装：">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue项目在IE11下空白">
+<meta property="og:url" content="http://yoursite.com/2019/10/29/vue项目在IE11下空白/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="不要怕，耍起来再说">
+<meta property="og:description" content="今天遇到了vue项目在IE11下显示空白的地方，第一个反应是兼容性，然后仔细检查了一下项目，然后发现没有去安装babel-polyfill，所以就第一时间去安装：">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-29T14:21:24.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="何生鑫的博客">
-<meta name="twitter:description" content="不要怕，耍起来再说">
+<meta name="twitter:title" content="vue项目在IE11下空白">
+<meta name="twitter:description" content="今天遇到了vue项目在IE11下显示空白的地方，第一个反应是兼容性，然后仔细检查了一下项目，然后发现没有去安装babel-polyfill，所以就第一时间去安装：">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -158,36 +159,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue项目在IE11下空白" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue项目在IE11下空白
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/vue项目在IE11下空白/" class="archive-article-date">
+
+        
+        <a href="/2019/10/29/vue项目在IE11下空白/" class="archive-article-date">
   	<time datetime="2019-10-29T14:18:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/29/vue项目在IE11下空白/">vue项目在IE11下空白</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天遇到了vue项目在IE11下显示空白的地方，第一个反应是兼容性，然后仔细检查了一下项目，然后发现没有去安装babel-polyfill，所以就第一时间去安装：</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-polyfill -D</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p>然后在main.js里引入（一般放在首行）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import <span class="string">'babel-polyfill'</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在webpack.config.base.js里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">	app:  [<span class="string">'babel-polyfill'</span>, <span class="string">'./src/main.js'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在loader里还有最重要的一步，就是把有ES6语法的js文件所在的文件夹都需要包含进去，</span><br><span class="line">// 这样才能保证将所有的ES6语法都编译成ES5的</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">test</span>: /\.js$/,</span><br><span class="line">	loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">	include: [</span><br><span class="line">			resolve(<span class="string">'src'</span>),</span><br><span class="line">			resolve(<span class="string">'test'</span>),</span><br><span class="line">			resolve(<span class="string">'mock'</span>)</span><br><span class="line">		]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就OK了，页面能正常显示在IE11了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,209 +230,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/vue项目在IE11下空白/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/28/vue里router-link在IE里的兼容/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/29/serve-Node-js轻量级服务/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">serve Node.js轻量级服务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/28/vue里router-link在IE里的兼容/">vue里router-link在IE里的兼容</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/在vue中如何使用自己写的js/" class="archive-article-date">
-  	<time datetime="2019-10-21T14:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/在vue中如何使用自己写的js/">在vue中如何使用自己写的js</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/17/vue如何实现双向数据绑定/" class="archive-article-date">
-  	<time datetime="2019-10-17T13:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/17/vue如何实现双向数据绑定/">vue如何实现双向数据绑定</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/安装vue-cli时出现4058错误/" class="archive-article-date">
-  	<time datetime="2019-10-15T15:15:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/安装vue-cli时出现4058错误/">安装vue-cli时出现4058错误</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/13/vue下载及安装的三种方式/" class="archive-article-date">
-  	<time datetime="2019-10-13T15:47:41.268Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/13/vue下载及安装的三种方式/">vue.js下载及安装的三种方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -424,9 +352,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
