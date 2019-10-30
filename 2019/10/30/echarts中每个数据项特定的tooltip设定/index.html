@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>安装vue-cli时出现4058错误 | 何生鑫的博客</title>
+  <title>echarts中每个数据项特定的tooltip设定 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在安装vue脚手架的时候出现了4058的报错： 1npm ERR! errno -4058  那么这到底是哪里出错了呢？查了一下，貌似是已经安装过脚手架以后，又想重新安装到其他目录时会报这样的错误。解决办法也很简单粗暴，可以直接找到C:\Users\Administrator\AppData\Roaming\npm\node_modules下的vue-cli，即删除本机全局安装的node_mo">
-<meta name="keywords" content="vue">
+  <meta name="description" content="什么是每个数据项特定的tooltip？类似于这样：">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装vue-cli时出现4058错误">
-<meta property="og:url" content="http://yoursite.com/2019/10/15/安装vue-cli时出现4058错误/index.html">
+<meta property="og:title" content="echarts中每个数据项特定的tooltip设定">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/echarts中每个数据项特定的tooltip设定/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="今天在安装vue脚手架的时候出现了4058的报错： 1npm ERR! errno -4058  那么这到底是哪里出错了呢？查了一下，貌似是已经安装过脚手架以后，又想重新安装到其他目录时会报这样的错误。解决办法也很简单粗暴，可以直接找到C:\Users\Administrator\AppData\Roaming\npm\node_modules下的vue-cli，即删除本机全局安装的node_mo">
+<meta property="og:description" content="什么是每个数据项特定的tooltip？类似于这样：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-17T13:23:27.858Z">
+<meta property="og:updated_time" content="2019-10-30T15:17:05.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装vue-cli时出现4058错误">
-<meta name="twitter:description" content="今天在安装vue脚手架的时候出现了4058的报错： 1npm ERR! errno -4058  那么这到底是哪里出错了呢？查了一下，貌似是已经安装过脚手架以后，又想重新安装到其他目录时会报这样的错误。解决办法也很简单粗暴，可以直接找到C:\Users\Administrator\AppData\Roaming\npm\node_modules下的vue-cli，即删除本机全局安装的node_mo">
+<meta name="twitter:title" content="echarts中每个数据项特定的tooltip设定">
+<meta name="twitter:description" content="什么是每个数据项特定的tooltip？类似于这样：">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -159,30 +159,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-安装vue-cli时出现4058错误" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-echarts中每个数据项特定的tooltip设定" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      安装vue-cli时出现4058错误
+      echarts中每个数据项特定的tooltip设定
     </h1>
   
 
         
-        <a href="/2019/10/15/安装vue-cli时出现4058错误/" class="archive-article-date">
-  	<time datetime="2019-10-15T15:15:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+        <a href="/2019/10/30/echarts中每个数据项特定的tooltip设定/" class="archive-article-date">
+  	<time datetime="2019-10-30T15:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在安装vue脚手架的时候出现了4058的报错：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! errno -4058</span><br></pre></td></tr></table></figure>
+        <p>什么是每个数据项特定的tooltip？类似于这样：</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">data: [ &#123;</span><br><span class="line">	value: 20,</span><br><span class="line">	name: <span class="string">'CO2: '</span>,</span><br><span class="line">	itemStyle: &#123;</span><br><span class="line">		borderWidth: 2,</span><br><span class="line">		color: <span class="string">'#55d3db'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	label: &#123;</span><br><span class="line">		show: <span class="literal">true</span>,</span><br><span class="line">		position : <span class="string">'inside'</span>,</span><br><span class="line">		fontSize: 8,</span><br><span class="line">		formatter: <span class="string">" &#123;b&#125;\n"</span>+skyValueArr[0]</span><br><span class="line">	&#125;,</span><br><span class="line">	tooltip: &#123;</span><br><span class="line">		formatter: <span class="string">" &#123;a&#125;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#123;b&#125;"</span>+skyValueArr[0],</span><br><span class="line">		backgroundColor: <span class="string">'rgba(255, 255, 255, 0.7)'</span>,</span><br><span class="line">		textStyle: &#123;</span><br><span class="line">			color: <span class="string">'#000'</span>,</span><br><span class="line">			fontSize: 12</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
 
-<p>那么这到底是哪里出错了呢？查了一下，貌似是已经安装过脚手架以后，又想重新安装到其他目录时会报这样的错误。解决办法也很简单粗暴，可以直接找到C:\Users\Administrator\AppData\Roaming\npm\node_modules下的vue-cli，即删除本机全局安装的node_modules下的vue-cli，重新执行安装命令就行了。</p>
+<p>设置这一数据项的tooltip的作用就是显示指定内容，与放在整个option里的tooltip相比，一个是公共的，一个是私有的。<br>那么只是按照上述代码写肯定是不行的（不信你试试），你必须还要在option里去整体写一个tooltip:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> option = &#123;</span><br><span class="line">	tooltip: &#123;</span><br><span class="line">		trigger: <span class="string">'item'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>OK，这样的话就可以完成特定tooltip的设定了。</p>
 
       
 
@@ -217,7 +221,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -273,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/15/安装vue-cli时出现4058错误/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/30/echarts中每个数据项特定的tooltip设定/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +291,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/17/vue如何实现双向数据绑定/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue如何实现双向数据绑定
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/14/我的hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">常见的几种网页进度条及如何判断页面已经加载完毕</div>
+    <a href="/2019/10/29/vue项目在IE11下空白/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue项目在IE11下空白</div>
       <i class="icon-circle-right"></i>
     </a>
   
