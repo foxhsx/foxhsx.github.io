@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>用canvas画一个简单的圆（带进度条效果） | 何生鑫的博客</title>
+  <title>sublime出现Install Package无法使用的问题 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="直接贴代码了，里面有注释：">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="现在咱们有时候要使用package control中的Install Package时，会出现这样的报错： 1there are no packages available for installation">
+<meta name="keywords" content="工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用canvas画一个简单的圆（带进度条效果）">
-<meta property="og:url" content="http://yoursite.com/2019/10/28/用canvas画一个简单的圆（带进度条效果）/index.html">
+<meta property="og:title" content="sublime出现Install Package无法使用的问题">
+<meta property="og:url" content="http://yoursite.com/2019/11/04/sublime出现Install-Package无法使用的问题/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="直接贴代码了，里面有注释：">
+<meta property="og:description" content="现在咱们有时候要使用package control中的Install Package时，会出现这样的报错： 1there are no packages available for installation">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdn.net/20180906172444344?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-10-28T15:52:09.508Z">
+<meta property="og:updated_time" content="2019-11-04T15:15:37.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用canvas画一个简单的圆（带进度条效果）">
-<meta name="twitter:description" content="直接贴代码了，里面有注释：">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180906172444344?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="sublime出现Install Package无法使用的问题">
+<meta name="twitter:description" content="现在咱们有时候要使用package control中的Install Package时，会出现这样的报错： 1there are no packages available for installation">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -161,31 +159,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-用canvas画一个简单的圆（带进度条效果）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sublime出现Install-Package无法使用的问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      用canvas画一个简单的圆（带进度条效果）
+      sublime出现Install Package无法使用的问题
     </h1>
   
 
         
-        <a href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+        <a href="/2019/11/04/sublime出现Install-Package无法使用的问题/" class="archive-article-date">
+  	<time datetime="2019-11-04T15:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>直接贴代码了，里面有注释： <a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt; </span><br><span class="line">	&lt;title&gt;canvas画图&lt;/title&gt;</span><br><span class="line">	&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">""</span>&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">	*&#123;padding: 0; margin: 0; &#125;</span><br><span class="line"> 	.circle&#123;width: 300px;height: 300px;position: relative;&#125;</span><br><span class="line"> 	canvas&#123;display: block;margin: 0;position: absolute;background: white;left: 0;top: 0;&#125;</span><br><span class="line"> 	<span class="comment">#canvas_1&#123;z-index: 2;position:absolute;left:72px;top:72px; &#125;</span></span><br><span class="line"> 	<span class="comment">#canvas_2&#123;z-index: 3; background: transparent;transform:rotate(-90deg); position:absolute;left:72px;top:72px;&#125;</span></span><br><span class="line">	<span class="comment">#canvas_3&#123;z-index:1&#125;</span></span><br><span class="line">	.smallText&#123;</span><br><span class="line">		font-size: 14px;</span><br><span class="line">		z-index: 4;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=<span class="string">"circle"</span>&gt;</span><br><span class="line">	 &lt;canvas id=<span class="string">"canvas_1"</span> width=<span class="string">"154"</span> height=<span class="string">"154"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">	 &lt;span class=<span class="string">"smallText"</span>&gt;待解决&lt;/span&gt;</span><br><span class="line">	&lt;canvas id=<span class="string">"canvas_2"</span> width=<span class="string">"154"</span> height=<span class="string">"154"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">	&lt;canvas id=<span class="string">"canvas_3"</span> width=<span class="string">"300"</span> height=<span class="string">"300"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> inte(percent)&#123;</span><br><span class="line">//获取画布</span><br><span class="line">	var canvas_1 = document.getElementById(<span class="string">"canvas_1"</span>);</span><br><span class="line">	var canvas_2 = document.getElementById(<span class="string">"canvas_2"</span>);</span><br><span class="line">	var canvas_3 = document.getElementById(<span class="string">"canvas_3"</span>);</span><br><span class="line">//可以在画布上进行绘画，即返回一个对象，该对象可以在画布上进行操作，可以理解为画笔</span><br><span class="line">	var ctx_1 = canvas_1.getContext(<span class="string">'2d'</span>);</span><br><span class="line">	var ctx_2 = canvas_2.getContext(<span class="string">'2d'</span>);</span><br><span class="line">	var ctx_3 = canvas_3.getContext(<span class="string">'2d'</span>);</span><br><span class="line">	//图像边框是10像素</span><br><span class="line">	ctx_1.lineWidth = 5;</span><br><span class="line">	ctx_1.strokeStyle = <span class="string">"#ccc"</span>;</span><br><span class="line">	//第一个圆的颜色为白色，为底部的白色圆圈</span><br><span class="line">	ctx_1.beginPath(); //画笔1的起始位置</span><br><span class="line">	//参数arc(x轴，y轴，半径，起始角（一般为0），结束角（一般为2*Math.PI）,可选（<span class="literal">false</span>为顺时针，<span class="literal">true</span>为逆时针）)</span><br><span class="line">	ctx_1.arc(canvas_1.width / 2, canvas_1.height / 2, canvas_1.width / 2 - ctx_1.lineWidth / 2, 0, Math.PI * 2, <span class="literal">false</span>);</span><br><span class="line">	//创建从当前点回到起始点的路径</span><br><span class="line">	ctx_1.closePath();</span><br><span class="line">	//绘制以上定义好的路线</span><br><span class="line">	ctx_1.stroke();</span><br><span class="line">	<span class="keyword">if</span> (percent &lt; 0 || percent &gt; 100) &#123;</span><br><span class="line">		throw new Error(<span class="string">'percent must be between 0 and 100'</span>);</span><br><span class="line">		<span class="built_in">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	ctx_2.lineWidth = 5;</span><br><span class="line">	ctx_2.strokeStyle = <span class="string">"#f90"</span>;</span><br><span class="line">	var angle = 0;</span><br><span class="line">	var timer;</span><br><span class="line">	//定义一个自运行函数</span><br><span class="line">	(<span class="keyword">function</span> <span class="function"><span class="title">draw</span></span>()&#123;</span><br><span class="line">	//requestAnimationFrame定义动画</span><br><span class="line">		timer = requestAnimationFrame(draw);</span><br><span class="line">		//clearRect清空给定矩形内的指定像素（参数：x轴，y轴，要清除矩形的宽度，要清除矩形的高度）</span><br><span class="line">		ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height)</span><br><span class="line">		//百分比圆环</span><br><span class="line">		ctx_2.beginPath();	//画笔2的起始位置</span><br><span class="line">		//创建部分圆或圆圈</span><br><span class="line">		ctx_2.arc(canvas_2.width / 2, canvas_2.height / 2, canvas_2.width / 2 - ctx_2.lineWidth / 2, 0, angle * Math.PI / 180, <span class="literal">false</span>);</span><br><span class="line">		angle++;</span><br><span class="line">		//取整</span><br><span class="line">		var percentAge = parseInt((angle / 360) * 100)</span><br><span class="line">		<span class="keyword">if</span> (angle &gt; (percent / 100 * 360)) &#123;</span><br><span class="line">			percentAge = percent</span><br><span class="line">			window.cancelAnimationFrame(timer);</span><br><span class="line">		&#125;;</span><br><span class="line">		ctx_2.stroke();</span><br><span class="line">		ctx_2.closePath();</span><br><span class="line">		//保存当前环境状态</span><br><span class="line">		ctx_2.save();</span><br><span class="line">		ctx_2.beginPath();</span><br><span class="line">		//旋转当前的绘画</span><br><span class="line">		ctx_2.rotate(90 * Math.PI / 180)</span><br><span class="line">		ctx_2.font = <span class="string">'30px Arial'</span>;</span><br><span class="line">		ctx_2.fillStyle = <span class="string">'red'</span>;</span><br><span class="line">		var text = percentAge + <span class="string">'%'</span>;</span><br><span class="line">		//fillText() 方法在画布上绘制填色的文本。文本的默认颜色是黑色。</span><br><span class="line">		//使用上面font 属性来定义字体和字号，并使用 fillStyle 属性以另一种颜色/渐变来渲染文本。</span><br><span class="line">		ctx_2.fillText(text, 55, -70);</span><br><span class="line">		ctx_2.closePath();</span><br><span class="line">		//返回之前保存过的路径状态和属性</span><br><span class="line">		ctx_2.restore();</span><br><span class="line">		ctx_3.lineWidth = 1;</span><br><span class="line">		ctx_3.strokeStyle = <span class="string">"#000"</span>;</span><br><span class="line">		ctx_3.beginPath();</span><br><span class="line">		ctx_3.arc(canvas_3.width / 2,canvas_3.height / 2,canvas_3.width / 2 -ctx_3.lineWidth / 2,0,Math.PI * 2,<span class="literal">false</span>);</span><br><span class="line">		ctx_3.closePath();</span><br><span class="line">		ctx_3.stroke();</span><br><span class="line">	&#125;)()</span><br><span class="line">&#125;</span><br><span class="line">window.onload = inte(60);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <p>现在咱们有时候要使用package control中的Install Package时，会出现这样的报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">there are no packages available <span class="keyword">for</span> installation</span><br></pre></td></tr></table></figure>
 
-<p>里面有详细注释哦，下面是效果图：</p>
-<img src="https://img-blog.csdn.net/20180906172444344?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+<a id="more"></a>
+<p>这是因为在首选项下的Package Settings-&gt;Package Control-&gt;Settings-Default.json文件中的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"channels"</span>: [</span><br><span class="line">  <span class="string">"https://packagecontrol.io/channel_v3.json"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>这个路径无法访问了。<br>那么这时候我们可以去github上下载一个channel_v3.json，并将它放在一个指定的目录下，然后再在Package Settings-&gt;Package Control-&gt;Settings-User.json文件中添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"channels"</span>:</span><br><span class="line">  [</span><br><span class="line">    <span class="string">"F:/sumlime/Sublime Text 3/channel_v3.json"</span></span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
+
+<p>也就是将这个json文件的路径写进来，然后重启sublime，就可以正常使用package control中的Install Package了。</p>
 
       
 
@@ -220,7 +224,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
@@ -276,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/04/sublime出现Install-Package无法使用的问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -290,18 +294,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/28/vue里router-link在IE里的兼容/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue里router-link在IE里的兼容
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/24/直接在命令行来监听sass编译/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">直接在命令行来监听sass编译</div>
+    <a href="/2019/11/01/vue动态渲染组件的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue动态渲染组件的方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
