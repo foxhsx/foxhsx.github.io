@@ -6,19 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | 何生鑫的博客</title>
+  <title>在Windows环境下安装MongoDB | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不要怕，耍起来再说">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="何生鑫的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+  <meta name="description" content="首先进入MongoDB的官网下载安装包进行安装https://www.mongodb.com/download-center#community。 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。">
+<meta name="keywords" content="MongoDB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Windows环境下安装MongoDB">
+<meta property="og:url" content="http://yoursite.com/2019/11/05/在Windows环境下安装MongoDB/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="不要怕，耍起来再说">
+<meta property="og:description" content="首先进入MongoDB的官网下载安装包进行安装https://www.mongodb.com/download-center#community。 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630171925226?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172028574?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172112807?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172222492?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172309755?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172351676?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172438752?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172522401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172630211?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172735796?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172759286?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172829710?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172900438?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180630172935282?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2019-11-05T15:10:46.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="何生鑫的博客">
-<meta name="twitter:description" content="不要怕，耍起来再说">
+<meta name="twitter:title" content="在Windows环境下安装MongoDB">
+<meta name="twitter:description" content="首先进入MongoDB的官网下载安装包进行安装https://www.mongodb.com/download-center#community。 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180630171925226?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -158,405 +174,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-在Windows环境下安装MongoDB" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在Windows环境下安装MongoDB
+    </h1>
+  
+
+        
+        <a href="/2019/11/05/在Windows环境下安装MongoDB/" class="archive-article-date">
+  	<time datetime="2019-11-05T14:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先进入MongoDB的官网下载安装包进行安装<a href="https://www.mongodb.com/download-center#community。" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community。</a> 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。</p>
+<img src="https://img-blog.csdn.net/20180630171925226?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<a id="more"></a>
+<p>下载好安装包以后，双击打开该文件，按提示进行安装。</p>
+<img src="https://img-blog.csdn.net/20180630172028574?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>在这里你可以点击Custom也就是自定义来设置你自己的安装目录。</p>
+<img src="https://img-blog.csdn.net/20180630172112807?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>在安装完成后，我们需要创建数据目录。MongoDB将数据目录存储在db目录下的，我们需要手动去创建它。<br>我是在e盘安装了MongoDB，现在可以在E盘创建一个data的目录然后在data目录里创建db目录。</p>
+<img src="https://img-blog.csdn.net/20180630172222492?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<img src="https://img-blog.csdn.net/20180630172309755?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>创建好db目录以后，打开MongoDB目录中的bin目录，按住shift+鼠标右键，在当前目录下打开命令行。执行mongodb.exe文件。<br>E:\MongoDB\Server\3.6\bin\mongod.exe –dbpath E:\data\db</p>
+<p>执行成功：</p>
+<img src="https://img-blog.csdn.net/20180630172351676?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>成功运行MongoDB以后，紧接着就是连接MongoDB了，同样的方法，在bin目录下打开命令行窗口，执行以下命令：<br>E:\MongoDB\Server\3.6\bin\mongo.exe</p>
+<img src="https://img-blog.csdn.net/20180630172438752?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>输入show dbs可以查看当前数据库。<br>既然是一个数据库，那相应的也要有其日志文件，在data目录下，我们再创建一个日志文件目录log。<br>有目录当然也要有文件，紧接着再创建一个log.txt的日志文件。</p>
+<img src="https://img-blog.csdn.net/20180630172522401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>那么我们说每次都以命令行的方式来启动MongoDB是很麻烦的，所以我们可以创建一个批处理文件。比如我们可以创建一个dbstart.cmd的批处理文件。<br>创建完成后右击以记事本或者选择其他打开方式打开文件进行编辑。</p>
+<img src="https://img-blog.csdn.net/20180630172630211?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>在这里mongodb1802只是一个服务名字，可以自己起。<br>（路径的话按自己实际的安装路径输入）<br>完成后右击这个批处理文件，并以管理员的身份运行</p>
+<img src="https://img-blog.csdn.net/20180630172735796?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>这时表示已经运行完了。<br>然后打开任务管理器，点击进入服务</p>
+<img src="https://img-blog.csdn.net/20180630172759286?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+<p>在服务里查找mongodb1802，并启动。现在这个服务就是Windows来管理了。<br>最后再在相同的目录下创建一个客户端的批处理文件db-client.cmd</p>
+<img src="https://img-blog.csdn.net/20180630172829710?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>其内容只需要输入如图所示的命令即可：</p>
+<img src="https://img-blog.csdn.net/20180630172900438?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>你的MongoDB安装在哪个盘第一行就写哪个盘，第二行cd进入bin目录，第三行输入mongo,exe，最后一行pause: 停在这个位置。<br>同样的方法以管理员身份打开，就会直接显示</p>
+<img src="https://img-blog.csdn.net/20180630172935282?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+
+<p>OK，完成！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/31/splice（）方法采坑/" class="archive-article-date">
-  	<time datetime="2019-10-31T15:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/31/splice（）方法采坑/">splice（）方法采坑</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/05/在Windows环境下安装MongoDB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/30/echarts中每个数据项特定的tooltip设定/" class="archive-article-date">
-  	<time datetime="2019-10-30T15:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/04/sublime出现Install-Package无法使用的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sublime出现Install Package无法使用的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/30/echarts中每个数据项特定的tooltip设定/">echarts中每个数据项特定的tooltip设定</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/vue项目在IE11下空白/" class="archive-article-date">
-  	<time datetime="2019-10-29T14:18:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/29/vue项目在IE11下空白/">vue项目在IE11下空白</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/29/serve-Node-js轻量级服务/" class="archive-article-date">
-  	<time datetime="2019-10-29T14:15:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/29/serve-Node-js轻量级服务/">serve Node.js轻量级服务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/28/vue里router-link在IE里的兼容/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/28/vue里router-link在IE里的兼容/">vue里router-link在IE里的兼容</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/">用canvas画一个简单的圆（带进度条效果）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/24/直接在命令行来监听sass编译/" class="archive-article-date">
-  	<time datetime="2019-10-23T22:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/24/直接在命令行来监听sass编译/">直接在命令行来监听sass编译</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/22/使用browser-sync进行静态页面的实时监听/" class="archive-article-date">
-  	<time datetime="2019-10-22T14:46:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/22/使用browser-sync进行静态页面的实时监听/">使用browser-sync进行静态页面的实时监听</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/21/在vue中如何使用自己写的js/" class="archive-article-date">
-  	<time datetime="2019-10-21T14:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/在vue中如何使用自己写的js/">在vue中如何使用自己写的js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/20/Ztree怎么在子节点后面添加按钮/" class="archive-article-date">
-  	<time datetime="2019-10-20T14:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/20/Ztree怎么在子节点后面添加按钮/">Ztree怎么在子节点后面添加按钮</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">第三方插件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/10/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -580,8 +399,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
