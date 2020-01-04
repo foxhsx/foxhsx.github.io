@@ -160,6 +160,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-offsettop及相关属性介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/offsettop及相关属性介绍/">offsettop及相关属性介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/04/offsettop及相关属性介绍/" class="archive-article-date">
+  	<time datetime="2020-01-04T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近的项目中有用到offsetTop属性配合iscroll插件来进行下拉加载的一个效果，经过测试，在其他浏览器都是OK的，但是在iPhone的safari上页面刚加载完以后，滚动部分会有被遮挡一部分，后来发现是因为获取到的offsetTop值在刚开始进来的时候，并不是0，而是120px，这个刚好是节点元素到页面顶部的距离，所以猜测这里应该是offsetparent不对。那么是哪里不对呢？<hr><br>首先偏移量属性咱们经常会用到offsetLeft、offsetTop、offsetHeight、offsetWidth这四种，然后我们他们的参照点就是offsetParent。我们可以在<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent" target="_blank" rel="noopener">HTMLElement.offsetParent</a>里可以看到它只是一个只读属性，而HTMLElement.offsetTop 也是只读属性，它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。<br><br>它的定义是返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素（position不等于static）或者最近的 table,td,th,body元素，在 Webkit 中，如果元素为隐藏的（该元素或其祖先元素的 style.display 为 “none”），或者该元素的 style.position 被设为 “fixed”，则该属性返回 null。</p>
+<p>在 IE 9 中，如果该元素的 style.position 被设置为 “fixed”，则该属性返回 null。（display:none 无影响。）</p>
+<blockquote>
+<p>也就是说要获取到正确的offsetTop值，首先要确保它的最近的定位元素不能是fixed和static。其次确保style.display不能为none。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/04/offsettop及相关属性介绍/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-在Windows环境下安装MongoDB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -848,82 +926,6 @@
 
 
   
-    <article id="post-直接在命令行来监听sass编译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/24/直接在命令行来监听sass编译/">直接在命令行来监听sass编译</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/24/直接在命令行来监听sass编译/" class="archive-article-date">
-  	<time datetime="2019-10-23T22:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>咱们除了使用gulp和webpack等前端自动化构建工具以外，其实可以直接在命令行来监听sass的编译，那么如何操作呢？<br>首先咱们得下载安装ruby，因为它算是sass的“根”了，windows直接进入下载地址：
-        
-          <a class="article-more-a" href="/2019/10/24/直接在命令行来监听sass编译/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/24/直接在命令行来监听sass编译/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -938,7 +940,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 cecil_He何生鑫
+    		&copy; 2020 cecil_He何生鑫
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
