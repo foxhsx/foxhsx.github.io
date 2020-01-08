@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue如何实现双向数据绑定 | 何生鑫的博客</title>
+  <title>使用原生js中的add和remove进行class类的增加和删除 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue中实现数据绑定的一个重要点：">
-<meta name="keywords" content="vue">
+  <meta name="description" content="我们可以直接使用原生JavaScript提供的API来做class类的增加和删除，效率更高。 element.classList它是一个只读属性，返回一个元素的类属性的实时DOMTokenList集合。 如果类属性未设置或为空，那么它的length为0。虽然element.classList本身是只读的，但是你可以使用add()和remove()方法来修改它。 add( String[, Stri">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue如何实现双向数据绑定">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/vue如何实现双向数据绑定/index.html">
+<meta property="og:title" content="使用原生js中的add和remove进行class类的增加和删除">
+<meta property="og:url" content="http://yoursite.com/2020/01/08/使用原生js中的add和remove进行class类的增加和删除/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="vue中实现数据绑定的一个重要点：">
+<meta property="og:description" content="我们可以直接使用原生JavaScript提供的API来做class类的增加和删除，效率更高。 element.classList它是一个只读属性，返回一个元素的类属性的实时DOMTokenList集合。 如果类属性未设置或为空，那么它的length为0。虽然element.classList本身是只读的，但是你可以使用add()和remove()方法来修改它。 add( String[, Stri">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191004114829296.png">
-<meta property="og:updated_time" content="2019-10-17T13:18:50.565Z">
+<meta property="og:updated_time" content="2020-01-08T14:25:09.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue如何实现双向数据绑定">
-<meta name="twitter:description" content="vue中实现数据绑定的一个重要点：">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191004114829296.png">
+<meta name="twitter:title" content="使用原生js中的add和remove进行class类的增加和删除">
+<meta name="twitter:description" content="我们可以直接使用原生JavaScript提供的API来做class类的增加和删除，效率更高。 element.classList它是一个只读属性，返回一个元素的类属性的实时DOMTokenList集合。 如果类属性未设置或为空，那么它的length为0。虽然element.classList本身是只读的，但是你可以使用add()和remove()方法来修改它。 add( String[, Stri">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -161,36 +159,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue如何实现双向数据绑定" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-使用原生js中的add和remove进行class类的增加和删除" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue如何实现双向数据绑定
+      使用原生js中的add和remove进行class类的增加和删除
     </h1>
   
 
         
-        <a href="/2019/10/17/vue如何实现双向数据绑定/" class="archive-article-date">
-  	<time datetime="2019-10-17T13:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+        <a href="/2020/01/08/使用原生js中的add和remove进行class类的增加和删除/" class="archive-article-date">
+  	<time datetime="2020-01-08T14:14:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>vue中实现数据绑定的一个重要点：<a id="more"></a></p>
-<ul>
-<li>Object.defineProperty()函数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"a"</span> /&gt;</span><br><span class="line">&lt;span id=<span class="string">"b"</span>&gt;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var obj = &#123;&#125;</span><br><span class="line">    Object.defineProperty(obj, <span class="string">'test'</span>, &#123;</span><br><span class="line">    	// 不需要监听事件，只要达到条件就会自动触发</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            document.getElementById(<span class="string">'a'</span>).value = newVal;</span><br><span class="line">            document.getElementById(<span class="string">'b'</span>).innerHTML = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    // 需要添加keyup事件去监听，不然就不知道已经发生了改变。</span><br><span class="line">    document.addEventListener(<span class="string">'keyup'</span>, <span class="keyword">function</span>(e) &#123;</span><br><span class="line">        obj.test = e.target.value;</span><br><span class="line">        // 当<span class="built_in">test</span>属性改变时，会触发上面的<span class="built_in">set</span>方法。</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>那么Object.defineProperty()底层提供了两个API，一个是get，一个是set。<br>当我们给obj.test属性赋值时，会发现set函数触发了，那这就和我们去手动添加监听事件不一样了，当我们改变obj.test的值时，会自动触发set。而我们去获取obj.test的值时，也会自动触发get方法。</p>
-<img src="https://img-blog.csdnimg.cn/20191004114829296.png" class="[]">
-
-<p>可以看到，当我们在控制台改变了obj.test的值时，会自动触发set事件，从而实现了数据绑定。</p>
+        <p>我们可以直接使用原生JavaScript提供的API来做class类的增加和删除，效率更高。</p>
+<h4 id="element-classList"><a href="#element-classList" class="headerlink" title="element.classList"></a>element.classList</h4><p>它是一个只读属性，返回一个元素的类属性的实时DOMTokenList集合。</p>
+<p>如果类属性未设置或为空，那么它的length为0。虽然element.classList本身是只读的，但是你可以使用add()和remove()方法来修改它。</p>
+<h5 id="add-String-String-…"><a href="#add-String-String-…" class="headerlink" title="add( String[, String [, …]] )"></a>add( String[, String [, …]] )</h5><p> 添加指定的类值(class value)。如果这些类已经存在于元素的属性中，那么它们将被忽略。<a id="more"></a></p>
+<h5 id="remove-String-String-…"><a href="#remove-String-String-…" class="headerlink" title="remove( String[, String [, …]] )"></a>remove( String[, String [, …]] )</h5><p> 删除指定的类值。</p>
+<blockquote>
+<p>注意：即使删除不存在的类值也不会导致抛出异常。</p>
+</blockquote>
+<h5 id="item-Number"><a href="#item-Number" class="headerlink" title="item( Number )"></a>item( Number )</h5><p> 按集合中的索引返回类值。</p>
+<h5 id="toggle-String-force"><a href="#toggle-String-force" class="headerlink" title="toggle( String [, force] )"></a>toggle( String [, force] )</h5><p> 当只有一个参数时：切换类值；也就是说，即如果类值存在，则删除它并返回false，如果不存在， 则添加它并返回true。</p>
+<p> 当存在第二个参数时：若第二个参数的执行结果为true，则添加指定的类值，若执行结果为false， 则删除它。</p>
+<h5 id="contains-String"><a href="#contains-String" class="headerlink" title="contains( String )"></a>contains( String )</h5><p> 检查元素的类class属性中是否存在指定的类值。</p>
+<h5 id="replace-oldClass-newClass"><a href="#replace-oldClass-newClass" class="headerlink" title="replace( oldClass, newClass )"></a>replace( oldClass, newClass )</h5><p> 用一个新类值替换已有的类值。</p>
 
       
 
@@ -235,7 +236,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -291,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/17/vue如何实现双向数据绑定/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/08/使用原生js中的add和remove进行class类的增加和删除/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/20/Ztree怎么在子节点后面添加按钮/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/08/13个提高大脑学习效率的技巧/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Ztree怎么在子节点后面添加按钮
+          13个提高大脑学习效率的技巧
         
       </div>
     </a>
   
   
-    <a href="/2019/10/15/安装vue-cli时出现4058错误/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安装vue-cli时出现4058错误</div>
+    <a href="/2020/01/08/bootstrap里模态框调用后禁止页面滚动/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bootstrap里模态框调用后禁止页面滚动</div>
       <i class="icon-circle-right"></i>
     </a>
   

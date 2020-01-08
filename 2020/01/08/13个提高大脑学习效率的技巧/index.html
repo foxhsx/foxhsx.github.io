@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue如何实现双向数据绑定 | 何生鑫的博客</title>
+  <title>13个提高大脑学习效率的技巧 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue中实现数据绑定的一个重要点：">
-<meta name="keywords" content="vue">
+  <meta name="description" content="SPACED REPETITION –间歇重复 为了最大化学习效率，短时间学习，但再三进行。   FIND YOUR OWN STYLE–找到适合自己的学习模式 有的人喜欢与朋友一起学习，有些则喜欢埋头安静学习   GOOD NIGHT SLEEP–良好的睡眠 睡觉和做梦是处理和储存信息至关重要的部分。">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue如何实现双向数据绑定">
-<meta property="og:url" content="http://yoursite.com/2019/10/17/vue如何实现双向数据绑定/index.html">
+<meta property="og:title" content="13个提高大脑学习效率的技巧">
+<meta property="og:url" content="http://yoursite.com/2020/01/08/13个提高大脑学习效率的技巧/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="vue中实现数据绑定的一个重要点：">
+<meta property="og:description" content="SPACED REPETITION –间歇重复 为了最大化学习效率，短时间学习，但再三进行。   FIND YOUR OWN STYLE–找到适合自己的学习模式 有的人喜欢与朋友一起学习，有些则喜欢埋头安静学习   GOOD NIGHT SLEEP–良好的睡眠 睡觉和做梦是处理和储存信息至关重要的部分。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191004114829296.png">
-<meta property="og:updated_time" content="2019-10-17T13:18:50.565Z">
+<meta property="og:updated_time" content="2020-01-08T14:23:02.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue如何实现双向数据绑定">
-<meta name="twitter:description" content="vue中实现数据绑定的一个重要点：">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191004114829296.png">
+<meta name="twitter:title" content="13个提高大脑学习效率的技巧">
+<meta name="twitter:description" content="SPACED REPETITION –间歇重复 为了最大化学习效率，短时间学习，但再三进行。   FIND YOUR OWN STYLE–找到适合自己的学习模式 有的人喜欢与朋友一起学习，有些则喜欢埋头安静学习   GOOD NIGHT SLEEP–良好的睡眠 睡觉和做梦是处理和储存信息至关重要的部分。">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -161,36 +159,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue如何实现双向数据绑定" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-13个提高大脑学习效率的技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue如何实现双向数据绑定
+      13个提高大脑学习效率的技巧
     </h1>
   
 
         
-        <a href="/2019/10/17/vue如何实现双向数据绑定/" class="archive-article-date">
-  	<time datetime="2019-10-17T13:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+        <a href="/2020/01/08/13个提高大脑学习效率的技巧/" class="archive-article-date">
+  	<time datetime="2020-01-08T14:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>vue中实现数据绑定的一个重要点：<a id="more"></a></p>
-<ul>
-<li>Object.defineProperty()函数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"a"</span> /&gt;</span><br><span class="line">&lt;span id=<span class="string">"b"</span>&gt;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var obj = &#123;&#125;</span><br><span class="line">    Object.defineProperty(obj, <span class="string">'test'</span>, &#123;</span><br><span class="line">    	// 不需要监听事件，只要达到条件就会自动触发</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            document.getElementById(<span class="string">'a'</span>).value = newVal;</span><br><span class="line">            document.getElementById(<span class="string">'b'</span>).innerHTML = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    // 需要添加keyup事件去监听，不然就不知道已经发生了改变。</span><br><span class="line">    document.addEventListener(<span class="string">'keyup'</span>, <span class="keyword">function</span>(e) &#123;</span><br><span class="line">        obj.test = e.target.value;</span><br><span class="line">        // 当<span class="built_in">test</span>属性改变时，会触发上面的<span class="built_in">set</span>方法。</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>那么Object.defineProperty()底层提供了两个API，一个是get，一个是set。<br>当我们给obj.test属性赋值时，会发现set函数触发了，那这就和我们去手动添加监听事件不一样了，当我们改变obj.test的值时，会自动触发set。而我们去获取obj.test的值时，也会自动触发get方法。</p>
-<img src="https://img-blog.csdnimg.cn/20191004114829296.png" class="[]">
-
-<p>可以看到，当我们在控制台改变了obj.test的值时，会自动触发set事件，从而实现了数据绑定。</p>
+        <ol>
+<li>SPACED REPETITION –间歇重复<ol>
+<li>为了最大化学习效率，短时间学习，但再三进行。</li>
+</ol>
+</li>
+<li>FIND YOUR OWN STYLE–找到适合自己的学习模式<ol>
+<li>有的人喜欢与朋友一起学习，有些则喜欢埋头安静学习</li>
+</ol>
+</li>
+<li>GOOD NIGHT SLEEP–良好的睡眠<ol>
+<li>睡觉和做梦是处理和储存信息至关重要的部分。<a id="more"></a></li>
+</ol>
+</li>
+<li>FOCUS–集中注意力<ol>
+<li>关闭手机或去像图书馆一样安静的地方</li>
+</ol>
+</li>
+<li>POMODORO TECHNIQUE–番茄工作法<ol>
+<li>25分钟休息5分钟</li>
+</ol>
+</li>
+<li>HARD STUFF FIRST–从难做起<ol>
+<li>先做困难的事情，早上拥有最强的意志力，当你完成困难的事情以后，接下来的一天都感觉更好。</li>
+</ol>
+</li>
+<li>EXERCISE MEDITATE AND CONVERSE–运动 冥想以及交谈<ol>
+<li>这些活动让你的大脑变强壮</li>
+</ol>
+</li>
+<li>GO PIACES–更换地点</li>
+<li>TAKE FUN SERIOUSLY–趣味学习<ol>
+<li>找到有趣的练习方式，积极情绪对于增加学习潜力非常重要</li>
+</ol>
+</li>
+<li>SPACE YOUR STUDIES–间隔学习<ol>
+<li>为了让事物记得更久一些，间隔重复记忆材料。</li>
+</ol>
+</li>
+<li>30% READ 70% RECITE–三分读七分背</li>
+<li>INSTANT SELF TEST–随时自检<ol>
+<li>能提高30%的记忆力保留。</li>
+</ol>
+</li>
+<li>DON`T FORCEIT–顺其自然<ol>
+<li>积极性就像饥饿感，你不能强迫自己去积极，你可以在这段时间做别的事情。</li>
+</ol>
+</li>
+</ol>
 
       
 
@@ -235,7 +271,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -291,7 +327,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/17/vue如何实现双向数据绑定/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/08/13个提高大脑学习效率的技巧/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +341,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/20/Ztree怎么在子节点后面添加按钮/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Ztree怎么在子节点后面添加按钮
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/15/安装vue-cli时出现4058错误/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">安装vue-cli时出现4058错误</div>
+    <a href="/2020/01/08/使用原生js中的add和remove进行class类的增加和删除/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用原生js中的add和remove进行class类的增加和删除</div>
       <i class="icon-circle-right"></i>
     </a>
   
