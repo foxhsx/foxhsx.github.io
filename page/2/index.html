@@ -160,6 +160,312 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-offsettop及相关属性介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/offsettop及相关属性介绍/">offsettop及相关属性介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/04/offsettop及相关属性介绍/" class="archive-article-date">
+  	<time datetime="2020-01-04T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近的项目中有用到offsetTop属性配合iscroll插件来进行下拉加载的一个效果，经过测试，在其他浏览器都是OK的，但是在iPhone的safari上页面刚加载完以后，滚动部分会有被遮挡一部分，后来发现是因为获取到的offsetTop值在刚开始进来的时候，并不是0，而是120px，这个刚好是节点元素到页面顶部的距离，所以猜测这里应该是offsetparent不对。那么是哪里不对呢？<hr><br>首先偏移量属性咱们经常会用到offsetLeft、offsetTop、offsetHeight、offsetWidth这四种，然后我们他们的参照点就是offsetParent。我们可以在<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent" target="_blank" rel="noopener">HTMLElement.offsetParent</a>里可以看到它只是一个只读属性，而HTMLElement.offsetTop 也是只读属性，它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。<br><br>它的定义是返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素（position不等于static）或者最近的 table,td,th,body元素，在 Webkit 中，如果元素为隐藏的（该元素或其祖先元素的 style.display 为 “none”），或者该元素的 style.position 被设为 “fixed”，则该属性返回 null。</p>
+<p>在 IE 9 中，如果该元素的 style.position 被设置为 “fixed”，则该属性返回 null。（display:none 无影响。）</p>
+<blockquote>
+<p>也就是说要获取到正确的offsetTop值，首先要确保它的最近的定位元素不能是fixed和static。其次确保style.display不能为none。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/04/offsettop及相关属性介绍/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-positionfixed失效的奇怪现象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/04/positionfixed失效的奇怪现象/">position：fixed失效的奇怪现象</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/04/positionfixed失效的奇怪现象/" class="archive-article-date">
+  	<time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>项目里使用fixed定位以后发现，它跟relative里包了一个absolute一样，始终不能跑到页面的最外层，也就是说它失效了。<br><br>原因很令人费解，是因为父级元素里或者祖先元素里有transform导致的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">html+css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/04/positionfixed失效的奇怪现象/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-在Windows环境下安装MongoDB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/05/在Windows环境下安装MongoDB/">在Windows环境下安装MongoDB</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/05/在Windows环境下安装MongoDB/" class="archive-article-date">
+  	<time datetime="2019-11-05T14:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先进入MongoDB的官网下载安装包进行安装<a href="https://www.mongodb.com/download-center#community。" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community。</a> 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。</p>
+<img src="https://img-blog.csdn.net/20180630171925226?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
+        
+          <a class="article-more-a" href="/2019/11/05/在Windows环境下安装MongoDB/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/05/在Windows环境下安装MongoDB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sublime出现Install-Package无法使用的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/sublime出现Install-Package无法使用的问题/">sublime出现Install Package无法使用的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/04/sublime出现Install-Package无法使用的问题/" class="archive-article-date">
+  	<time datetime="2019-11-04T15:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在咱们有时候要使用package control中的Install Package时，会出现这样的报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">there are no packages available <span class="keyword">for</span> installation</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/11/04/sublime出现Install-Package无法使用的问题/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/04/sublime出现Install-Package无法使用的问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue动态渲染组件的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -618,310 +924,6 @@
 
 
   
-    <article id="post-用canvas画一个简单的圆（带进度条效果）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/">用canvas画一个简单的圆（带进度条效果）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/" class="archive-article-date">
-  	<time datetime="2019-10-28T15:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>直接贴代码了，里面有注释：
-        
-          <a class="article-more-a" href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/28/用canvas画一个简单的圆（带进度条效果）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-直接在命令行来监听sass编译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/24/直接在命令行来监听sass编译/">直接在命令行来监听sass编译</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/24/直接在命令行来监听sass编译/" class="archive-article-date">
-  	<time datetime="2019-10-23T22:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>咱们除了使用gulp和webpack等前端自动化构建工具以外，其实可以直接在命令行来监听sass的编译，那么如何操作呢？<br>首先咱们得下载安装ruby，因为它算是sass的“根”了，windows直接进入下载地址：
-        
-          <a class="article-more-a" href="/2019/10/24/直接在命令行来监听sass编译/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/24/直接在命令行来监听sass编译/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使用browser-sync进行静态页面的实时监听" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/22/使用browser-sync进行静态页面的实时监听/">使用browser-sync进行静态页面的实时监听</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/22/使用browser-sync进行静态页面的实时监听/" class="archive-article-date">
-  	<time datetime="2019-10-22T14:46:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>咱们在写页面的时候如果不用框架或者webpack之类的自动化工具，每次修改一个样式或者一个js，就得自己手动刷新一下页面，这对于追求高效率的我们来说是很浪费时间的，那么今天给大家来介绍一个工具—— browser-sync。<br>Browsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。您可以想象一下：“假设您的桌子上有pc、ipad、iphone、android等设备，同时打开了您需要调试的页面，当您使用browsersync后，您的任何一次代码保存，以上的设备都会同时显示您的改动”。无论您是前端还是后端工程师，使用它将提高您30%的工作效率。<br>接下来就来给大家介绍具体的使用：
-        
-          <a class="article-more-a" href="/2019/10/22/使用browser-sync进行静态页面的实时监听/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/22/使用browser-sync进行静态页面的实时监听/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在vue中如何使用自己写的js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/21/在vue中如何使用自己写的js/">在vue中如何使用自己写的js</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/21/在vue中如何使用自己写的js/" class="archive-article-date">
-  	<time datetime="2019-10-21T14:49:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在做弹框部分时，要用到一个拖拽的效果，搜了好久的插件，但是感觉没有很符合我需要的那种，所以就把之前写的js拖拽拿了过来，放到vue里。那具体操作时怎样的呢？咱们一起来看一下：
-        
-          <a class="article-more-a" href="/2019/10/21/在vue中如何使用自己写的js/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/21/在vue中如何使用自己写的js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1031,19 +1033,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">第三方插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">html+css</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">第三方插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">html+css</a>
               </li>
              
               <li class="article-tag-list-item">

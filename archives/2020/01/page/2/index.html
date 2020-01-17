@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>bootstrap里模态框调用后禁止页面滚动 | 何生鑫的博客</title>
+  <title>Archives: 2020/1 | 何生鑫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先我们需要判断模态框是否已经被调用，这里使用bootstrap里提供的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768// 监听点击事件，来触发页面是否滚动// 定义两个函数，来禁止滚">
-<meta name="keywords" content="JavaScript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="bootstrap里模态框调用后禁止页面滚动">
-<meta property="og:url" content="http://yoursite.com/2020/01/08/bootstrap里模态框调用后禁止页面滚动/index.html">
+  <meta name="description" content="不要怕，耍起来再说">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="何生鑫的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2020/01/page/2/index.html">
 <meta property="og:site_name" content="何生鑫的博客">
-<meta property="og:description" content="首先我们需要判断模态框是否已经被调用，这里使用bootstrap里提供的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768// 监听点击事件，来触发页面是否滚动// 定义两个函数，来禁止滚">
+<meta property="og:description" content="不要怕，耍起来再说">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-08T14:26:22.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bootstrap里模态框调用后禁止页面滚动">
-<meta name="twitter:description" content="首先我们需要判断模态框是否已经被调用，这里使用bootstrap里提供的方法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768// 监听点击事件，来触发页面是否滚动// 定义两个函数，来禁止滚">
+<meta name="twitter:title" content="何生鑫的博客">
+<meta name="twitter:description" content="不要怕，耍起来再说">
   
     <link rel="alternative" href="/atom.xml" title="何生鑫的博客" type="application/atom+xml">
   
@@ -159,69 +158,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-bootstrap里模态框调用后禁止页面滚动" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      bootstrap里模态框调用后禁止页面滚动
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/04/offsettop及相关属性介绍/" class="archive-article-date">
+  	<time datetime="2020-01-04T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/04/offsettop及相关属性介绍/">offsettop及相关属性介绍</a>
     </h1>
   
 
-        
-        <a href="/2020/01/08/bootstrap里模态框调用后禁止页面滚动/" class="archive-article-date">
-  	<time datetime="2020-01-08T14:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先我们需要判断模态框是否已经被调用，这里使用bootstrap里提供的方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听点击事件，来触发页面是否滚动</span></span><br><span class="line"><span class="comment">// 定义两个函数，来禁止滚动和释放页面滚动</span></span><br><span class="line">$(<span class="string">'.modal'</span>).on(<span class="string">'show.bs.modal'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    stopScroll();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.modal'</span>).on(<span class="string">'hidden.bs.modal'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    scrolling();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @method stopScroll 禁止页面滚动</span></span><br><span class="line"><span class="comment">* return 无</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopScroll</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个函数来给body添加fixed属性</span></span><br><span class="line">    fixedBody();</span><br><span class="line">    <span class="comment">// 为了兼容移动端，我们还需要做一下判断</span></span><br><span class="line">    <span class="keyword">var</span> bodyWidth = $(<span class="string">'body'</span>).width();</span><br><span class="line">    <span class="comment">// 并且给body添加modal-open类</span></span><br><span class="line">    $(<span class="string">'body'</span>).addClass(<span class="string">'modal-open'</span>);</span><br><span class="line">    <span class="comment">// 判断如果是移动端</span></span><br><span class="line">    <span class="keyword">if</span> (bodyWidth &gt; <span class="number">768</span>) &#123;</span><br><span class="line">        <span class="comment">// 移动端padding-right记得设置为17px.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @method scrolling 还原页面滚动</span></span><br><span class="line"><span class="comment">* return 无</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scrolling</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个函数来还原页面滚动</span></span><br><span class="line">    looseBody();</span><br><span class="line">    <span class="comment">// 为了兼容移动端，我们还需要做一下判断</span></span><br><span class="line">    <span class="keyword">var</span> bodyWidth = $(<span class="string">'body'</span>).width();</span><br><span class="line">    <span class="comment">// 并且给body删除modal-open类</span></span><br><span class="line">    $(<span class="string">'body'</span>).removeClass(<span class="string">'modal-open'</span>);</span><br><span class="line">    <span class="comment">// 判断如果是移动端</span></span><br><span class="line">    <span class="keyword">if</span> (bodyWidth &gt; <span class="number">768</span>) &#123;</span><br><span class="line">        <span class="comment">// 移动端padding-right记得设置为0.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弹框出现的时候禁止滚动</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fixedBody</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">    在有的浏览器上有多次以上点击的时候(这时主要是因为弹框与弹框之间做切换时scrollTop会为0)，因为页面是不能     滚动的，所以document.body.scrollTop || document.documentElement.scrollTop为0，这时咱们需要     获取到当前body的top值</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">var</span> nowTop = <span class="built_in">Math</span>.abs(<span class="built_in">document</span>.body.style.top.split(<span class="string">"p"</span>)[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">     只有在弹框出现的时候才有body的top值，弹框关闭的时候是没有的，第一次点击的时候会获取到为0的值，这个时        候，咱们应该取document.body.scrollTop || document.documentElement.scrollTop的值。再其他        时候当弹框关闭以后body的top会重置为“”.这个时候的值也是不可取的。但是如果有弹框出现的时候，我们就可以        获取此时的body的top值，用这个值来做模态框的位置固定</span></span><br><span class="line"><span class="comment">    */</span> </span><br><span class="line">    <span class="keyword">if</span> (nowTop !== <span class="string">""</span> &amp;&amp; nowTop !== <span class="number">0</span>) &#123;</span><br><span class="line">        scrollTop = nowTop</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.style.cssText += <span class="string">'position:fixed;top:-'</span>+scrollTop+<span class="string">'px;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弹框消失的时候取消禁止滚动效果</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">looseBody</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line">    body.style.position = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> top = body.style.top;</span><br><span class="line">    <span class="built_in">document</span>.body.scrollTop = <span class="built_in">document</span>.documentElement.scrollTop = -<span class="built_in">parseInt</span>(top);</span><br><span class="line">    body.style.top = <span class="string">''</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>为什么我们不直接使用body的overflow:hidden呢？因为当我们使用这个样式的时候，页面会跳到最顶部，这在项目中的很不好的体验，而在fixedBody函数中添加的方法，既考虑到了只调用一次弹框的场景，又考虑到了多个弹框做切换时的场景。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/wechataplay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -233,114 +199,60 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/08/bootstrap里模态框调用后禁止页面滚动/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2020/01/08/使用原生js中的add和remove进行class类的增加和删除/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用原生js中的add和remove进行class类的增加和删除
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/08/ES2016ES2017ES2018ES2019 新语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES2016ES2017ES2018ES2019 新语法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/04/positionfixed失效的奇怪现象/" class="archive-article-date">
+  	<time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
   
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/04/positionfixed失效的奇怪现象/">position：fixed失效的奇怪现象</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">html+css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2020/01/">&laquo; Prev</a><a class="page-number" href="/archives/2020/01/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -364,8 +276,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

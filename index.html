@@ -160,6 +160,327 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vuex学习笔记（四）——getters" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/Vuex学习笔记（四）——getters/">Vuex学习笔记（四）——getters</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/18/Vuex学习笔记（四）——getters/" class="archive-article-date">
+  	<time datetime="2020-01-17T16:06:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vuex中的getter，可以认为是store的计算属性。就跟计算属性一样，getter的返回值会根据它的依赖被缓存起来，且只有当它的以来至发生了改变才会被重新计算。</p>
+<p>我们来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先创建一个store</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        todos: [</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">5</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">            &#123; <span class="attr">id</span>: <span class="number">6</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        increment (state) &#123;</span><br><span class="line">            state.count++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    	vuex允许我们在store中定义getter，这个可以认为是store的计算属性。</span></span><br><span class="line"><span class="comment">        getter的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算</span></span><br><span class="line"><span class="comment">        Getter接受state作为其第一个参数</span></span><br><span class="line"><span class="comment">        filter返回符合条件的新数组</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    getters: &#123;</span><br><span class="line">        doneTodos: <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> state.todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.done)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// Getter也可以接受其他getter作为第二个参数</span></span><br><span class="line">        doneTodoCounts: <span class="function">(<span class="params">state, getters</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> getters.doneTodos.length</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 也可以返回一个函数，来实现给getter传参。在对store里的数组查询时非常有用。</span></span><br><span class="line">        getTodoById: <span class="function">(<span class="params">state</span>) =&gt;</span> <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> state.todos.find(<span class="function"><span class="params">todo</span> =&gt;</span> todo.id === id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个Vue实例</span></span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line">    store,</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;div&gt;&#123;&#123; doneTodoCount &#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;p v-for="(item, index) of doneTodoGetter" :key="index"&gt;&#123;&#123;item.id&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;&#123;&#123; getTodo &#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">	`</span>,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        <span class="comment">// 如果有多个组件需要用到此属性，我们要么复制这个函数，或者抽取到一个共享函数然后在多处导入它无论哪种方式都不是很理想。</span></span><br><span class="line">        doneTodoCount() &#123;</span><br><span class="line">            <span class="comment">// 获取集合中key值为done的长度</span></span><br><span class="line">            <span class="comment">// return this.$store.state.todos.filter(todo =&gt; todo.done).length</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.doneTodoCounts</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// getter会暴露为store.getters对象，你可以以属性的形式访问这些值：</span></span><br><span class="line">        <span class="comment">// store.getters.doneTodos // -&gt; [&#123; id: 1, text: '...', done: true &#125;]</span></span><br><span class="line">        doneTodoGetter() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.doneTodos</span><br><span class="line">        &#125;,</span><br><span class="line">        getTodo() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.getTodoById(<span class="number">2</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/18/Vuex学习笔记（四）——getters/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vuex笔记（三）——state" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/Vuex笔记（三）——state/">Vuex笔记（三）——state</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/18/Vuex笔记（三）——state/" class="archive-article-date">
+  	<time datetime="2020-01-17T16:00:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Vuex中，我们会发现所有的状态都包含在了一个对象<strong>state</strong>中。即Vuex使用<strong>单一状态树</strong>。</p>
+<p>那我们在Vue组件中获取和展示状态的方法，在上一个笔记里已经有写过：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在vue实例中引入store</span></span><br><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  <span class="comment">// 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件</span></span><br><span class="line">  store,</span><br><span class="line">  <span class="comment">// 在template中，使用插值表达式</span></span><br><span class="line">  template: <span class="string">`&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">  <span class="comment">// 使用计算属性或其他钩子来获取状态</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">    count () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当然官方也提供了<strong>辅助函数mapState</strong>，它会帮助我们生成计算属性：
+        
+          <a class="article-more-a" href="/2020/01/18/Vuex笔记（三）——state/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/18/Vuex笔记（三）——state/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vuex笔记（二）——store" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/17/Vuex笔记（二）——store/">Vuex笔记（二）——store</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/17/Vuex笔记（二）——store/" class="archive-article-date">
+  	<time datetime="2020-01-17T15:59:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vuex的核心就是store(仓库)。里面包含着项目中共用的数据状态。</p>
+<p>我们可以来看一个简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;vuex&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;vuex开始---state&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div id="app"&gt;&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.bootcss.com/vue/2.6.10/vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.bootcss.com/vuex/2.2.0/vuex.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">// 创建一个store</span></span><br><span class="line">    <span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">        state: &#123;</span><br><span class="line">            count: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 相当于vue中的method，里面定义的是一个函数方法</span></span><br><span class="line">        mutations: &#123;</span><br><span class="line">            increment (state) &#123;</span><br><span class="line">                state.count++</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个组件</span></span><br><span class="line">    <span class="keyword">const</span> Counter = &#123;</span><br><span class="line">        template: <span class="string">`&lt;div @click="changeState"&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`</span>,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            count () &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            <span class="comment">// 触发事件后提交increment事件，从而改变仓库中的值</span></span><br><span class="line">            changeState () &#123;</span><br><span class="line">                <span class="keyword">this</span>.$store.commit(<span class="string">'increment'</span>)</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.$store.state.count)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        <span class="comment">// 将 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件中</span></span><br><span class="line">        store,</span><br><span class="line">        data () &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                count: <span class="number">1</span>,</span><br><span class="line">                localCount: <span class="number">2</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 注册组件，一定要在template使用</span></span><br><span class="line">        components: &#123;</span><br><span class="line">            Counter</span><br><span class="line">        &#125;,</span><br><span class="line">        template: <span class="string">`&lt;Counter&gt;&lt;/Counter&gt;`</span>,</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看出Vuex的状态存储是响应式的。而改变store中状态的唯一途径就是显式地<b>提交(commit) mutation</b>。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/17/Vuex笔记（二）——store/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vuex笔记（一）——什么是Vuex？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/17/Vuex笔记（一）——什么是Vuex？/">Vuex笔记（一）——什么是Vuex？</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/17/Vuex笔记（一）——什么是Vuex？/" class="archive-article-date">
+  	<time datetime="2020-01-17T15:58:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vuex是一个<strong>专为Vue.js</strong>应用程序开发的<strong>状态管理模式</strong>。</p>
+<p>它采用<strong><i>集中式存储</i></strong>管理应用的所有组件的状态。</p>
+<p>项目中，它相当于一个中央管理仓库，来存储一些页面共用的数据或状态，主要包含以下几个部分：</p>
+<ul>
+<li><b>state</b>，驱动应用的数据源——也就是你初始化定义公共数据状态的部分；</li>
+<li><b>Vue Components</b>，以声明方式将<b>state</b>映射到视图——也就是把需要的数据从仓库中取出来并渲染到页面上；</li>
+<li><b>actions</b>，响应在<b>view</b>上的用户输入导致的状态变化——这块的话，我的理解是相当于vue组件中的method，里面定义的是一些函数方法，这里主要是为了提供一种在vuex中有异步操作的状态，它提交的是mutation，而不是直接变更状态。</li>
+<li><b>mutation</b>，个人理解还是和actions一样，提供用户输入操作导致状态变化的钩子，它会直接更改状态。</li>
+</ul>
+<p>下面是官网提供的一张示意图：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly92dWV4LnZ1ZWpzLm9yZy92dWV4LnBuZw?x-oss-process=image/format,png" alt="Alt 简单示意"></p>
+<p>适用场景：</p>
+<blockquote>
+<p>正如官网所说，如果不是大型应用，使用Vuex可能是繁琐冗余的。一个简单的<b>store模式</b>就足够了。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/17/Vuex笔记（一）——什么是Vuex？/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-13个提高大脑学习效率的技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -637,312 +958,6 @@
 
 
   
-    <article id="post-offsettop及相关属性介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/offsettop及相关属性介绍/">offsettop及相关属性介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/04/offsettop及相关属性介绍/" class="archive-article-date">
-  	<time datetime="2020-01-04T05:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近的项目中有用到offsetTop属性配合iscroll插件来进行下拉加载的一个效果，经过测试，在其他浏览器都是OK的，但是在iPhone的safari上页面刚加载完以后，滚动部分会有被遮挡一部分，后来发现是因为获取到的offsetTop值在刚开始进来的时候，并不是0，而是120px，这个刚好是节点元素到页面顶部的距离，所以猜测这里应该是offsetparent不对。那么是哪里不对呢？<hr><br>首先偏移量属性咱们经常会用到offsetLeft、offsetTop、offsetHeight、offsetWidth这四种，然后我们他们的参照点就是offsetParent。我们可以在<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent" target="_blank" rel="noopener">HTMLElement.offsetParent</a>里可以看到它只是一个只读属性，而HTMLElement.offsetTop 也是只读属性，它返回当前元素相对于其 offsetParent 元素的顶部内边距的距离。<br><br>它的定义是返回一个指向最近的（指包含层级上的最近）包含该元素的定位元素（position不等于static）或者最近的 table,td,th,body元素，在 Webkit 中，如果元素为隐藏的（该元素或其祖先元素的 style.display 为 “none”），或者该元素的 style.position 被设为 “fixed”，则该属性返回 null。</p>
-<p>在 IE 9 中，如果该元素的 style.position 被设置为 “fixed”，则该属性返回 null。（display:none 无影响。）</p>
-<blockquote>
-<p>也就是说要获取到正确的offsetTop值，首先要确保它的最近的定位元素不能是fixed和static。其次确保style.display不能为none。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/04/offsettop及相关属性介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-positionfixed失效的奇怪现象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/positionfixed失效的奇怪现象/">position：fixed失效的奇怪现象</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/04/positionfixed失效的奇怪现象/" class="archive-article-date">
-  	<time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>项目里使用fixed定位以后发现，它跟relative里包了一个absolute一样，始终不能跑到页面的最外层，也就是说它失效了。<br><br>原因很令人费解，是因为父级元素里或者祖先元素里有transform导致的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">html+css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/04/positionfixed失效的奇怪现象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-在Windows环境下安装MongoDB" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/05/在Windows环境下安装MongoDB/">在Windows环境下安装MongoDB</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/05/在Windows环境下安装MongoDB/" class="archive-article-date">
-  	<time datetime="2019-11-05T14:58:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先进入MongoDB的官网下载安装包进行安装<a href="https://www.mongodb.com/download-center#community。" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community。</a> 进入网页后，可根据自己电脑系统进行选择在Windows、Linux和OSX三种不同操作系统下的安装包。</p>
-<img src="https://img-blog.csdn.net/20180630171925226?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" class="[]">
-        
-          <a class="article-more-a" href="/2019/11/05/在Windows环境下安装MongoDB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/05/在Windows环境下安装MongoDB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sublime出现Install-Package无法使用的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/sublime出现Install-Package无法使用的问题/">sublime出现Install Package无法使用的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/04/sublime出现Install-Package无法使用的问题/" class="archive-article-date">
-  	<time datetime="2019-11-04T15:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>现在咱们有时候要使用package control中的Install Package时，会出现这样的报错：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">there are no packages available <span class="keyword">for</span> installation</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/04/sublime出现Install-Package无法使用的问题/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/sublime出现Install-Package无法使用的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1052,19 +1067,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">第三方插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">html+css</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">第三方插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">html+css</a>
               </li>
              
               <li class="article-tag-list-item">
