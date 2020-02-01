@@ -160,6 +160,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-冒泡排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/01/Java-冒泡排序算法/">冒泡排序算法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/01/Java-冒泡排序算法/" class="archive-article-date">
+  	<time datetime="2020-02-01T11:52:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>比较相邻的元素，如果第一个元素比第二个元素大，就交换。</p>
+<p>相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo12</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] nums = &#123;<span class="number">34</span>, <span class="number">4</span>, <span class="number">56</span>, <span class="number">17</span>, <span class="number">90</span>, <span class="number">65</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 这是从小到大排序</span></span><br><span class="line">		<span class="comment">// 外循环控制轮数，长度减一</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i &lt; nums.length-<span class="number">1</span>;i++) &#123;</span><br><span class="line">			<span class="comment">// 内循环次数依次递减i</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j &lt; nums.length-<span class="number">1</span>-i;j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(nums[j] &gt; nums[j+<span class="number">1</span>])&#123;</span><br><span class="line">					nums[j] = nums[j] + nums[j+<span class="number">1</span>];</span><br><span class="line">					nums[j+<span class="number">1</span>] = nums[j] - nums[j+<span class="number">1</span>];</span><br><span class="line">					nums[j] = nums[j] - nums[j+<span class="number">1</span>];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 输出结果</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x:nums) &#123;</span><br><span class="line">			System.out.println(x);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 这是从大到小排序</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i &lt; nums.length-<span class="number">1</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j &lt; nums.length-<span class="number">1</span>-i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span> (nums[j]&lt;nums[j+<span class="number">1</span>])&#123;</span><br><span class="line">					nums[j] = nums[j] + nums[j+<span class="number">1</span>];</span><br><span class="line">					nums[j+<span class="number">1</span>] = nums[j] - nums[j+<span class="number">1</span>];</span><br><span class="line">					nums[j] = nums[j] - nums[j+<span class="number">1</span>];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 输出结果</span></span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x:nums) &#123;</span><br><span class="line">			System.out.println(x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/01/Java-冒泡排序算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vuex学习笔记（四）——getters" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -881,83 +956,6 @@
 
 
   
-    <article id="post-2020年flag" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/2020年flag/">2020年flag</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/04/2020年flag/" class="archive-article-date">
-  	<time datetime="2020-01-04T08:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>相对去年来说，自己的成长还是很大的，不管是从精神层面还是从物质层面。</p>
-<p>首先，从看一些畅销类的书，到看专业书的一个过度，18年看了22本书，虽然看的书挺多，但是都是一些畅销的小说类的书籍。也不能说是没有什么用，里面的故事和情节，还是对我帮助很大，也从故事人物的身上学到很多东西，也是这些故事书让我从一个不看书的，或者说不看实体书的拖后腿青年到现在的拖一点后退的青年。下面是2018年的书单：</p>
-        
-          <a class="article-more-a" href="/2020/01/04/2020年flag/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随感</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/04/2020年flag/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1064,6 +1062,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
