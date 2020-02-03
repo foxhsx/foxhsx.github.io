@@ -160,6 +160,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-直接插入排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/03/Java-直接插入排序算法/">Java-直接插入排序算法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/03/Java-直接插入排序算法/" class="archive-article-date">
+  	<time datetime="2020-02-03T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>直接插入排序算法</p>
+<p>(从后向前找到合适的位置后插入)</p>
+<p>基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的子序列的合适位置（从后向前找到合适的位置后），直到全部插入排序完为止。</p>
+<p>每插入一个数，都把前面的数往后挪，然后把中间值，也就是要做比较的数跟前面的位置做替换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo14</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] nums = &#123;<span class="number">34</span>, <span class="number">4</span>, <span class="number">56</span>, <span class="number">17</span>, <span class="number">90</span>, <span class="number">65</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 从小到大</span></span><br><span class="line">		<span class="comment">// 控制比较的轮数</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[i];  <span class="comment">// 记录操作数</span></span><br><span class="line">			<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">			<span class="comment">// 从后向前比，所以这里要减减</span></span><br><span class="line">			<span class="keyword">for</span> (j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums[j] &gt; temp) &#123;</span><br><span class="line">					nums[j+<span class="number">1</span>] = nums[j];</span><br><span class="line">					</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 因为j--，所以这里j的话还会在i-1的基础上再减一次</span></span><br><span class="line">			<span class="comment">// 判断当前下标的值和记录操作数是否相等</span></span><br><span class="line">			<span class="keyword">if</span> (nums[j+<span class="number">1</span>] != temp) &#123;</span><br><span class="line">				<span class="comment">// 这里应该是-1+1</span></span><br><span class="line">				nums[j+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 输出结果：</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> n:nums) &#123;</span><br><span class="line">			System.out.println(n);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 从大到小</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[i];  <span class="comment">// 记录操作数</span></span><br><span class="line">			<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">			<span class="comment">// 从后向前比，所以这里要减减</span></span><br><span class="line">			<span class="keyword">for</span> (j=i-<span class="number">1</span>;j&gt;=<span class="number">0</span>;j--) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums[j] &lt; temp) &#123;</span><br><span class="line">					nums[j+<span class="number">1</span>] = nums[j];</span><br><span class="line">					</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 因为j--，所以这里j的话还会在i-1的基础上再减一次</span></span><br><span class="line">			<span class="comment">// 判断当前下标的值和记录操作数是否相等</span></span><br><span class="line">			<span class="keyword">if</span> (nums[j+<span class="number">1</span>] != temp) &#123;</span><br><span class="line">				<span class="comment">// 这里应该是-1+1</span></span><br><span class="line">				nums[j+<span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"-------------"</span>);</span><br><span class="line">		<span class="comment">// 输出结果：</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> n:nums) &#123;</span><br><span class="line">			System.out.println(n);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/03/Java-直接插入排序算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java-选择排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -873,80 +950,6 @@
 
 
   
-    <article id="post-ES2016ES2017ES2018ES2019 新语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/08/ES2016ES2017ES2018ES2019 新语法/">ES2016ES2017ES2018ES2019 新语法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/08/ES2016ES2017ES2018ES2019 新语法/" class="archive-article-date">
-  	<time datetime="2020-01-08T14:12:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://img-blog.csdnimg.cn/20200108091541912.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMzQ1MjM3,size_16,color_FFFFFF,t_70" alt="alt 新语法"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/08/ES2016ES2017ES2018ES2019 新语法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1048,11 +1051,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">随感</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随感</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
