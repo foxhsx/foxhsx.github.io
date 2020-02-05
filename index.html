@@ -160,6 +160,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-二分查找算法（折半算法）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/05/Java-二分查找算法（折半算法）/">Java-二分查找算法（折半算法）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/05/Java-二分查找算法（折半算法）/" class="archive-article-date">
+  	<time datetime="2020-02-05T14:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>二分查找算法（折半查找）</p>
+<p>前提是在已经<strong>排好序的数组</strong>中，通过将待查找的元素与中间索引值对应的元素进行比较，<em>若大于中间索引值对应的元素，去右半部分查找。否则，去左半部分查找。</em> 依次推类，直到找到为止。找不到返回一个负数。 效率很高</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo15</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 必须保证数列是有序的</span></span><br><span class="line">		<span class="keyword">int</span>[] num = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">50</span>,<span class="number">65</span>,<span class="number">88</span>,<span class="number">90</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> index = binarySearch(num, <span class="number">100</span>);</span><br><span class="line">		System.out.println(index);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 二分查找算法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] num,<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> start = <span class="number">0</span>;   <span class="comment">// 起始下标</span></span><br><span class="line">		<span class="keyword">int</span> end = num.length-<span class="number">1</span>;   <span class="comment">// 结束下标</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(start &lt;= end) &#123;</span><br><span class="line">			<span class="keyword">int</span> middle = (start+end) / <span class="number">2</span>;   <span class="comment">// &gt;&gt;&gt;1</span></span><br><span class="line">			<span class="keyword">if</span> (num[middle] &gt; key) &#123;</span><br><span class="line">				<span class="comment">// 左半部分</span></span><br><span class="line">				end = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (num[middle] &lt; key) &#123;</span><br><span class="line">				<span class="comment">// 右半部分</span></span><br><span class="line">				start = middle+<span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/05/Java-二分查找算法（折半算法）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java-直接插入排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -873,83 +948,6 @@
 
 
   
-    <article id="post-bootstrap里模态框调用后禁止页面滚动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/08/bootstrap里模态框调用后禁止页面滚动/">bootstrap里模态框调用后禁止页面滚动</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/08/bootstrap里模态框调用后禁止页面滚动/" class="archive-article-date">
-  	<time datetime="2020-01-08T14:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先我们需要判断模态框是否已经被调用，这里使用bootstrap里提供的方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听点击事件，来触发页面是否滚动</span></span><br><span class="line"><span class="comment">// 定义两个函数，来禁止滚动和释放页面滚动</span></span><br><span class="line">$(<span class="string">'.modal'</span>).on(<span class="string">'show.bs.modal'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    stopScroll();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.modal'</span>).on(<span class="string">'hidden.bs.modal'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    scrolling();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @method stopScroll 禁止页面滚动</span></span><br><span class="line"><span class="comment">* return 无</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopScroll</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个函数来给body添加fixed属性</span></span><br><span class="line">    fixedBody();</span><br><span class="line">    <span class="comment">// 为了兼容移动端，我们还需要做一下判断</span></span><br><span class="line">    <span class="keyword">var</span> bodyWidth = $(<span class="string">'body'</span>).width();</span><br><span class="line">    <span class="comment">// 并且给body添加modal-open类</span></span><br><span class="line">    $(<span class="string">'body'</span>).addClass(<span class="string">'modal-open'</span>);</span><br><span class="line">    <span class="comment">// 判断如果是移动端</span></span><br><span class="line">    <span class="keyword">if</span> (bodyWidth &gt; <span class="number">768</span>) &#123;</span><br><span class="line">        <span class="comment">// 移动端padding-right记得设置为17px.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* @method scrolling 还原页面滚动</span></span><br><span class="line"><span class="comment">* return 无</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scrolling</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个函数来还原页面滚动</span></span><br><span class="line">    looseBody();</span><br><span class="line">    <span class="comment">// 为了兼容移动端，我们还需要做一下判断</span></span><br><span class="line">    <span class="keyword">var</span> bodyWidth = $(<span class="string">'body'</span>).width();</span><br><span class="line">    <span class="comment">// 并且给body删除modal-open类</span></span><br><span class="line">    $(<span class="string">'body'</span>).removeClass(<span class="string">'modal-open'</span>);</span><br><span class="line">    <span class="comment">// 判断如果是移动端</span></span><br><span class="line">    <span class="keyword">if</span> (bodyWidth &gt; <span class="number">768</span>) &#123;</span><br><span class="line">        <span class="comment">// 移动端padding-right记得设置为0.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弹框出现的时候禁止滚动</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fixedBody</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">    在有的浏览器上有多次以上点击的时候(这时主要是因为弹框与弹框之间做切换时scrollTop会为0)，因为页面是不能     滚动的，所以document.body.scrollTop || document.documentElement.scrollTop为0，这时咱们需要     获取到当前body的top值</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">var</span> nowTop = <span class="built_in">Math</span>.abs(<span class="built_in">document</span>.body.style.top.split(<span class="string">"p"</span>)[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">     只有在弹框出现的时候才有body的top值，弹框关闭的时候是没有的，第一次点击的时候会获取到为0的值，这个时        候，咱们应该取document.body.scrollTop || document.documentElement.scrollTop的值。再其他        时候当弹框关闭以后body的top会重置为“”.这个时候的值也是不可取的。但是如果有弹框出现的时候，我们就可以        获取此时的body的top值，用这个值来做模态框的位置固定</span></span><br><span class="line"><span class="comment">    */</span> </span><br><span class="line">    <span class="keyword">if</span> (nowTop !== <span class="string">""</span> &amp;&amp; nowTop !== <span class="number">0</span>) &#123;</span><br><span class="line">        scrollTop = nowTop</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.style.cssText += <span class="string">'position:fixed;top:-'</span>+scrollTop+<span class="string">'px;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 弹框消失的时候取消禁止滚动效果</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">looseBody</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> body = <span class="built_in">document</span>.body;</span><br><span class="line">    body.style.position = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> top = body.style.top;</span><br><span class="line">    <span class="built_in">document</span>.body.scrollTop = <span class="built_in">document</span>.documentElement.scrollTop = -<span class="built_in">parseInt</span>(top);</span><br><span class="line">    body.style.top = <span class="string">''</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>为什么我们不直接使用body的overflow:hidden呢？因为当我们使用这个样式的时候，页面会跳到最顶部，这在项目中的很不好的体验，而在fixedBody函数中添加的方法，既考虑到了只调用一次弹框的场景，又考虑到了多个弹框做切换时的场景。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/08/bootstrap里模态框调用后禁止页面滚动/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1063,15 +1061,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">第三方插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
