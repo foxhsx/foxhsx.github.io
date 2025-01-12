@@ -1,4 +1,4 @@
-baseurl: https://example.com/
+baseurl: /
 languageCode: zh-cn
 theme: hugo-theme-stack
 title: 三金
@@ -57,7 +57,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/avatar.svg
 
     article:
         math: false
@@ -209,6 +209,18 @@ menu:
           url: https://x.com/he_cecil
           params:
               icon: brand-twitter
+    
+        - identifier: 知乎
+          name: 知乎
+          url: https://www.zhihu.com/people/xiao-he-shang-14-8
+          params:
+              icon: brand-zhihu
+
+        - identifier: 掘金
+          name: 掘金
+          url: https://juejin.cn/user/4406498335130216
+          params:
+              icon: brand-juejin
 
 related:
     includeNewer: true
