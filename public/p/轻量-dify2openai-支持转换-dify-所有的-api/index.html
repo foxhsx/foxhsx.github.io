@@ -393,15 +393,8 @@
 </blockquote>
 <h3 id="安装">安装
 </h3><p>首先拉去项目到本地：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/fatwang2/dify2openai.git
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后作者这边提供了两种启动方式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone https://github.com/fatwang2/dify2openai.git
+</span></span></code></pre></div><p>然后作者这边提供了两种启动方式：</p>
 <ul>
 <li>本地使用 pnpm 启动</li>
 <li>本地构建镜像启动</li>
@@ -419,102 +412,34 @@
 <h3 id="启动方式">启动方式
 </h3><h3 id="使用-pnpm-启动----二开推荐">使用 pnpm 启动 &ndash; 二开推荐
 </h3><p>使用 pnpm 命令，对应就需要安装 node 环境，如何安装可以自行百度/Google，然后使用 npm 来安装 pnpm：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g pnpm
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p> 全局安装好 pnpm 之后，进到项目根目录下安装项目依赖：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm install
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装好依赖之后，先不要着急启动项目。此时还需要修改环境变量对应的文件 <code>.env</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mv .env.template .env
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g pnpm
+</span></span></code></pre></div><p> 全局安装好 pnpm 之后，进到项目根目录下安装项目依赖：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm install
+</span></span></code></pre></div><p>安装好依赖之后，先不要着急启动项目。此时还需要修改环境变量对应的文件 <code>.env</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mv .env.template .env
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">vim .env
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>有两个必须设置/修改的参数：</p>
+</span></span></code></pre></div><p>有两个必须设置/修改的参数：</p>
 <ul>
 <li>DIFY_API_URL: 你 Dify 服务器的地址，默认是官方 API 地址 <code>https://api.dify.ai/v1</code>；</li>
 <li>BOT_TYPE：你的应用类型，默认是 Chat。</li>
 </ul>
 <p>设置好这两个之后，就可以启动项目了：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm start
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>项目端口默认 3000，我们在浏览器中使用 <code>localhost:3000</code> 来检查项目是否启动。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pnpm start
+</span></span></code></pre></div><p>项目端口默认 3000，我们在浏览器中使用 <code>localhost:3000</code> 来检查项目是否启动。</p>
 <h4 id="使用-docker-启动----使用推荐">使用 Docker 启动 &ndash; 使用推荐
 </h4><p>该项目貌似没有提供官方镜像，不过项目根目录下有提供 Dockerfile 文件，我们也可以自己 build 镜像：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker build -t dify2openai:latest .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后使用 docker 启动容器：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d name dify2openapi <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker build -t dify2openai:latest .
+</span></span></code></pre></div><p>然后使用 docker 启动容器：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d name dify2openapi <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --network bridge <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 3000:3000 <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="nv">DIFY_API_URL</span><span class="o">=</span>&lt;你自己的 Dify 服务地址&gt; <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="nv">BOT_TYPE</span><span class="o">=</span>Chat <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --restart always
 </span></span><span class="line"><span class="cl">    dify2openai:latest
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>或者直接在项目根目录下使用 Docker Compose 一把梭，在 build 镜像之后运行容器，下面是 <code>docker-compose.yaml</code> 文件内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.5&#39;</span><span class="w">
+</span></span></code></pre></div><p>或者直接在项目根目录下使用 Docker Compose 一把梭，在 build 镜像之后运行容器，下面是 <code>docker-compose.yaml</code> 文件内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.5&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dify2openai</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">dify2openai</span><span class="w">
@@ -528,18 +453,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">DIFY_API_URL=&lt;你自己的 Dify 服务地址&gt;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">BOT_TYPE=Chat</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>执行下面命令启动：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker compose up -d
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+</span></span></span></code></pre></div><p>执行下面命令启动：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker compose up -d
+</span></span></code></pre></div><blockquote>
 <p>🔔提示：如果都是通过 docker 部署的 dify 和 dify2openai，这里的 IP 请换成：<code>http://host.docker.internal</code> 端口不变</p>
 </blockquote>
 <h3 id="测试">测试
@@ -569,15 +485,8 @@
 	
 ></p>
 <p>然后我们依旧使用 OpenWebUI 来进行测试：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启动后在「设置-外部连接」这里配置模型：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+</span></span></code></pre></div><p>启动后在「设置-外部连接」这里配置模型：</p>
 <p><img src="/p/%E8%BD%BB%E9%87%8F-dify2openai-%E6%94%AF%E6%8C%81%E8%BD%AC%E6%8D%A2-dify-%E6%89%80%E6%9C%89%E7%9A%84-api/assets/TNMrfy7YlP0Hi-nQ8uJv7KGR0w6MO0euYR779gCjP4w=.png"
 	width="1346"
 	height="719"
