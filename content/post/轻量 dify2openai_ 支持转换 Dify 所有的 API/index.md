@@ -1,12 +1,11 @@
---- 
+---
 title: '轻量 dify2openai: 支持转换 Dify 所有的 API'
 date: 2024-01-11
 tags:
   - AI
   - Dify
-draft: true
+draft: false
 ---
-
 之前介绍过 one-api 的下游项目——New API，它支持将 Dify 的 API 转换为标准的 OpenAI 的 API 格式。
 
 不过在写《[通过 NewAPI 接入 Dify 后能支持什么？](https://mp.weixin.qq.com/s/Q9dVgGE5PzyXc82DiOkNGQ?token=625489712)》这篇文章时，测试还不支持：
