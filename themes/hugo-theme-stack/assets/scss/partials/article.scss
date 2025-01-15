@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--card-padding);
+    padding: 24px 20px;
     gap: 15px;
 }
 
@@ -61,7 +61,7 @@
     font-size: 2.2rem;
 
     @include respond(xl) {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     a {
@@ -80,14 +80,14 @@
     margin: 0;
     font-size: 1.75rem;
     @include respond(xl) {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 
 .article-title-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
 }
 
 .article-time,

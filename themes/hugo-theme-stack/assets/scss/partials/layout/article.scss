@@ -26,6 +26,14 @@
             .article-details {
                 padding: var(--card-padding);
                 padding-bottom: 0;
+                .article-title {
+                    @include respond(xl) {
+                        font-size: 2.8rem;
+                    }
+                }
+                .article-subtitle {
+                    display: none;
+                }
             }
         }
 
