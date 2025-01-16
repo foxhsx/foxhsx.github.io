@@ -65,6 +65,27 @@
             }
         }
     }
+
+    header {
+        .site-avatar {
+            border-radius: 3px;
+            
+            .site-logo {
+                border-radius: 3px;
+                box-shadow: var(--card-shadow);
+            }
+        }
+
+        .site-name {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+        .site-description {
+            color: var(--card-text-color-secondary);
+            font-size: 1.4rem;
+        }
+    }
 }
 
 .right-sidebar {

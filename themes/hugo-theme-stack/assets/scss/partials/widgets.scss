@@ -65,3 +65,33 @@
         }
     }
 }
+
+/* WeChat widget */
+.widget.wechat {
+    .wechat-qrcodes {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px 0;
+
+        .qrcode {
+            flex: 1;
+            text-align: center;
+            
+            img {
+                width: 100%;
+                max-width: 150px;
+                height: auto;
+                border-radius: var(--card-border-radius);
+                box-shadow: var(--card-shadow);
+            }
+
+            .caption {
+                display: block;
+                margin-top: 10px;
+                color: var(--card-text-color-secondary);
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

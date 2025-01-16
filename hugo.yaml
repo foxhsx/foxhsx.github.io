@@ -161,8 +161,24 @@ params:
             - type: tag-cloud
               params:
                   limit: 10
+            - type: wechat
+              params:
+                  personalLocal: true
+                  officialAccountLocal: true
+                  officialAccountImage: /img/officialAccountImage.jpg
+                  personal: /img/personal.jpg
+                  captionA: 公众号
+                  captionB: 微信
         page:
             - type: toc
+            - type: wechat
+              params:
+                  personalLocal: true
+                  officialAccountLocal: true
+                  officialAccountImage: /img/officialAccountImage.jpg
+                  personal: /img/personal.jpg
+                  captionA: 公众号
+                  captionB: 微信
 
     opengraph:
         twitter:

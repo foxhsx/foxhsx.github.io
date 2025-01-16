@@ -1,0 +1,57 @@
+{{- $context := .Context -}}
+<section class="widget wechat">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "wechat" }}
+    </div>
+    <h2 class="widget-title section-title">{{ T "widget.wechat.title" }}</h2>
+
+    <div class="wechat-qrcodes">
+        <div class="qrcode">
+            {{ if not .Params.officialAccountLocal }}
+                {{ if hasSuffix .Params.officialAccountImage ".jpg" }}
+                    <img src="{{ .Params.officialAccountImage }}" loading="lazy" alt="WeChat Official Account">
+                {{ else }}
+                    <img src="{{ .Params.officialAccountImage }}" width="300" height="300" loading="lazy" alt="WeChat Official Account">
+                {{ end }}
+            {{ else }}
+                {{ $qrcode := resources.Get (.Params.officialAccountImage) }}
+                {{ if $qrcode }}
+                    {{ if hasSuffix .Params.officialAccountImage ".jpg" }}
+                        <img src="{{ $qrcode.RelPermalink }}" loading="lazy" alt="WeChat Official Account">
+                    {{ else }}
+                        {{ $qrcodeResized := $qrcode.Resize "300x" }}
+                        <img src="{{ $qrcodeResized.RelPermalink }}" width="{{ $qrcodeResized.Width }}"
+                            height="{{ $qrcodeResized.Height }}" loading="lazy" alt="WeChat Official Account">
+                    {{ end }}
+                {{ else }}
+                    {{ errorf "Failed loading QR code from %q" .Params.officialAccountImage }}
+                {{ end }}
+            {{ end }}
+            <span class="caption">{{ .Params.captionA | default "Official Account" }}</span>
+        </div>
+
+        <div class="qrcode">
+            {{ if not .Params.personalLocal }}
+                {{ if hasSuffix .Params.personal ".jpg" }}
+                    <img src="{{ .Params.personal }}" loading="lazy" alt="WeChat Personal">
+                {{ else }}
+                    <img src="{{ .Params.personal }}" width="300" height="300" loading="lazy" alt="WeChat Personal">
+                {{ end }}
+            {{ else }}
+                {{ $qrcode := resources.Get (.Params.personal) }}
+                {{ if $qrcode }}
+                    {{ if hasSuffix .Params.personal ".jpg" }}
+                        <img src="{{ $qrcode.RelPermalink }}" loading="lazy" alt="WeChat Personal">
+                    {{ else }}
+                        {{ $qrcodeResized := $qrcode.Resize "300x" }}
+                        <img src="{{ $qrcodeResized.RelPermalink }}" width="{{ $qrcodeResized.Width }}"
+                            height="{{ $qrcodeResized.Height }}" loading="lazy" alt="WeChat Personal">
+                    {{ end }}
+                {{ else }}
+                    {{ errorf "Failed loading QR code from %q" .Params.personal }}
+                {{ end }}
+            {{ end }}
+            <span class="caption">{{ .Params.captionB | default "Personal" }}</span>
+        </div>
+    </div>
+</section> 

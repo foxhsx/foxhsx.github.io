@@ -48,6 +48,9 @@ widget:
     categoriesCloud:
         title:
             other: 分类
+    wechat:
+        title:
+            other: 关注我
 
 search:
     title:

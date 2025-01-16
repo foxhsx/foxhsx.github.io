@@ -55,6 +55,9 @@ widget:
         title:
             other: Categories
 
+    wechat:
+        title: "WeChat"
+
 search:
     title:
         other: Search

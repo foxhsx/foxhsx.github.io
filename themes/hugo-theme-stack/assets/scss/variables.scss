@@ -11,12 +11,12 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
         --main-top-padding: 50px;
     }
 
-    --body-background: #f5f5fa;
+    --body-background: #f0f0f0;
 
-    --accent-color: #34495e;
-    --accent-color-darker: #2c3e50;
+    --accent-color: #2eaadc;
+    --accent-color-darker: #2591bc;
     --accent-color-text: #fff;
-    --body-text-color: #707070;
+    --body-text-color: #37352f;
 
     --tag-border-radius: 4px;
 
@@ -25,14 +25,49 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     --scrollbar-thumb: hsl(0, 0%, 85%);
     --scrollbar-track: var(--body-background);
 
+    --card-background: #ffffff;
+    --card-border-radius: 3px;
+    --card-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, 
+                   rgba(15, 15, 15, 0.1) 0px 2px 4px;
+
+    --card-text-color-main: #37352f;
+    --card-text-color-secondary: #6b6b6b;
+    --card-text-color-tertiary: #9b9b9b;
+    
+    --notion-gray-background: rgba(235, 236, 237, 0.3);
+    --notion-brown-background: rgba(233, 229, 227, 0.3);
+    --notion-orange-background: rgba(250, 235, 221, 0.3);
+    --notion-yellow-background: rgba(251, 243, 219, 0.3);
+    --notion-green-background: rgba(221, 237, 234, 0.3);
+    --notion-blue-background: rgba(221, 235, 241, 0.3);
+    --notion-purple-background: rgba(234, 228, 242, 0.3);
+    --notion-pink-background: rgba(244, 223, 235, 0.3);
+    --notion-red-background: rgba(251, 228, 228, 0.3);
+
     &[data-scheme="dark"] {
-        --body-background: #303030;
-        --accent-color: #ecf0f1;
-        --accent-color-darker: #bdc3c7;
-        --accent-color-text: #000;
-        --body-text-color: rgba(255, 255, 255, 0.7);
+        --body-background: #1a1a1a;
+        --accent-color: #2eaadc;
+        --accent-color-darker: #2591bc;
+        --accent-color-text: #fff;
+        --body-text-color: rgba(255, 255, 255, 0.9);
+        --card-background: #2f3437;
+        --card-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, 
+                       rgba(0, 0, 0, 0.2) 0px 2px 4px;
         --scrollbar-thumb: hsl(0, 0%, 40%);
         --scrollbar-track: var(--body-background);
+        --card-text-color-main: rgba(255, 255, 255, 0.9);
+        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+        --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
+        
+        --notion-gray-background: rgba(120, 120, 120, 0.2);
+        --notion-brown-background: rgba(147, 114, 100, 0.2);
+        --notion-orange-background: rgba(255, 163, 68, 0.2);
+        --notion-yellow-background: rgba(255, 220, 73, 0.2);
+        --notion-green-background: rgba(77, 171, 154, 0.2);
+        --notion-blue-background: rgba(82, 156, 202, 0.2);
+        --notion-purple-background: rgba(154, 109, 215, 0.2);
+        --notion-pink-background: rgba(226, 85, 161, 0.2);
+        --notion-red-background: rgba(255, 115, 105, 0.2);
     }
 }
 
@@ -40,11 +75,11 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global font family
 */
 :root {
-    --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
+    --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji";
     --zh-font-family: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
 
-    --base-font-family: "Lato", var(--sys-font-family), var(--zh-font-family), sans-serif;
-    --code-font-family: Menlo, Monaco, Consolas, "Courier New", var(--zh-font-family), monospace;
+    --base-font-family: var(--sys-font-family);
+    --code-font-family: SFMono-Regular, Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
 }
 
 /*
@@ -161,7 +196,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 }
 
 :root {
-    --menu-icon-separation: 40px;
+    --menu-icon-separation: 20px;
     --container-padding: 15px;
     --widget-separation: var(--section-separation);
 }
