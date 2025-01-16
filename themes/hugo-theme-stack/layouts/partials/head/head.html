@@ -22,5 +22,7 @@
     <link rel="shortcut icon" href="{{ . | relURL }}" />
 {{ end }}
 
+{{ if not hugo.IsServer }}
 {{- template "_internal/google_analytics.html" . -}}
+{{ end }}
 {{- partial "head/custom.html" . -}}
