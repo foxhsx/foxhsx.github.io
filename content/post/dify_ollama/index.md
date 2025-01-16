@@ -1,5 +1,5 @@
 ---
-title: Dify 教程二：使用本地大模型
+title: Dify2. 使用本地大模型
 date: 2024-07-17
 tags:
   - AI
