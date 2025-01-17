@@ -20,21 +20,21 @@ description: 通过将 Dify 与 Ollama 结合，开发者可以充分利用本�
 * 其他选项可以根据自己的需求进行配置，或者也可以保持默认
 * 然后保存即可
 
-![](assets/qwPr3LPtVOabPBq39lgwR9yu8g_iiSjxjqj3I00Y1F0=.png)
+![](assets/1720621691405.webp)
 
 回到创建的应用中，在编排页面的右上角切换大模型为 `qwen2:7b`:
 
-![](assets/TwLROTIeaag_I-2wWY2sPqTRpK9wgum7oB4odu4_P3o=.png)
+![](assets/1720621764701.webp)
 
 可以看到的，由于是本地大模型，所以响应速度非常快！
 
-![](assets/HviEbfrwfDPA18cdiqUS9QSFSICsW0HSmDrzV7xpuwk=.png)
+![](assets/1720621989109.webp)
 
 ### 知识库配置嵌入模型
 
 因为咱们本次使用 Ollama 来作为 Dify 的 AI 模型，所以在创建知识库时会有一些问题：
 
-![](assets/alP6DbY4QULuQpgoVYtMiJIKkVqKMYLhtYZi4WXWJI0=.png)
+![](assets/1720847796882.webp)
 
 这是**因为 Dify 默认的系统 Embedding 模型是 OpenAI 的&#x20;****`text-embedding-3-large`**，但是当我们使用本地大模型时，是无法连接到这个模型的，所以我们**还需要再拉取一个 Embeddinng 模型下来，这里以&#x20;****`nomic-embed-text`****&#x20;为例**：
 
@@ -44,30 +44,30 @@ ollama pull nomic-embed-text
 
 然后在 Ollama 模型设置中选择 `Text Embedding`：
 
-![](assets/W-z1vTZIeBFd0WEPWQocEUAxgrW-XnVcxGOBjNiKghg=.png)
+![](assets/1720848495880.webp)
 
 保存之后，我们可以**修改 Dify 的默认系统模型，点击右上角的「系统默认设置」按钮进行设置**：
 
-![](assets/-zdAmNWfrdhOOzLiD4c3dXFxB8WBCQ4k7mayiCOOwyk=.png)
+![](assets/1721144105460.webp)
 
 再创建一个新的知识库进行测试：
 
-![](assets/X4ZRR8DIGGwwaqUBWA8e_gQM9YPrm6POT4XjNWN55kM=.png)
+![](assets/1720848647875.webp)
 
 也可以成功嵌入：
 
-![](assets/wfrlp0W53-Ysy42Z83BWLa68zuovsqBRasJuAQLTRBo=.png)
+![](assets/1720848702212.webp)
 
 ### 测试应用
 
 接下来我们将刚刚创建的知识库添加到应用中去，并给应用添加提示词。如果不知道怎么编写提示词，还可以点击右上角的自动编排让 AI 帮助我们完成：
 
-![](assets/fTW0gpaC52AJyUbw8CnMYKPjuwgtkMKHlFcteuVI9o8=.png)
+![](assets/1720848889365.webp)
 
-![](assets/mtXyKOxumGqg_Zc6YWzn8rnMW-KmLD-6bXH2ybFSK-Y=.png)
+![](assets/1720852173480.webp)
 
 点击右下角的「应用」按钮，就会自动为我们添加这些提示词和开场白到应用中了：
 
-![](assets/fhGW58NgtobEzJyJuG3LiYWF-dqV0lnhdAyhiAI7vws=.png)
+![](assets/1720852546098.webp)
 
 我们可以在知识库中添加大量的 K8s 相关的资料，打造一款 K8s 大师应用。是不是很棒😊
