@@ -31,7 +31,7 @@ tags:
 
 我们选择**使用 Docker Compose 来部署**。但是在部署之前，需要注意应用部署的**前提条件**：
 
-![](assets/N5BeS3g5Aslrv77GTTpHPzLU_bgbKHY2D1415IX3of4=.png)
+![](assets/1720795355142.webp)
 
 > [文档地址](https://docs.dify.ai/v/zh-hans/getting-started/install-self-hosted/docker-compose)
 
@@ -57,31 +57,31 @@ docker compose up -d
 
 初次访问 Dify 时需要**先设置一个管理员账号**：
 
-![](assets/O6GDHdV5fDfoS6QUUi_6zLpPCAEtRM_J9XRmSWMx7lk=.png)
+![](assets/1720534522885.webp)
 
 设置好之后正常进行登录即可：
 
-![](assets/EyQmQ3u8HGGebk8__v5yXn2K9ayFA7Xo-iEy6tXnHO8=.png)
+![](assets/1720534573062.webp)
 
-![](assets/ur-y9qoe74MYPbj01pO7-8VAc2okEGyzBYrtaCSxWHM=.png)
+![](assets/1720795668944.webp)
 
 到目前为止我们清楚了它长啥样子，但要正常使用还得**设置一下 AI 大模型**才可以，点击右上角的头像，选择设置唤出设置对话框：
 
-![](assets/2-ZsMB5ARe9lghz8m_1qV2EU6iWcgGNqgydqOuFe1dg=.png)
+![](assets/1720534884506.webp)
 
 点击**左侧菜单栏中的模型供应商**开始设置你的 Dify AI 模型。我们以 OpenAI 为例，输入 API Key 和代理 Url（参考[如何免费获取 ChatGPT API Key？](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247484170\&idx=1\&sn=8dae94674046265f0687cc2bdc0a535a\&chksm=fa6860ebcd1fe9fd25c7ce5f3ed7ca3dc0bfbb7812b4ec533ddc24a444a637ddeb6acc110ba5#rd)）：
 
-![](assets/y3Rx5SE4Iip4EP6Rhxgsh_P66wk7zhJv6ve3oeaK5vA=.png)
+![](assets/1720795862716.webp)
 
-![](assets/KK-uTZiJ3Nhh2QR6gsLgXkeNieIvTrgs87ALhFkNPgM=.png)
+![](assets/1720534927925.webp)
 
 然后创建一个空白应用，在应用里面就可以选择模型了：
 
-![](assets/QnaFLGzsh2a3buk7PpWTvzbRfhWesD4Yk_TrPVugVek=.png)
+![](assets/1720535011035.webp)
 
 测试一下看看是否能正常进行对话：
 
-![](assets/ieMb9g9PZzHKNUYRJJZJtgkzP0nfKEXaKqjXDeX0FYI=.png)
+![](assets/1720796424487.webp)
 
 哦吼～完美
 
@@ -89,23 +89,23 @@ docker compose up -d
 
 Dify 也**支持创建知识库**，点击页面顶部的知识库 Tab，在对应的页面按照以下步骤创建一个新的知识库：
 
-![](assets/facNQJvKnDFmC7ofoObun6aSPcwDqLIoyO6EHuPN0rY=.png)
+![](assets/1720535582335.webp)
 
-![](assets/hc3UmpDsCey33LqMCLrTiop39vg191fRWjFyULs31Kk=.png)
+![](assets/1720535613296.webp)
 
-![](assets/VsXjfpJMb2jvum3G45mkhESoCNCBfn2PyQqfW_0ESOo=.png)
+![](assets/1720535638698.webp)
 
 创建好之后，我们就可以在这个知识库详情页面看到刚刚上传的文档以及是否可用：
 
-![](assets/qx7g6Iv_ggE9r862X0trdaGA6sYy4UZurkkvMwRf0XM=.png)
+![](assets/1720535656098.webp)
 
 我们可以将知识库接入到刚刚创建好的应用中去：
 
-![](assets/9btS0xM87Z_rKF3aR1bf_N084qYRuklKllWxryT40vE=.png)
+![](assets/1720535704877.webp)
 
 测试一下：
 
-![](assets/NZCpZvF1Tk-5yu32-fhqDM9GWbykq3eYrnUxTKCLAig=.png)
+![](assets/1720535771662.webp)
 
 也访问正常，**AI 回答的结果来源正是我们刚刚上传的 PDF 文档**！非常 Nice\~
 
@@ -113,18 +113,18 @@ Dify 也**支持创建知识库**，点击页面顶部的知识库 Tab，在对�
 
 应用创建并编排好之后，点击右上角的发布按钮进行发布，除此之外 Dify 还额外提供了三个功能给我们，分别是：
 
-![](assets/IyZmr1nvbCSB0J6dXI9Z9-6CBjQWZwQKnrQE9CLGmTo=.png)
+![](assets/1720797200256.webp)
 
 * **运行**：打开一个新的页面，页面 url 地址是 dify 为这个应用生成的一个唯一的 url 链接；
 
-![](assets/UDxu_lXEBy5B1OHI5hGUfxhRRIaunOnMbwrhjQzpbvA=.png)
+![](assets/1720797238940.webp)
 
 * **嵌入网站**：这个功能其实 FastGPT 也有（不得不说，其实二者的功能很相似），就是提供三种嵌入方式：**以 iframe 的形式将 AI 应用集成到自己的网站中去**、**通过 script 脚本的方式将一段代码 copy 到网站代码中**以及**通过浏览器插件的形式来集成**
 
-![](assets/Gsb2lZVEISMF18DgJ8kA4u1a0yftzPPXxnxkSIRG02U=.png)
+![](assets/1720797281307.webp)
 
 * **访问 API**：提供接口的形式，将 AI 应用接入到其他的产品中
 
-![](assets/u-wBGk4tbkPf83vt53jH_PRiTCq9rfwFtUfp4hTMax4=.png)
+![](assets/1720797295570.webp)
 
 以上就是 Dify 的部署及基础使用。因篇幅过长，如何接入 Ollama 以及进阶用法会在后续文章中介绍，尽情期待～
