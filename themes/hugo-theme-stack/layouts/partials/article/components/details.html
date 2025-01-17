@@ -38,6 +38,15 @@
         {{ end }}
 
         {{ if $showReadingTime }}
+        <div>
+            {{ partial "helper/icon" "wordcount" }}
+            <time class="article-time--reading">
+                {{ T "article.wordCount" .WordCount  }}
+            </time>
+        </div>
+        {{ end }}
+
+        {{ if $showReadingTime }}
             <div>
                 {{ partial "helper/icon" "clock" }}
                 <time class="article-time--reading">
