@@ -26,15 +26,15 @@ description: 如何在 Dify 中创建工作流呢？本节详细阐述创建 Wor
 
 * **Chatflow**：**面向对话类情景**，包括客户服务、语义搜索、以及其他需要在构建响应时进行多步逻辑的对话式应用程序。
 
-![](assets/dZKsJDlr53G4eun4NVj2uTRsAWCSs1R_IctkEulVjtY=.png)
+![](assets/1721465027637.webp)
 
 * **Workflow**：**面向自动化和批处理情景**，适合高质量翻译、数据分析、内容生成、电子邮件自动化等应用程序。
 
-![](assets/u6jx0ITR21lUk9K-6BwIUGuuTCOj7ULyvJO3Yhl4T5c=.png)
+![](assets/1721465112667.webp)
 
 在 Workflow 中**起到关键作用的就是节点**，关于节点的分类如下：
 
-![](assets/c7I1cs2F6JjLKWOjSCFYeHPfalyZN2EBUoyIrQRlww8=.png)
+![](assets/1721465756458.webp)
 
 接下来三金以 Workflow 为例，**实现一个可以根据用户输入自动生成小红书文案的工作流**。Let\`s do it!
 
@@ -42,7 +42,7 @@ description: 如何在 Dify 中创建工作流呢？本节详细阐述创建 Wor
 
 然后创建一个空白的 Workflow 应用，并按照刚刚的内容创建节点：
 
-![](assets/ElJBoo-rcfHhWra_8hqQtwrfL2HvmQXmALWqn4w6JuM=.png)
+![](assets/1721465636521.webp)
 
 我们这里一共有 7 个节点：
 
@@ -54,12 +54,14 @@ description: 如何在 Dify 中创建工作流呢？本节详细阐述创建 Wor
 * **变量聚合器**：将两个 LLM 生成的文章都会聚合到这个节点上来
 * **结束**：最后输出给用户
 
-![](assets/PmSFRBu69prquqCugp1qYgDxWAswA23g89ZtzjeIz3I=.png)
+![](assets/1721543214612.webp)
 
 我们来测试一下，点击右上角的运行按钮：
 
-![](assets/FDJaQV8-QhC9tjhDevSgKzjzj6yuBjzUXlWhs1fuWkg=.png)
+![](assets/1721543395257.webp)
 
 可以看到已经输出了一篇 100 字左右的小红书文案：
+
+![](assets/1721543770980.webp)
 
 相信大家现在已经基本掌握了如何创建 Dify 工作流，那接下来我们就可以创建一些可以执行自动化任务的工作流 + AI 智能对话 + 微信推送来实现一个微信智能助理。
