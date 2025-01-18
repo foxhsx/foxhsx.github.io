@@ -13,7 +13,7 @@ description: 在 Dify 中可以自定义工具，也可以使用内置工具，�
 
 点击页面顶部的「探索」Tab 即可跳转到「探索 Dify 应用」的页面，在这个页面中会列出内置的一些应用模板，如下图：
 
-![](assets/enWYFTSO9qwyk_oMx9T1EpRduXieQccepGmZ3lNOGrQ=.webp)
+![](assets/1721229227735.webp)
 
 目前**Dify 社区版中内置有 31 个应用模板**，按照类型分为三类：
 
@@ -33,11 +33,11 @@ description: 在 Dify 中可以自定义工具，也可以使用内置工具，�
 * 模板转换：Template
 * 结束节点：直接回复
 
-![](assets/6uYZaMboVKV51Tw67C6YAnPORyDKhfY_2wDjkVuiEqg=.png)
+![](assets/1721459878920.webp)
 
 我们可以点击右上角的「调试和预览」测试一下这个应用：
 
-![](assets/2ZoV633-NLOr-NlteTM9dwScx7LEH41fLPwTbilwg2A=.png)
+![](assets/1721460159906.webp)
 
 可以看到在输入指令之后，工作流会一步一步地按照节点顺序开始执行任务，最终输出一个用来生成文章的 Workflow 规划，这对于不熟悉如何编排工作流的小伙伴来说，还是很好用的。
 
@@ -47,7 +47,7 @@ description: 在 Dify 中可以自定义工具，也可以使用内置工具，�
 
 用过 ChatGPT 的小伙伴们都知道 Actions，**在 Dify 中「工具」对标的就是 ChatGPT 的 Actions**，目前在 Dify 中已经**内置了 45 个工具**：
 
-![](assets/AcZ_KWSYVLJJbmXrqNcpyztFs48I2o7hPPWecNf6b9M=.png)
+![](assets/1721460727615.webp)
 
 我们**可以添加工具到工作流中，用来增强和完善工作流的能力**，这里以 Google 为例：
 
@@ -56,11 +56,11 @@ description: 在 Dify 中可以自定义工具，也可以使用内置工具，�
 
 接下来就是将 Google 工具集成到工作流中：
 
-![](assets/fZcG4fPaRdGDqKCu8DJV7RRnrZw0sPbB5gGNpWcreU8=.png)
+![](assets/1721461535986.webp)
 
 除了这些内置好的工具之外，我们也可以**自定义工具**：
 
-![](assets/aCuxPCP1lEzR1xH5XmdVVXQORbOUSgsUAdtFHlA3Cf4=.png)
+![](assets/1721462815208.webp)
 
 在 Schema 中**输入符合 OpenAPI 的 schema格式**，这里 Dify 也提供了符合规范的 Schema 例子：
 
@@ -105,13 +105,13 @@ description: 在 Dify 中可以自定义工具，也可以使用内置工具，�
 
 三金这里自定义了一个获取掘金热榜的工具，测试了一下完全 OK：
 
-![](assets/ychAe4HUVeMV6hY9a48F4gqHkAf_RuptMn_d_SyhfR8=.png)
+![](assets/1721463079300.webp)
 
-![](assets/xnqXTSjkjuV26qCSZS_3L9fofGtzg3B5mCPpiRWT9yQ=.png)
+![](assets/1721463097752.webp)
 
 回到工作流应用中，我们也可以在自定义工具中找到它：
 
-![](assets/QsXdiRCuRwf4FNSw9FtyXH7CKVX58CBqW3rDQzuJJTs=.png)
+![](assets/1721463173117.webp)
 
 好啦～到这里我们已经介绍了 Dify 的大部分功能，包括：
 
