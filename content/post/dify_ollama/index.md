@@ -38,7 +38,7 @@ description: 通过将 Dify 与 Ollama 结合，开发者可以充分利用本�
 
 这是**因为 Dify 默认的系统 Embedding 模型是 OpenAI 的&#x20;****`text-embedding-3-large`**，但是当我们使用本地大模型时，是无法连接到这个模型的，所以我们**还需要再拉取一个 Embeddinng 模型下来，这里以&#x20;****`nomic-embed-text`****&#x20;为例**：
 
-```shellscript
+```bash
 ollama pull nomic-embed-text
 ```
 

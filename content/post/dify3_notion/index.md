@@ -41,14 +41,14 @@ description: 两种联网创建知识库的方式：一是接入 Notion，而是
 
 打开 Dify 源代码，在 docker 目录下找到`.env`文件，在该文件里配置相关环境变量，环境变量如下：
 
-```shellscript
+```bash
 NOTION_INTEGRATION_TYPE = internal
 NOTION_INTERNAL_SECRET=<刚刚拷贝出来的 Secret>
 ```
 
 修改好之后，执行以下命令并重启启容器：
 
-```shellscript
+```bash
 docker-compose down
 docker-compose up -d
 ```

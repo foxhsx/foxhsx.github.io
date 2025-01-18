@@ -37,13 +37,13 @@ tags:
 
 满足前提条件之后，**克隆 Dify 代码到本地**：
 
-```shellscript
+```bash
 git clone https://github.com/langgenius/dify.git
 ```
 
 然后**进入到源代码中的 docker 目录下，一键启动**！
 
-```shellscript
+```bash
 cd dify/docker
 cp .env.example .env
 docker compose up -d
