@@ -27,15 +27,15 @@ description: 两种联网创建知识库的方式：一是接入 Notion，而是
 
 然后，**创建一个新的集成「New Integrations」**；
 
-![](assets/x6qYGlzSttI7lx1QKj-yh6k_ocRjUcV5yJqrbrtBH7g=.png)
+![](assets/1720855248786.webp)
 
 再次，在**集成配置页面关联 Notion 的工作空间，类型选择 Internal**，并为这个集成起一个见名治意的名称，logo 可选可不选，然后提交；
 
-![](assets/M7HLgdtLiNXz5TegY9bTb9HcTIpM_KWMS7nOlrO4DWE=.png)
+![](assets/1720855401680.webp)
 
 最后，到**该 Integrations 详情页面中拷贝对应的 Secret 出来**。
 
-![](assets/GFfCKX7tz3lP58fbkfLCrZcXTRIxV2RkGMOKwJfYpig=.png)
+![](assets/1720855911707.webp)
 
 以上就是创建一个 Notion 内部集成的流程，是不是超级简单？接下来我们要将这个 Internal 集成到 Dify 中去。
 
@@ -55,7 +55,7 @@ docker-compose up -d
 
 再次访问知识库并选中「同步自 Notion 内容」时就可以看到咱们已经集成成功了：
 
-![](assets/q3uXG2Yu0vC0kV7HS_X2GzSv0Qnr_U4ucsRvQalfFt4=.png)
+![](assets/1720855813997.webp)
 
 但是光是到这里其实还是不够的，我们还**需要将想要同步的文章关联到对应的 Integrations 中**：
 
@@ -64,7 +64,7 @@ docker-compose up -d
 
 - 回到 Dify 页面并刷新，就可以看到这篇文章已经被列出来了
 
-![](assets/zuq2iMCFA-q09mC8lU8PFlZt_JyjwHqjchq7gVG0omQ=.png)
+![](assets/1720856474021.webp)
 
 接下来的操作和导入本地文件是一样的，就不过多赘述了。
 
@@ -74,23 +74,23 @@ docker-compose up -d
 
 同步 Web 站点的功能**需要配置 FireCrawl**，这是一款可以将网站转换为 Markdown 格式的产品。我们只需要在它的[官网](https://www.firecrawl.dev/pricing)申请一下 API Key 即可使用，有免费版也有付费版：
 
-![](assets/nlgnA6hPO0mgeKMO_sXq4Xl1mjAmX5IyJkxJDcVDo1A=.png)
+![](assets/1720938183429.webp)
 
 在申请 API Key 之前我们需要先注册一下，可以使用 Google 账号或者 Github 账号进行登录。
 
 登录好之后我们就可以看到对应的 API Key 了：
 
-![](assets/Q1zH2dKXIw5njgd93gdye1dJoRPe0ZhQ08-m_cFGlTE=.png)
+![](assets/1720938351453.webp)
 
 将其粘贴复制到 Dify 的数据来源中去：
 
-![](assets/B9k49mweKdOvWEl5d--Jonjd6_5d_IZJY4Tsi442StY=.png)
+![](assets/1720938521515.webp)
 
 测试一下，以我的小破站为例：
 
-![](assets/GyZd2CFuMBxL0augdYekBGMTUS9WFLvT3DAIfpXCkaU=.png)
+![](assets/1720938650558.webp)
 
 已经成功抓取到了 10 个页面，点击下一步之后的操作也是和之前的都一样，就不过多赘述了。
 
-![](assets/-qzGwxDERcSOxkO9hwe4Ga8swPoZtLBWHCPO3M8qw8E=.png)
+![](assets/1720938786552.webp)
 
