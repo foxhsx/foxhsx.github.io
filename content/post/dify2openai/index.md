@@ -131,9 +131,9 @@ docker compose up -d
 
 首先我们需要获取 Dify 应用的密钥，在 Dify 中你需要进入到该应用，点击右上角的「发布-访问 API」按钮或者左侧菜单栏的第二个 shell 图标之后进行获取。
 
-![](assets/pwOGjZyOVvm96jlh0mJxWSf0tAnYuMbtSiVDO-TpA5s=.png)
+![](assets/pwOGjZyOVvm96jlh0mJxWSf0tAnYuMbtSiVDO-TpA5s=.webp)
 
-![](assets/TOo2NMnMimQmakhnnsunAR7-EYQbyjZHDhRoGyIvCLU=.png)
+![](assets/TOo2NMnMimQmakhnnsunAR7-EYQbyjZHDhRoGyIvCLU=.webp)
 
 然后我们依旧使用 OpenWebUI 来进行测试：
 
@@ -143,7 +143,7 @@ docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --r
 
 启动后在「设置-外部连接」这里配置模型：
 
-![](assets/TNMrfy7YlP0Hi-nQ8uJv7KGR0w6MO0euYR779gCjP4w=.png)
+![](assets/TNMrfy7YlP0Hi-nQ8uJv7KGR0w6MO0euYR779gCjP4w=.webp)
 
 > 眼尖的朋友们或许发现 OpenWebUI 的端口也是 3000，这样的话会和 dify2openai 的容器端口冲突，所以我在这里将 dify2openai 的端口改成了 3100。
 > 1\. 本地 pnpm 启动：在 `.env` 文件中加上 PORT 参数进行修改；
@@ -151,11 +151,11 @@ docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --r
 
 此时这里的 URL 就变成了 dify2openai 的服务地址：`IP:port`；密钥就是刚刚我们复制下来的密钥，配置好之后保存一下即可。
 
-![](assets/FlqmH5pInZj9kpqWukAbPr3HBmVQ6QjGWw44bz5p7rk=.png)
+![](assets/FlqmH5pInZj9kpqWukAbPr3HBmVQ6QjGWw44bz5p7rk=.webp)
 
 新建对话，我们按照 Dify 中提供的应用类型来分别测试一下。
 
-![](assets/dk6gBRPC5SyPP5ragUF7gtjgWzFNEswoduGbysP-TKQ=.png)
+![](assets/dk6gBRPC5SyPP5ragUF7gtjgWzFNEswoduGbysP-TKQ=.webp)
 
 不同的应用，对应的 BOT\_TYPE 是不同的，且环境变量设置上也有差异：
 
@@ -168,19 +168,19 @@ docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui --r
 
 **聊天助手**
 
-![](assets/HcHPgujvh1i2Nc7jTIEwg1DqvuJ2kpWcNNjWvXV8O1U=.png)
+![](assets/HcHPgujvh1i2Nc7jTIEwg1DqvuJ2kpWcNNjWvXV8O1U=.webp)
 
 **工作流**
 
-![](assets/XyfadAAsUdo785vi7nK8s0nZETM2EnaQrnIR66hTopU=.png)
+![](assets/XyfadAAsUdo785vi7nK8s0nZETM2EnaQrnIR66hTopU=.webp)
 
 **文本生成**
 
-![](assets/WTkUCtL321S63yHsNnZwoDRsGGti4u0IH78TP6jQ4qk=.png)
+![](assets/WTkUCtL321S63yHsNnZwoDRsGGti4u0IH78TP6jQ4qk=.webp)
 
 **Agent**
 
-![](assets/aonaeCEWalWNv0yfc20H0FqoVRq-sGcYMsDwx0xMzhk=.png)
+![](assets/aonaeCEWalWNv0yfc20H0FqoVRq-sGcYMsDwx0xMzhk=.webp)
 
 ### 总结
 
