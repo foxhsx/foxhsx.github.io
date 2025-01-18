@@ -1,4 +1,11 @@
-# Dify8. 给 Dify 接入 SD 实现 AI 绘画自由
+---
+title: Dify8. 给 Dify 接入 SD 实现 AI 绘画自由
+date: 2024-08-03
+description: 使用部署好的 Stable Diffusion，将其接入到 Dify 中，既可以在 Agent 中使用也可以在工作流 Workflow 中使用。
+tags:
+  - AI
+  - Dify
+---
 
 Dify 中也支持接入 Stable Diffusion AI 绘画、DALLE 2 和 3 绘画，不过在国内使用 DALLE 绘图比较麻烦，如果能使用 DALLE 还不如一步到位使用 MJ，不巧的是这俩三金都没有。
 

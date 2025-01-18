@@ -1,4 +1,11 @@
-# Dify7. dify-on-wechat 深入探索
+---
+title: Dify7. dify-on-wechat 深入探索
+date: 2024-08-31
+description: dify-on-wechat 作为 dify 的生态真的太棒了，将 dify 接入到微信之后，微信机器人的可玩儿性极大地增强。
+tags:
+  - AI
+  - Dify
+---
 
 最近群友们在玩儿 dify-on-wechat 的时候，发现插件啥的还能搞定时任务，这不得研究研究，搞起来。
 
