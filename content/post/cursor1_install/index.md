@@ -1,6 +1,6 @@
 ---
-title: Cursor1. AI 编辑器 Cursor 安装
-date: 2024-01-19
+title: Cursor1 -AI 编辑器 Cursor 安装
+date: 2025-01-19
 description: 早在 2023 年的时候我就安装了 Cursor，但是当时对于 tab 补全功能其实没有太在意，大多数情况下将其作为一个免费的 AI 客户端机器人来使用，最近在改代码时重拾 Cursor，真的感觉之前有一些资源浪费了。
 tags:
   - Cursor

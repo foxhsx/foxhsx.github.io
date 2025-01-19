@@ -1,12 +1,11 @@
 ---
-title: Dify5. 创建 Workflow
+title: Dify5 创建 Workflow
 date: 2024-07-25
 tags:
   - AI
   - Dify
 description: 如何在 Dify 中创建工作流呢？本节详细阐述创建 Workflow 应用的步骤，包括设置节点等，最后提到可创建微信智能助理。
 ---
-
 我们在之前的几篇文章中已经介绍了 Dify 的大部分功能，包括：
 
 * 部署及基础使用：[37.4k 的 Dify，一款小白也可以轻松上手的大模型开发平台（一）：部署及基础使用](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485019\&idx=1\&sn=572e8f94c6d082183d80788a53cc6f55\&chksm=fa6865bacd1fecac6f3ed04454f5751444c7cf7849490d8991faf9e9c2296f565ac05140aa58\&token=1941914531\&lang=zh_CN#rd)**[原创](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485019\&idx=1\&sn=572e8f94c6d082183d80788a53cc6f55\&chksm=fa6865bacd1fecac6f3ed04454f5751444c7cf7849490d8991faf9e9c2296f565ac05140aa58\&token=1941914531\&lang=zh_CN#rd)**

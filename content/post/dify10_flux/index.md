@@ -1,12 +1,11 @@
 ---
-title: Dify10. 在 Dify 中接入 Flux 和 Stable Diffusion
+title: Dify10 在 Dify 中接入 Flux 和 Stable Diffusion
 date: 2024-12-10
 description: 硅基流动提供的免费限免模型，包括对话、嵌入、重排序、语音、视频等类型。在 Dify 中使用时需填入硅基流动的 API Key 即可。
 tags:
   - AI
   - Dify
 ---
-
 之前有出过两篇关于本地部署及使用 AI 绘图应用 Stable Diffusion 的文章：
 
 * [MacOS 部署 ](https://mp.weixin.qq.com/s/JZ6Hflg6-ZcYbRYGrcfabw)*[Stable](https://mp.weixin.qq.com/s/JZ6Hflg6-ZcYbRYGrcfabw)*[ Diffusion 实现 AI 绘画自由](https://mp.weixin.qq.com/s/JZ6Hflg6-ZcYbRYGrcfabw)

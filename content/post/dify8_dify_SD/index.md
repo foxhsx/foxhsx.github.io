@@ -1,12 +1,11 @@
 ---
-title: Dify8. 给 Dify 接入 SD 实现 AI 绘画自由
+title: Dify8 给 Dify 接入 SD 实现 AI 绘画自由
 date: 2024-08-03
 description: 使用部署好的 Stable Diffusion，将其接入到 Dify 中，既可以在 Agent 中使用也可以在工作流 Workflow 中使用。
 tags:
   - AI
   - Dify
 ---
-
 Dify 中也支持接入 Stable Diffusion AI 绘画、DALLE 2 和 3 绘画，不过在国内使用 DALLE 绘图比较麻烦，如果能使用 DALLE 还不如一步到位使用 MJ，不巧的是这俩三金都没有。
 
 所以前几天三金在电脑上部署了下 SD（[MacOS 部署 Stable Diffusion 实现 AI 绘画自由](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485177\&idx=1\&sn=8fcbb0338f8211d433c21953858df909\&chksm=fa686518cd1fec0e470341b1c83e6f8d75bd66dc0f27d97b60c3919a0fbe8a85c8c5ec1cb3ae#rd)），并从 C 站上下载了**XXMix\_9realisticSDXL**模型来试试水。
@@ -27,7 +26,7 @@ Dify 中也支持接入 Stable Diffusion AI 绘画、DALLE 2 和 3 绘画，不�
 
 首先，我们要 Dify 的工具页面，设置 Stable Diffusion 授权：
 
-> ⚠️注意：如果要使用 SD 的 API 服务，在 MacOS 和 Linux 系统上需要使用`./webui.sh --api --listen`命令启动 SD，Windows 系统则是通过`./webui.bat --api --listen`启动。
+> ⚠️注意：如果要使用 SD 的 API 服务，在 MacOS 和 Linux 系统上需要使用 `./webui.sh --api --listen`命令启动 SD，Windows 系统则是通过 `./webui.bat --api --listen`启动。
 
 这里 SD 的服务器地址如果是本地部署的就写：`http://host.docker.internal:7860`；如果是部署在云服务器上的就写「服务器 IP:7860」。
 

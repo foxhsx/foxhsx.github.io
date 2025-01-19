@@ -1,12 +1,11 @@
 ---
-title: Dify7. dify-on-wechat 深入探索
+title: Dify7 dify-on-wechat 深入探索
 date: 2024-08-31
 description: dify-on-wechat 作为 dify 的生态真的太棒了，将 dify 接入到微信之后，微信机器人的可玩儿性极大地增强。
 tags:
   - AI
   - Dify
 ---
-
 最近群友们在玩儿 dify-on-wechat 的时候，发现插件啥的还能搞定时任务，这不得研究研究，搞起来。
 
 首先如何使用 dify-on-wechat（下文中简称 dow），可以参考三金之前的文章（[如何将 39.3k 的开源知识库 Dify 接入微信](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\\\&mid=2247485151\\\&idx=1\\\&sn=22cbef91d44d7211e2ec71835a0faafd\\\&chksm=fa68653ecd1fec2883fbe8c428a62c9528f57e3f458ca9c1bc2ff45546edcc9fd50a5373ef6e\\\&token=1313093260\\\&lang=zh_CN#rd)）。

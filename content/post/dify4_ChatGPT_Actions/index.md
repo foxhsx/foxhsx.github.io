@@ -1,12 +1,11 @@
 ---
-title: Dify4. 自定义 AI 工具（ChatGPT Actions）
+title: Dify4 自定义 AI 工具（ChatGPT Actions）
 date: 2024-07-22
 tags:
   - AI
   - Dify
 description: 在 Dify 中可以自定义工具，也可以使用内置工具，有没有一种使用 ChatGPT Actions 的感觉～
 ---
-
 上篇文章《[38.2k 的 AI 开发平台 Dify 教程三：将 Notion 和网站作为知识库](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485086\&idx=1\&sn=16ffa7b2459ec604c9c0ce2c1ee31173\&chksm=fa68657fcd1fec69d4246d6271bafe0e0119a7c2731ad3049d258f7c3de722b864a05c0f6f3f#rd)》中我们介绍了在 Dify 中创建知识库的其他两种方式「同步 Notion」和「同步 Web 站点」。今天我们一起来看下**Dify 中内置的应用模板和工具**。
 
 ### 探索应用

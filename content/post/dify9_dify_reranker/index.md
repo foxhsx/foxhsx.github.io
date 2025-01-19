@@ -1,5 +1,5 @@
 ---
-title: Dify9. 如何增强 Dify 的知识库检索能力？
+title: Dify9 如何增强 Dify 的知识库检索能力？
 date: 2024-08-27
 description: 如何增强 Dify 知识库检索能力？对比 Dify 和 fastGPT 后指出 Dify 检索不足但功能多样。介绍了 Dify 分段、索引、检索设置等方面的优化选择，还提到接入 Jina AI 来增强，包括申请 API Key、在 Dify 中使用、设置知识库等，最后强调效果明显，鼓励大家尝试。
 tags:

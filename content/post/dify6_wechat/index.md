@@ -1,12 +1,11 @@
 ---
-title: Dify6. 如何将 39.3k 的开源知识库 Dify 接入微信
+title: Dify6 如何将 39.3k 的开源知识库 Dify 接入微信
 date: 2024-07-28
 description: 发现可以将 dify 和 微信关联起来的开源生态项目 dify-on-wechat，简称 dow，这下我们既可以倒腾 dify 也可以倒腾微信了～
 tags:
   - AI
   - Dify
 ---
-
 > ⚠️注意
 > 目前微信官方对第三方接入风控严重，目前该篇教程中涉及到接入微信的部分已经不适用。但是！文章中说的项目已经更新到了新的版本，可以有效避开风控，大家可以移步到项目 README 进行查看～
 
@@ -36,7 +35,7 @@ git clone https://github.com/hanfangyuan4396/dify-on-wechat
 cd dify-on-wechat/
 ```
 
-* 建议使用虚拟环境来启动项目，因为可能出现一些 python 依赖上的冲突，我们可以使用`venv`或者`conda`创建虚拟环境
+* 建议使用虚拟环境来启动项目，因为可能出现一些 python 依赖上的冲突，我们可以使用 `venv`或者 `conda`创建虚拟环境
 
 其中 venv 是 python 3.3+ 自带的，而 conda 则需要先进行安装。这里以 venv 为例：
 
@@ -66,7 +65,7 @@ pip3 install -r requirements.txt  # 国内可以在该命令末尾添加 "-i htt
 pip3 install -r requirements-optional.txt # 国内可以在该命令末尾添加 "-i https://mirrors.aliyun.com/pypi/simple" 参数，使用阿里云镜像源安装依赖
 ```
 
-* 填写配置文件，在项目根目录下创建一个名为`config.json`的文件：
+* 填写配置文件，在项目根目录下创建一个名为 `config.json`的文件：
 
 ```json
 {
@@ -92,7 +91,7 @@ ngrok http http://localhost:8686
 
 这样就会生成一个外网环境也可以访问的服务地址，我们将上述配置中的 dify\_api\_base 的地址改为生成的地址即可。
 
-* 启动项目`python3 app.py`，然后扫码登录
+* 启动项目 `python3 app.py`，然后扫码登录
 
 ![](assets/81pOqxGRVwm3zLArHwmxsao90S3mhCs310fineHHrSY=.webp)
 
@@ -107,7 +106,7 @@ cd dify-on-wechat
 nohup python3 app.py & tail -f nohup.out   # 在后台运行程序并通过日志输出二维码
 ```
 
-或者使用 docker compose 也可以进行项目部署，在部署之前需要修改`docker/docker-compose.yml`文件，里面的内容和上面说到的`config.json`文件内容一致。
+或者使用 docker compose 也可以进行项目部署，在部署之前需要修改 `docker/docker-compose.yml`文件，里面的内容和上面说到的 `config.json`文件内容一致。
 
 要确保正确配置了 DIFY\_API\_BASE 和 DIFY\_API\_KEY 以及 DIFY\_APP\_TYPE 这三个环境变量。
 

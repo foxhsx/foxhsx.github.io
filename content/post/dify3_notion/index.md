@@ -1,12 +1,11 @@
 ---
-title: Dify3. 将 Notion 和网站作为知识库
+title: Dify3 将 Notion 和网站作为知识库
 date: 2024-07-19
 tags:
   - AI
   - Dify
 description: 两种联网创建知识库的方式：一是接入 Notion，而是通过爬虫爬取网站内容。
 ---
-
 在上一篇《[Dify 教程二：使用本地大模型 Ollama](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485047\&idx=1\&sn=05e09f8ed8c452b42c151a7f67cdb6f7\&chksm=fa686596cd1fec80e020bd0de536f031a966ad06138bba27479d6f6885a915f38490f67ee1fa#rd)》中，我们介绍了如何在 Dify 中接入本地大模型，今天我们来**看看 Dify 创建知识库的其他两种方式**。
 
 * **同步自 Notion 内容**
@@ -39,7 +38,7 @@ description: 两种联网创建知识库的方式：一是接入 Notion，而是
 
 以上就是创建一个 Notion 内部集成的流程，是不是超级简单？接下来我们要将这个 Internal 集成到 Dify 中去。
 
-打开 Dify 源代码，在 docker 目录下找到`.env`文件，在该文件里配置相关环境变量，环境变量如下：
+打开 Dify 源代码，在 docker 目录下找到 `.env`文件，在该文件里配置相关环境变量，环境变量如下：
 
 ```bash
 NOTION_INTEGRATION_TYPE = internal
@@ -93,4 +92,3 @@ docker-compose up -d
 已经成功抓取到了 10 个页面，点击下一步之后的操作也是和之前的都一样，就不过多赘述了。
 
 ![](assets/1720938786552.webp)
-

@@ -1,12 +1,11 @@
 ---
-title: Dify2. 使用本地大模型
+title: Dify2 使用本地大模型
 date: 2024-07-17
 tags:
   - AI
   - Dify
 description: 通过将 Dify 与 Ollama 结合，开发者可以充分利用本地大模型的优势，打造更智能、更定制化的 AI 应用，探索 AI 技术在不同领域的应用前景。
 ---
-
 上一篇文章《[37.4k 的 Dify，一款小白也可以轻松上手的大模型开发平台（一）：部署及基础使用](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247485019\&idx=1\&sn=572e8f94c6d082183d80788a53cc6f55\&chksm=fa6865bacd1fecac6f3ed04454f5751444c7cf7849490d8991faf9e9c2296f565ac05140aa58\&token=1234823734\&lang=zh_CN#rd)》我们介绍了 Dify 的部署及基础使用，今天我们来介绍一下**如何为 Dify 接入 Ollama**。
 
 > 关于如何在本地部署并使用 Ollama，可以参考[中文版斯坦福多智能体AI小镇（一）：安装 Ollama](https://mp.weixin.qq.com/s?__biz=MzUyODkwNTg3MA==\&mid=2247484912\&idx=1\&sn=4b9d831c1b85af97c43e922182faa7ae\&chksm=fa686611cd1fef07abafc1c0b996068515b91576dcd3d9b4ba65ca37184631c8e1378cdc04b7\&token=284766951\&lang=zh_CN#rd)
