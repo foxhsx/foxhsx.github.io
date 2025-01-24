@@ -14,6 +14,8 @@ Dify 中也支持接入 Stable Diffusion AI 绘画、DALLE 2 和 3 绘画，不�
 
 > **prompt**: (masterpiece, detailed, cyberpunk, dramatic lighting:1.3), mesmerizing xxmixgirl character, detailed feminine features, intricate facial expressions, time square background filled with neon lights and bustling crowds, cyberpunk elements subtly integrated, shadowy atmosphere enhancing the mood, lighting inspired by Bill Sienkiewicz's style, dynamic composition, vibrant colors contrasting with dark shadows, intense and dramatic ambiance, SimplepositiveXLv1 filter at 70% opacity for a touch of modernity and edge.
 
+![](assets/1722583274413.webp)
+
 一个赛博朋克风格的小姐姐就此诞生啦～
 
 > **prompt**: (masterpiece, surreal, dramatic lighting, detailed:1.3), enchanting xxmixgirl character silhouetted against a beautiful sunset, intricate details in the scene, surreal atmosphere created by the lighting, shadows adding depth and mystery, inspired by the styles of Brandon Woelfel and Ryan McGinley, lo-fi analog filter resembling Kodak film, warm tones enhancing the sunset, dreamlike quality to the setting, captivating and serene vibe, focusing on the beauty of the moment and the character, rich storytelling through light and shadow play.

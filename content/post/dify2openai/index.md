@@ -1,5 +1,5 @@
 ---
-title: 轻量 dify2openai 支持转换 Dify 所有的 API
+title: Dify22. 轻量 dify2openai 支持转换 Dify 所有的 API
 date: 2025-01-13
 description: 开源项目 dify2openai，它支持转换 Dify 所有 API，只需启动一个 node 服务。包括安装方式（pnpm 启动和 Docker 启动）、环境变量说明、测试方法（获取 Dify 密钥，用 OpenWebUI 测试，不同应用有不同设置），其优点是轻量便捷，缺点是一个服务只支持一个应用。
 tags:
