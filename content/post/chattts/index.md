@@ -4,6 +4,7 @@ date: 2024-08-11
 description: 本地部署 ChatTTS-ui，一个开源的语音模型，让用户可以生成逼真的语音，并支持 WebUI，让用户可以快速使用。
 tags:
   - AI
+  - 语音模型
 ---
 
 说起**文生语音模型**，最广为人知的肯定是**OpenAI 的 Whisper**，之前试过确实很 OK，不过国内要使用比较麻烦而且收费，所以今天要说的是一款**开源语音模型——ChatTTS**，它在**短短两个月**的时间就获得了**29k 的 Star**。
@@ -32,7 +33,7 @@ tags:
 * 其次，需要安装 git，因为需要拉项目源码，[源码地址](https://github.com/jianchang512/ChatTTS-ui)
 * 最后，需要安装可以处理音频文件的库 libsndfile 以及 ffmpeg
 
-```shellscript
+```shell
 brew install libsndfile git python@3.10 ffmpeg
 
 export PATH="/usr/local/opt/python@3.10/bin:$PATH"
@@ -46,7 +47,7 @@ source ~/.zshrc
 
 接下来创建空目录并拉取代码：
 
-```shellscript
+```shell
 mkdir /data/chattts # 没有 data 目录自己建一个
 
 cd /data/chattts
@@ -56,7 +57,7 @@ git clone https://github.com/jianchang512/chatTTS-ui .
 
 创建并激活虚拟环境：
 
-```shellscript
+```shell
 python3 -m venv venv
 
 source ./venv/bin/activate
@@ -64,7 +65,7 @@ source ./venv/bin/activate
 
 安装依赖及 torch，并启动项目：
 
-```shellscript
+```shell
 pip3 install -r requirements.txt
 
 pip3 install torch==2.2.0 torchaudio==2.2.0
