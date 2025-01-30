@@ -17,20 +17,7 @@ menu:
 
 comments: false
 ---
-To use this feature, add `links` section to frontmatter.
 
-This page's frontmatter:
+暂时没有友链。
 
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
+有需要的小伙伴可以添加右侧的微信联系站长添加～
