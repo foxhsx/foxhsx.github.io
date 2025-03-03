@@ -1,6 +1,6 @@
 ---
 title: 看了铺天盖地的 DeepSeek 资讯之后的一些感想
-date: 2024-02-15
+date: 2025-02-15
 tags:
   - AI
   - DeepSeek
