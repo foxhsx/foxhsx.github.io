@@ -3,7 +3,7 @@ title: Github 推出免费使用的 Github Models，助力用户快速成为 AI 
 date: 2025-03-06
 tags: [AI]
 draft: false
-summary: Github 推出了免费使用的 Github Models，里面包含好多大厂 AI 模型
+description: Github 推出了免费使用的 Github Models，里面包含好多大厂 AI 模型
 ---
 
 首先三金先介绍一下**什么是 Github Models**：
