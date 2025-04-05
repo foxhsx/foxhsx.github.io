@@ -3,7 +3,7 @@ title: Dify25. Dify 工作流分享 - Deep Researcher
 date: 2025-04-05
 tags: [dify]
 draft: false
-description: OpenAI于2月底推出了Deep Research功能，该功能利用优化模型o3，能够综合分析数百个在线资源并生成详细的报告。Deep Research在金融、科学和法律领域表现突出，但使用次数受到限制。文章还提到，通过GitHub上的工作流可以复刻该功能，进一步解析用户问题并优化回答。关键词包括：Deep Research、o3模型、数据分析、工作流、用户交互。整体上，Deep Research旨在提升信息整合与分析效率。
+description: OpenAI于2月底推出了Deep Research功能，该功能利用优化后的o3模型，通过分析和综合多种在线资源，生成相关的综合报告。Deep Research与Deepseek R1模型在金融、科学和法律领域存在功能重叠，提供详实且有据可查的报告。现阶段，该功能对Plus、Team等用户限制使用次数，并已在Github上实现了Deep Researcher On Dify的工作流，展现出复刻该功能的潜力。
 ---
 
 OpenAI 在 2 月底的时候推出了一款新的 Agent 功能——Deep Research。它可以实现在接收到用户输入之后，查找、分析和综合数百个在线资源，以分析师的身份创建一个相关的综合报告。
@@ -20,7 +20,7 @@ OpenAI 在 2 月底的时候推出了一款新的 Agent 功能——Deep Researc
 
 > Github 地址：https://github.com/AdamPlatin123/Open-Deep-Research-workflow-on-Dify
 
-![71743778899_.pic.jpg](assets/1743834102655.webp)
+![1743834102655.webp](assets/1743834102655.webp)
 
 这次我们主要分析分析人家这个工作流的思路（毕竟节点真的有点多）。
 
@@ -34,13 +34,13 @@ OpenAI 在 2 月底的时候推出了一款新的 Agent 功能——Deep Researc
 
 我们来测试一下，比如输入：未来几年黄金价格的趋势是怎样的？
 
-![1991743750469_.pic.jpg](assets/1743834166773.webp)
+![1743834166773.webp](assets/1743834166773.webp)
 
-![2001743750480_.pic.jpg](assets/1743834204917.webp)
+![1743834204917.webp](assets/1743834204917.webp)
 
-![2011743750493_.pic.jpg](assets/1743834234783.webp)
+![1743834234783.webp](assets/1743834234783.webp)
 
-![2021743750512_.pic.jpg](assets/1743834265809.webp)
+![1743834265809.webp](assets/1743834265809.webp)
 
 看效果是不错的，中间用到的工具有：
 
