@@ -20,7 +20,7 @@ OpenAI 在 2 月底的时候推出了一款新的 Agent 功能——Deep Researc
 
 > Github 地址：https://github.com/AdamPlatin123/Open-Deep-Research-workflow-on-Dify
 
-![71743778899_.pic.jpg](assets/1743850576375.webp)
+![](assets/1743850576375.webp)
 
 这次我们主要分析分析人家这个工作流的思路（毕竟节点真的有点多）。
 
@@ -34,13 +34,13 @@ OpenAI 在 2 月底的时候推出了一款新的 Agent 功能——Deep Researc
 
 我们来测试一下，比如输入：未来几年黄金价格的趋势是怎样的？
 
-![1991743750469.jpg](assets/1743850617673.webp)
+![](assets/1743850617673.webp)
 
-![2001743750480.jpg](assets/1743850634061.webp)
+![](assets/1743850634061.webp)
 
-![2011743750493.jpg](assets/1743850659956.webp)
+![](assets/1743850659956.webp)
 
-![2021743750512.jpg](assets/1743850676467.webp)
+![](assets/1743850676467.webp)
 
 看效果是不错的，中间用到的工具有：
 
