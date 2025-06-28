@@ -1,6 +1,6 @@
 ---
 title: 使用 Docker 搭建 IT-tools
-date: 2025-06-11
+date: 2024-02-06
 tags: [docker]
 draft: false
 description: 该文章讨论了开发人员在日常工作中使用的多种工具，如JSON格式化、YAML转换和文本比较等，均可通过it-tools集成使用。文章强调使用Docker和Kubernetes(K8s)进行快速部署的步骤，并提供了相关的YAML配置示例。关键词包括“开发工具”、“Docker”、“Kubernetes”、“部署”。核心观点是利用it-tools提升开发效率，简化工具使用。
