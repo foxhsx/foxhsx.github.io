@@ -1,6 +1,6 @@
 ---
 title: 31.1K Star 专注于工作流 的 Flowise AI
-date: 2025-07-19
+date: 2024-11-03
 tags: [AI,Docker]
 draft: false
 description: 本文介绍了Flowise，一款兼容LangChain的开源低代码工具，旨在简化自动化工作流程的创建。核心主题为Flowise的灵活性和易用性，适合无编程背景的用户。关键词包括“低代码”、“自动化工作”、“可视化工作流”、“AI应用”等。Flowise允许用户通过拖拽方式构建聊天机器人、问答系统等应用，强调了其高定制性和便捷的部署方式，为用户提供了简化工作任务的解决方案。
@@ -73,8 +73,28 @@ Flowise 的部署有两种简单的方式：
 
 使用 npm 安装及启动项目，本地一定要有版本大于等于 18.15.0 的 NodeJS 环境，然后执行以下命令即可运行项目：
 
-```plaintext
-使用 Docker 安装及启动首先需要克隆 Flowise 项目到本地：git clone https://github.com/FlowiseAI/Flowise.git然后进入到项目中的 docker 目录下启动 docker：<pre vnode="true" code="cd Flowise/dockercp .env.example .envdocker compose up -d" language="bash" linenumbers="true" wordwrap="false" tabsize="2" shouldfocus="false">cd Flowise/dockercp .env.example .envdocker compose up -d
+```bash
+npm install -g flowise
+
+npx flowise start
+```
+
+*  **使用 Docker 启动及启动**
+
+首先需要克隆 Flowise 项目到本地：
+
+```bash
+git clone https://github.com/FlowiseAI/Flowise.git
+```
+
+然后进入到项目中的 docker 目录下启动 docker：
+
+```bash
+cd Flowise/docker
+
+cp .env.example .env
+
+docker compose up -d
 ```
 
 也是访问 `http://localhost:3000` 即可～
