@@ -3,6 +3,9 @@
     <head>
         {{- partial "head/head.html" . -}}
         {{- block "head" . -}}{{ end }}
+        <meta name="google-adsense-account" content="ca-pub-2054639233986036">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2054639233986036"
+             crossorigin="anonymous"></script>
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
@@ -23,9 +26,6 @@
                 {{- block "main" . }}{{- end }}
             </main>
         </div>
-        <!-- Custom HTML tag for Google AdSense -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2054639233986036"
-             crossorigin="anonymous"></script>
         {{ partial "footer/include.html" . }}
     </body>
 </html>
