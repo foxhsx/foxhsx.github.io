@@ -11,7 +11,7 @@ description: 26.4k Star 的开源自托管仪表盘，关注你想关注的一�
 
 它支持：
 
-* **自定义配置页面组件，想你所想，看你所看**；
+* **自定义配置页面组件，想你所想，看你所看**
 * 展示 RSS 订阅内容
 * 指定频道的 YouTube 视频
 * 日历、天气、时钟
@@ -44,16 +44,6 @@ tar -xzf - --strip-components 2
 ```
 
 解压后的目录结构如下：
-
-```plaintext
-glance
-  ├── assets
-  │   └── user.css
-  ├── config
-  │   ├── glance.yml
-  │   └── home.yml
-  └── docker-compose.yml
-```
 
 * assets 目录下存在的是 glance 的静态资源文件，比如 CSS 样式表；
 * config 目录下就是核心配置，我们可以通过修改它来更新 Glance 仪表盘内容；
