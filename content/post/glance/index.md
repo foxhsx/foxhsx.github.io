@@ -22,11 +22,11 @@ description: 26.4k Star 的开源自托管仪表盘，关注你想关注的一�
 
 在不修改任何配置的情况下，部署后的 Glance 长这样：
 
-![](assets/U-GPLmQQGme8eRQJt7dWjfgSleH0c4Vt56vQUJDihCc=.webp)
+![](assets/U-GPLmQQGme8eRQJt7dWjfgSleH0c4Vt56vQUJDihCc.webp)
 
 我们可以通过修改 Glance 的配置文件来调整页面内的展示信息。下图是三金这边调整后的效果：
 
-![](assets/WwNiGbbcKdnovzP-0yygjVZKA_8zlBwWRlOwCEhUchE=.webp)
+![](assets/WwNiGbbcKdnovzP-0yygjVZKA_8zlBwWRlOwCEhUchE.webp)
 
 > 目前该项目已在 Github 收获 26.4k Star，Github 地址：[https://github.com/glanceapp/glance](https://github.com/glanceapp/glance)
 
@@ -187,7 +187,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
       title: Fox Business
 ```
 
-![](assets/ElXMfUdeaXU40oLby_9TmLk8IkXWSP8cy1hA2EB2E9M=.webp)
+![](assets/ElXMfUdeaXU40oLby_9TmLk8IkXWSP8cy1hA2EB2E9M.webp)
 
 * Videos 视频
 
@@ -199,7 +199,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
     - UCHnyfMqiRRG1u-2MsSQLbXA
 ```
 
-![](assets/b3pDmufvqor5StAKhiHZxQnaKWJQB8AMHln-zXxuxf4=.webp)
+![](assets/b3pDmufvqor5StAKhiHZxQnaKWJQB8AMHln-zXxuxf4.webp)
 
 * Search 搜索组件
 
@@ -212,7 +212,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
       url: https://www.youtube.com/results?search_query={QUERY}
 ```
 
-![](assets/bN5whX8ubG0xkT0RpLxxO_iUAFIXQw10j71wgElTrY0=.webp)
+![](assets/bN5whX8ubG0xkT0RpLxxO_iUAFIXQw10j71wgElTrY0.webp)
 
 * Todo List 待办组件
 
@@ -220,7 +220,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
 - type: to-do
 ```
 
-![](assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik=.gif)
+![](assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik.gif)
 
 * Weather 天气组件
 
@@ -231,7 +231,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
   location: London, United Kingdom
 ```
 
-![](assets/ooZMENlMPI1uhDjmaMnA2eoq9sYY9jmqBSvxrm4yqx0=.webp)
+![](assets/ooZMENlMPI1uhDjmaMnA2eoq9sYY9jmqBSvxrm4yqx0.webp)
 
 * Monitor 网站监控
 
@@ -257,7 +257,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
       icon: /assets/vaultwarden-logo.png
 ```
 
-![](assets/0ntT5GJJYND7EG_JYArMdCqpRIBLVT2W92EPorUI2qw=.webp)
+![](assets/0ntT5GJJYND7EG_JYArMdCqpRIBLVT2W92EPorUI2qw.webp)
 
 * Releases 订阅特定仓库的最新版本，包括 Github、Gitlab 以及 Docker Hub 等；
 
@@ -273,7 +273,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
     - dockerhub:gotify/server
 ```
 
-![](assets/UVEvw9MkjQ6PfeXEWHVph-HKQ2FJcWatI0syK2Mh1kQ=.webp)
+![](assets/UVEvw9MkjQ6PfeXEWHVph-HKQ2FJcWatI0syK2Mh1kQ.webp)
 
 * 服务器统计
 
@@ -284,7 +284,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
       name: Services
 ```
 
-![](assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU=.gif)
+![](assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU.gif)
 
 * ……
 
