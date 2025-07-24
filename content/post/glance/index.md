@@ -14,7 +14,7 @@ description: 26.4k Star 的开源自托管仪表盘，关注你想关注的一�
 * **自定义配置页面组件，想你所想，看你所看**；
 * 展示 RSS 订阅内容
 * 指定频道的 YouTube 视频
-* 日历/天气/时钟
+* 日历、天气、时钟
 * 股票信息
 * Github 仓库信息
 * 网站监控
@@ -34,7 +34,7 @@ description: 26.4k Star 的开源自托管仪表盘，关注你想关注的一�
 
 Glance 提供了 Docker 部署的方式：
 
-```shellscript
+```bash
 mkdir glance && cd glance
 
 curl -sL https://github.com/glanceapp/docker-compose-template/archive/refs/heads/main.tar.gz
@@ -45,7 +45,7 @@ tar -xzf - --strip-components 2
 
 解压后的目录结构如下：
 
-```
+```text
 glance
   ├── assets
   │   └── user.css
@@ -61,7 +61,7 @@ glance
 
 在终端执行以下命令：
 
-```shellscript
+```bash
 docker compose up -d
 ```
 
@@ -71,12 +71,12 @@ docker compose up -d
 
 刚刚我们介绍了 Glance 的配置文件是在 config 目录下，默认有两个配置文件：
 
-* glance.yml：顶级配置文件，用来定义主题、认证、服务等信息；
-* home.yml：页面级别的配置，在这个文件中进行首页的布局配置；
+* `glance.yml`：顶级配置文件，用来定义主题、认证、服务等信息；
+* `home.yml`：页面级别的配置，在这个文件中进行首页的布局配置；
 
 ##### glance 配置
 
-默认的 glance.yml 文件，只有三个配置项：
+默认的 `glance.yml` 文件，只有三个配置项：
 
 * server：用来定义 Glance 服务，比如端口号、静态资源路径等等；
 
@@ -128,7 +128,7 @@ pages:
 
 ##### home 配置
 
-home.yml 文件，其实是顶级配置 pages 下的组件配置，里面通过 column 属性来设置页面布局，它有两个值：`small` 和 `full`，分别对应小列（300px）和全列（占满剩余宽度）。需要注意的是，每个页面必须要有至少一个 `full` 属性。
+`home.yml` 文件，其实是顶级配置 `pages` 下的组件配置，里面通过 `column` 属性来设置页面布局，它有两个值：`small` 和 `full`，分别对应小列（300px）和全列（占满剩余宽度）。需要注意的是，每个页面必须要有至少一个 `full` 属性。
 
 ```yaml
 pages:
@@ -259,7 +259,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
 
 ![](assets/0ntT5GJJYND7EG_JYArMdCqpRIBLVT2W92EPorUI2qw=.webp)
 
-* Releases 订阅特定仓库的最新版本，包括 Github\Gitlab\Docker Hub 等；
+* Releases 订阅特定仓库的最新版本，包括 Github、Gitlab 以及 Docker Hub 等；
 
 ```yaml
 - type: releases
