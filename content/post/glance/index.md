@@ -212,6 +212,14 @@ Glance 本身就提供了很多 Widgets 组件，有：
 
 ![](assets/bN5whX8ubG0xkT0RpLxxO_iUAFIXQw10j71wgElTrY0.webp)
 
+* Todo List 待办组件
+
+```yaml
+- type: to-do
+```
+
+<img src="assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik.gif" width="100%" />
+
 * Weather 天气组件
 
 ```yaml
@@ -264,6 +272,17 @@ Glance 本身就提供了很多 Widgets 组件，有：
 ```
 
 ![](assets/UVEvw9MkjQ6PfeXEWHVph-HKQ2FJcWatI0syK2Mh1kQ.webp)
+
+* 服务器统计
+
+```yaml
+- type: server-stats
+  servers:
+    - type: local
+      name: Services
+```
+
+<img src="assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU.gif" style="width: 100%;" />
 
 * ……
 
