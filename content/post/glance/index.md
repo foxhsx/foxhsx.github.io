@@ -34,16 +34,26 @@ description: 26.4k Star 的开源自托管仪表盘，关注你想关注的一�
 
 Glance 提供了 Docker 部署的方式：
 
-```bash
+<!-- ```bash
 mkdir glance && cd glance
 
 curl -sL https://github.com/glanceapp/docker-compose-template/archive/refs/heads/main.tar.gz
 
 # 解压
 tar -xzf - --strip-components 2
-```
+``` -->
 
 解压后的目录结构如下：
+
+```plaintext
+glance
+  ├── assets
+  │   └── user.css
+  ├── config
+  │   ├── glance.yml
+  │   └── home.yml
+  └── docker-compose.yml
+```
 
 * assets 目录下存在的是 glance 的静态资源文件，比如 CSS 样式表；
 * config 目录下就是核心配置，我们可以通过修改它来更新 Glance 仪表盘内容；
