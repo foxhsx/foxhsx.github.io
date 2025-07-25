@@ -170,6 +170,122 @@ pages:
                 title: Fox Business
 ```
 
+Glance 本身就提供了很多 Widgets 组件，有：
+
+* RSS
+
+```yaml
+- type: rss
+  title: News
+  style: horizontal-cards
+  feeds:
+    - url: https://feeds.bloomberg.com/markets/news.rss
+      title: Bloomberg
+    - url: https://moxie.foxbusiness.com/google-publisher/markets.xml
+      title: Fox Business
+    - url: https://moxie.foxbusiness.com/google-publisher/technology.xml
+      title: Fox Business
+```
+
+![](assets/ElXMfUdeaXU40oLby_9TmLk8IkXWSP8cy1hA2EB2E9M.webp)
+
+* Videos 视频
+
+```yaml
+- type: videos
+  channels:
+    - UCXuqSBlHAE6Xw-yeJA0Tunw
+    - UCBJycsmduvYEL83R_U4JriQ
+    - UCHnyfMqiRRG1u-2MsSQLbXA
+```
+
+![](assets/b3pDmufvqor5StAKhiHZxQnaKWJQB8AMHln-zXxuxf4.webp)
+
+* Search 搜索组件
+
+```yaml
+- type: search
+  search-engine: duckduckgo
+  bangs:
+    - title: YouTube
+```
+
+![](assets/bN5whX8ubG0xkT0RpLxxO_iUAFIXQw10j71wgElTrY0.webp)
+
+* Todo List 待办组件
+
+```yaml
+- type: to-do
+```
+
+![](assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik.gif)
+
+* Weather 天气组件
+
+```yaml
+- type: weather
+  units: metric
+  hour-format: 12h
+  location: London, United Kingdom
+```
+
+![](assets/ooZMENlMPI1uhDjmaMnA2eoq9sYY9jmqBSvxrm4yqx0.webp)
+
+* Monitor 网站监控
+
+```yaml
+- type: monitor
+  cache: 1m
+  title: Services
+  sites:
+    - title: Jellyfin
+      url: https://jellyfin.yourdomain.com
+      icon: /assets/jellyfin-logo.png
+    - title: Gitea
+      url: https://gitea.yourdomain.com
+      icon: /assets/gitea-logo.png
+    - title: Immich
+      url: https://immich.yourdomain.com
+      icon: /assets/immich-logo.png
+    - title: AdGuard Home
+      url: https://adguard.yourdomain.com
+      icon: /assets/adguard-logo.png
+    - title: Vaultwarden
+      url: https://vault.yourdomain.com
+      icon: /assets/vaultwarden-logo.png
+```
+
+![](assets/0ntT5GJJYND7EG_JYArMdCqpRIBLVT2W92EPorUI2qw.webp)
+
+* Releases 订阅特定仓库的最新版本，包括 Github、Gitlab 以及 Docker Hub 等；
+
+```yaml
+- type: releases
+  show-source-icon: true
+  repositories:
+    - go-gitea/gitea
+    - jellyfin/jellyfin
+    - glanceapp/glance
+    - codeberg:redict/redict
+    - gitlab:fdroid/fdroidclient
+    - dockerhub:gotify/server
+```
+
+![](assets/UVEvw9MkjQ6PfeXEWHVph-HKQ2FJcWatI0syK2Mh1kQ.webp)
+
+* 服务器统计
+
+```yaml
+- type: server-stats
+  servers:
+    - type: local
+      name: Services
+```
+
+![](assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU.gif)
+
+* ……
+
 > 注意：以上配置均来源自官方示例，记得更换为自己需要的数据哦～
 
 其他更多信息，可以查看 Glance 的配置文档：[configuration](https://github.com/glanceapp/glance/blob/v0.8.4/docs/configuration.md)
