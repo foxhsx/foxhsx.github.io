@@ -218,7 +218,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
 - type: to-do
 ```
 
-<img src="assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik.gif" width="100%" />
+<img src="assets/Rq_kObvG1uOyXjRa9ygiEJMbc2YpAqc_flGXeYZIsik.gif" width="400" />
 
 * Weather 天气组件
 
@@ -282,7 +282,7 @@ Glance 本身就提供了很多 Widgets 组件，有：
       name: Services
 ```
 
-<img src="assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU.gif" style="width: 100%;" />
+<img src="assets/BdONWoQ2PiTFEcD3q2EXv3SfAi4vQr8cKU0nWC_z_VU.gif" width="400" />
 
 * ……
 
