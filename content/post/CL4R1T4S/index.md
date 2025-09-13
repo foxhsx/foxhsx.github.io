@@ -1,4 +1,9 @@
-# 10k sta！各大 AI 应用系统提示词集合
+---
+title: 10k sta！各大 AI 应用系统提示词集合
+date: 2025-09-13
+tags: [AI, Prompt]
+description: 高达 10k star 的开源提示词项目，收集了来自 ChatGPT、Gemini、Grok、Claude、Perplexity、Cursor、Devin、Replit 等 AI 应用的系统提示词。
+---
 
 最近三金又沉迷在 Prompt 中无法自拔，原因是好的提示词能提高 AI 的产出效率和正确率。
 
