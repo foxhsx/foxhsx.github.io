@@ -18,7 +18,7 @@ tags:
 
 > SearXNG 是一个免费的互联网元搜索引擎，汇集了 70 多种搜索服务的结果。不会跟踪用户访问记录，更不会分析用户。
 
-![](./assets/a1791dcf-a722-45ba-af4e-a13418f5c4c5.png)
+![](assets/a1791dcf-a722-45ba-af4e-a13418f5c4c5.png)
 
 对于国内用户而言，大多数情况下只能选择百度搜索。但众所周知的是，百度搜索的前几条结果都是广告赞助，用户一不小心就误入广告中去，无法准确获取想要得到的信息。
 
@@ -33,14 +33,14 @@ SearXNG 支持以下特性：
 *   可以设置搜索时的自动补全功能（也就是输入时会提示一些可能会搜索的问题）
     
 
-![](./assets/ed2d5f85-9a97-4d97-8a00-3104fa30810e.png)
+![](assets/ed2d5f85-9a97-4d97-8a00-3104fa30810e.png)
 
 *   设置主题样式
     
 *   设置想要使用的搜索引擎
     
 
-![](./assets/5be7bddf-b041-40ec-8b67-30d02d5a7ddf.png)
+![](assets/5be7bddf-b041-40ec-8b67-30d02d5a7ddf.png)
 
 > [Github 地址](https://github.com/searxng/searxng) [文档地址](https://docs.searxng.org/)
 
@@ -57,12 +57,12 @@ SearXNG 支持以下特性：
 *   到这里我们需要将 `searxng` 目录下的 `settings.yml` 里的 `limiter` 配置项改为 false，否则可能触发 `too many requests` 的问题；
     
 
-![](./assets/15f50cb1-478b-4fe0-b13c-c86d8f1dc858.png)
+![](assets/15f50cb1-478b-4fe0-b13c-c86d8f1dc858.png)
 
 *   第一次运行时，必须从 `docker-compose.yaml` 文件中删除 `cap_drop: - ALL` 才能使 `searxng` 服务成功创建 `/etc/searxng/uwsgi.ini`。这是必要的，因为 `cap_drop: - ALL` 指令会删除所有功能，包括创建 `uwsgi.ini` 文件所需的功能。首次运行后，出于安全考虑，应将 `cap_drop: - ALL` 重新添加到 `docker-compose.yaml` 文件中。
     
 
-![](./assets/e3966df1-1ae3-40ec-9836-77ad9bafee19.png)
+![](assets/e3966df1-1ae3-40ec-9836-77ad9bafee19.png)
 
 *   除此之外，还需要将 `docker-compose` 文件中的 `127.0.0.1:8080:8080` 改为 `8080:8080`
     
@@ -71,18 +71,18 @@ SearXNG 支持以下特性：
 
 访问 `IP 地址:8080` 即可：
 
-![](./assets/a59f387f-6944-4895-8be7-c99333a63dc9.png)
+![](assets/a59f387f-6944-4895-8be7-c99333a63dc9.png)
 
 ### 使用
 
 测试一下搜索功能，以「AI 资讯」为例：
 
-![](./assets/87571a93-069b-49c9-9b96-96e7027f3656.png)
+![](assets/87571a93-069b-49c9-9b96-96e7027f3656.png)
 
 搜索速度还挺快的，而且也没有广告，由多个搜素引擎一起抓取得到，很实用！
 
 这里再推荐一下他们官方提供的 demo，里面都是一些已经部署好的 SearXNG，可以直接使用：[官方 demo](https://searx.space/)
 
-![](./assets/0a6495b4-439c-4df6-827d-1e5023782179.png)
+![](assets/0a6495b4-439c-4df6-827d-1e5023782179.png)
 
 感兴趣的小伙伴快去试试吧～
