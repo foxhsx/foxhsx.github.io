@@ -6,8 +6,6 @@ tags:
 description: 本文主要探索如何在 pre-commit 时触发 AI Code Review，增强代码提交质量，推进团队代码规范统一化、标准化，并有效减少历史技术债。
 ---
 
-# 本地 AI Code Review 探索及落地
-
 近期在参与实现本地 AI Code Review 的事情，以下是一些思考输出。感兴趣的小伙伴可以在评论区一起讨论～
 
 ### 引言
