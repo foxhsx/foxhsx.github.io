@@ -66,7 +66,7 @@ OPENAI_BASE_URL=https://自定义API端点.com/v1
 python3 -m venv deepwiki-open
 
 # 激活虚拟环境
-source ./deepwiki-open/bin/active
+source ./deepwiki-open/bin/activate
 
 # 安装后端项目依赖
 pip install -r api/requirements.txt
