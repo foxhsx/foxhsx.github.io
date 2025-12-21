@@ -145,7 +145,7 @@ AccessKeyId 和 AccessKeySecret 可以在阿里云控制台上进行获取，具
 
 ![](assets/PjbtpiqYDkswn5raoEJzQVzPEZF_bg7h0BNcLniYtjM=.webp)
 
-最后，大家需要注意的是，这个路径一定得是你 Nginx 里的 SSL 证书配置路径，不然不生效哦～
+最后，大家需要注意的是，这个路径一定得是你 Nginx 里的 SSL 证书配置路径，**并且要重启 nginx 服务**！不然不生效哦～
 
 ![](assets/VeNmPBSGHurisHUrJ4Wq-tVLXoIL8nqAutzaoiSeBR8=.webp)
 
