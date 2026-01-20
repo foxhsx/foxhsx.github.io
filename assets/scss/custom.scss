@@ -8,67 +8,71 @@
    ==================== */
 
 :root {
-    /* 极简配色方案 - 增强层次对比 */
-    --body-background: #e8e8e8;
+    /* 增强对比度配色 */
+    --body-background: #e5e7eb;
     --card-background: #ffffff;
-    --accent-color: #333333;
-    --accent-color-darker: #1a1a1a;
+    --accent-color: #3c8772;
+    --accent-color-darker: #2d6858;
     --accent-color-text: #ffffff;
 
-    /* 文字颜色 - 更柔和的对比度 */
-    --body-text-color: #2c2c2c;
-    --card-text-color-main: #2c2c2c;
-    --card-text-color-secondary: #666666;
-    --card-text-color-tertiary: #999999;
+    /* 文字颜色 */
+    --body-text-color: #1f2937;
+    --card-text-color-main: #111827;
+    --card-text-color-secondary: #4b5563;
+    --card-text-color-tertiary: #9ca3af;
 
-    /* 微妙阴影增强层次感 */
-    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-l1: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-l2: 0 2px 6px rgba(0, 0, 0, 0.06);
+    /* 扁平化设计 - 几乎无阴影 */
+    --card-shadow: none;
+    --shadow-l1: none;
+    --shadow-l2: none;
     --shadow-l3: none;
     --shadow-l4: none;
 
-    /* 更小的圆角 */
-    --card-border-radius: 2px;
-    --tag-border-radius: 2px;
+    /* 极简圆角 */
+    --card-border-radius: 8px;
+    --tag-border-radius: 4px;
 
-    /* 更简洁的边框 */
-    --card-separator-color: #e0e0e0;
+    /* 边框 */
+    --card-separator-color: #d1d5db;
+    --card-border-color: #d1d5db;
 
-    /* 代码块样式 - 更简洁 */
+    /* 代码块样式 */
     --blockquote-background-color: transparent;
-    --blockquote-border-size: 2px;
+    --blockquote-border-size: 3px;
 
     /* 滚动条样式 */
-    --scrollbar-thumb: #b0b0b0;
+    --scrollbar-thumb: #9ca3af;
+    --scrollbar-track: transparent;
 
-    /* 增加留白 */
-    --section-separation: 50px;
-    --card-padding: 30px;
+    /* 留白 */
+    --section-separation: 48px;
+    --card-padding: 28px;
 
     @include respond(md) {
-        --card-padding: 40px;
+        --card-padding: 32px;
     }
 
     @include respond(xl) {
-        --card-padding: 50px;
+        --card-padding: 36px;
     }
 
-    /* 暗色模式 */
+    /* 暗色模式 - 增强对比度 */
     &[data-scheme="dark"] {
         --body-background: #0a0a0a;
-        --card-background: #1e1e1e;
-        --accent-color: #e0e0e0;
-        --accent-color-darker: #ffffff;
+        --card-background: #1a1a1a;
+        --accent-color: #58a6ff;
+        --accent-color-darker: #79c0ff;
+        --accent-color-text: #ffffff;
 
-        --body-text-color: #e0e0e0;
-        --card-text-color-main: #e0e0e0;
-        --card-text-color-secondary: #a0a0a0;
-        --card-text-color-tertiary: #707070;
+        --body-text-color: #e5e7eb;
+        --card-text-color-main: #f3f4f6;
+        --card-text-color-secondary: #9ca3af;
+        --card-text-color-tertiary: #6b7280;
 
-        --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-        --card-separator-color: #333333;
-        --scrollbar-thumb: #404040;
+        --card-shadow: none;
+        --card-separator-color: #2a2a2a;
+        --card-border-color: #2a2a2a;
+        --scrollbar-thumb: #4a4a4a;
 
         --blockquote-background-color: transparent;
     }
@@ -78,23 +82,24 @@
    全局样式
    ==================== */
 
-/* 卡片使用微妙阴影增强层次感 */
+/* 扁平化卡片 - VitePress/Affine 风格 */
 .article-page .main-article,
 .card,
 .widget {
-    box-shadow: var(--card-shadow) !important;
-    border: 1px solid var(--card-separator-color);
+    box-shadow: none !important;
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
 }
 
 /* 简化头像样式 */
 .site-logo {
-    box-shadow: var(--shadow-l1) !important;
-    border: 1px solid var(--card-separator-color) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--card-border-color) !important;
 }
 
 .site-avatar .emoji {
-    box-shadow: var(--shadow-l2) !important;
-    border: 1px solid var(--card-separator-color);
+    box-shadow: none !important;
+    border: 1px solid var(--card-border-color);
 }
 
 /* ====================
@@ -117,42 +122,59 @@
     font-weight: 400;
 }
 
+/* 左侧菜单选中样式 - 黑色加粗 */
+#main-menu li.current a {
+    color: #000000 !important;
+    font-weight: 700;
+}
+
+[data-scheme="dark"] #main-menu li.current a {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
 /* ====================
    文章内容样式
    ==================== */
 
 .article-content {
-    /* 标题样式 - 更简洁 */
+    /* 标题样式 */
     h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
         color: var(--card-text-color-main);
+        letter-spacing: -0.02em;
     }
 
-    /* 引用块样式 - 极简 */
+    /* 引用块样式 */
     blockquote {
         background: transparent !important;
-        border-left: 2px solid var(--accent-color) !important;
-        padding-left: 1em !important;
+        border-left: 3px solid var(--accent-color) !important;
+        padding-left: 1.2em !important;
+        margin: 1.2em 0 !important;
         color: var(--card-text-color-secondary) !important;
+        font-style: italic;
     }
 
-    /* 代码块样式 - 更简洁 */
+    /* 代码块样式 */
     pre {
-        background: #f5f5f5 !important;
-        border: 1px solid #e0e0e0 !important;
+        background: #f3f4f6 !important;
+        border: 1px solid var(--card-border-color) !important;
+        border-radius: 6px !important;
     }
 
     /* 行内代码样式 */
     code {
-        background: #f0f0f0 !important;
+        background: rgba(156, 163, 175, 0.2) !important;
         color: #d73a49 !important;
         padding: 0.2em 0.4em;
-        font-size: 0.9em;
+        font-size: 0.85em;
+        border-radius: 4px !important;
     }
 
     /* 代码高亮块 */
     .highlight {
-        border: 1px solid #e8e8e8 !important;
+        border: 1px solid var(--card-border-color) !important;
+        border-radius: 6px !important;
 
         &[data-lang="javascript"],
         &[data-lang="js"],
@@ -160,7 +182,7 @@
         &[data-lang="html"],
         &[data-lang="css"],
         &[data-lang="scss"] {
-            background: #f5f5f5 !important;
+            background: #f3f4f6 !important;
         }
 
         pre {
@@ -170,32 +192,35 @@
 
         .copyCodeButton {
             background: #ffffff !important;
-            border: 1px solid #e0e0e0 !important;
+            border: 1px solid var(--card-border-color) !important;
+            border-radius: 4px !important;
             color: var(--card-text-color-secondary) !important;
+            font-size: 0.8rem;
 
             &:hover {
-                background: #f5f5f5 !important;
+                background: #f3f4f6 !important;
             }
         }
     }
 
-    /* 表格样式 - 更简洁 */
+    /* 表格样式 */
     table {
         border-collapse: collapse;
+        width: 100%;
     }
 
     th, td {
-        border: 1px solid var(--card-separator-color) !important;
+        border: 1px solid var(--card-border-color) !important;
         padding: 0.75em 1em;
     }
 
     th {
-        background: transparent;
+        background: #f3f4f6 !important;
         font-weight: 600;
     }
 
     tr:nth-child(even) {
-        background: transparent !important;
+        background: rgba(156, 163, 175, 0.1) !important;
     }
 }
 
@@ -219,13 +244,15 @@
 
 .article-tags a,
 .tag {
-    background: transparent !important;
-    border: 1px solid var(--card-separator-color) !important;
+    background: #f3f4f6 !important;
+    border: 1px solid var(--card-border-color) !important;
     color: var(--card-text-color-secondary) !important;
-    border-radius: 2px !important;
+    border-radius: var(--tag-border-radius) !important;
+    font-size: 0.85rem;
+    padding: 0.2em 0.6em;
 
     &:hover {
-        background: #f5f5f5 !important;
+        background: #d1d5db !important;
         color: var(--card-text-color-main) !important;
     }
 }
@@ -236,11 +263,13 @@
 
 .pagination {
     .pagination-item {
-        background: transparent !important;
-        border: 1px solid var(--card-separator-color) !important;
+        background: var(--card-background) !important;
+        border: 1px solid var(--card-border-color) !important;
+        border-radius: var(--card-border-radius) !important;
 
         &:hover {
-            background: #f5f5f5 !important;
+            background: #f3f4f6 !important;
+            border-color: var(--accent-color) !important;
         }
     }
 }
@@ -250,12 +279,14 @@
    ==================== */
 
 .widget--toc {
-    border: 1px solid var(--card-separator-color) !important;
-    box-shadow: var(--shadow-l1) !important;
+    border: 1px solid var(--card-border-color) !important;
+    box-shadow: none !important;
+    border-radius: var(--card-border-radius) !important;
 
     #TableOfContents {
         li.active-class > a {
-            border-left: 2px solid var(--accent-color) !important;
+            border-left: 3px solid var(--accent-color) !important;
+            font-weight: 600;
         }
     }
 }
@@ -343,34 +374,56 @@ button,
 [data-scheme="dark"] {
     .article-content {
         pre {
-            background: #2a2a2a !important;
-            border-color: #3a3a3a !important;
+            background: #0f0f0f !important;
+            border-color: var(--card-border-color) !important;
         }
 
         code {
-            background: #2a2a2a !important;
+            background: rgba(107, 114, 128, 0.3) !important;
             color: #ff7b72 !important;
         }
 
         .highlight {
-            background: #2a2a2a !important;
-            border-color: #3a3a3a !important;
+            background: #0f0f0f !important;
+            border-color: var(--card-border-color) !important;
 
             .copyCodeButton {
-                background: #3a3a3a !important;
-                border-color: #4a4a4a !important;
+                background: #1a1a1a !important;
+                border-color: var(--card-border-color) !important;
                 color: var(--card-text-color-secondary) !important;
 
                 &:hover {
-                    background: #4a4a4a !important;
+                    background: #252525 !important;
                 }
             }
+        }
+
+        th {
+            background: #1a1a1a !important;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(107, 114, 128, 0.1) !important;
+        }
+    }
+
+    .article-tags a,
+    .tag {
+        background: #1a1a1a !important;
+        border-color: var(--card-border-color) !important;
+
+        &:hover {
+            background: #252525 !important;
         }
     }
 
     button:hover,
     .btn:hover,
     .pagination-item:hover {
-        background: #2a2a2a !important;
+        background: #1a1a1a !important;
     }
+}
+
+.archives, .tagCloud, .wechat {
+    border: none;
 }
