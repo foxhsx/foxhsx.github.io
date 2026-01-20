@@ -1,0 +1,376 @@
+/**
+ * 极简风格自定义样式
+ * Minimalist Style for Hugo Theme Stack
+ */
+
+/* ====================
+   CSS 变量覆盖
+   ==================== */
+
+:root {
+    /* 极简配色方案 - 增强层次对比 */
+    --body-background: #e8e8e8;
+    --card-background: #ffffff;
+    --accent-color: #333333;
+    --accent-color-darker: #1a1a1a;
+    --accent-color-text: #ffffff;
+
+    /* 文字颜色 - 更柔和的对比度 */
+    --body-text-color: #2c2c2c;
+    --card-text-color-main: #2c2c2c;
+    --card-text-color-secondary: #666666;
+    --card-text-color-tertiary: #999999;
+
+    /* 微妙阴影增强层次感 */
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-l1: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-l2: 0 2px 6px rgba(0, 0, 0, 0.06);
+    --shadow-l3: none;
+    --shadow-l4: none;
+
+    /* 更小的圆角 */
+    --card-border-radius: 2px;
+    --tag-border-radius: 2px;
+
+    /* 更简洁的边框 */
+    --card-separator-color: #e0e0e0;
+
+    /* 代码块样式 - 更简洁 */
+    --blockquote-background-color: transparent;
+    --blockquote-border-size: 2px;
+
+    /* 滚动条样式 */
+    --scrollbar-thumb: #b0b0b0;
+
+    /* 增加留白 */
+    --section-separation: 50px;
+    --card-padding: 30px;
+
+    @include respond(md) {
+        --card-padding: 40px;
+    }
+
+    @include respond(xl) {
+        --card-padding: 50px;
+    }
+
+    /* 暗色模式 */
+    &[data-scheme="dark"] {
+        --body-background: #0a0a0a;
+        --card-background: #1e1e1e;
+        --accent-color: #e0e0e0;
+        --accent-color-darker: #ffffff;
+
+        --body-text-color: #e0e0e0;
+        --card-text-color-main: #e0e0e0;
+        --card-text-color-secondary: #a0a0a0;
+        --card-text-color-tertiary: #707070;
+
+        --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+        --card-separator-color: #333333;
+        --scrollbar-thumb: #404040;
+
+        --blockquote-background-color: transparent;
+    }
+}
+
+/* ====================
+   全局样式
+   ==================== */
+
+/* 卡片使用微妙阴影增强层次感 */
+.article-page .main-article,
+.card,
+.widget {
+    box-shadow: var(--card-shadow) !important;
+    border: 1px solid var(--card-separator-color);
+}
+
+/* 简化头像样式 */
+.site-logo {
+    box-shadow: var(--shadow-l1) !important;
+    border: 1px solid var(--card-separator-color) !important;
+}
+
+.site-avatar .emoji {
+    box-shadow: var(--shadow-l2) !important;
+    border: 1px solid var(--card-separator-color);
+}
+
+/* ====================
+   侧边栏样式
+   ==================== */
+
+.sidebar header {
+    .site-name {
+        color: var(--body-text-color) !important;
+        font-weight: 500;
+    }
+
+    .site-description {
+        color: var(--card-text-color-secondary) !important;
+    }
+}
+
+/* 简化暗色模式切换按钮 */
+#dark-mode-toggle {
+    font-weight: 400;
+}
+
+/* ====================
+   文章内容样式
+   ==================== */
+
+.article-content {
+    /* 标题样式 - 更简洁 */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+        color: var(--card-text-color-main);
+    }
+
+    /* 引用块样式 - 极简 */
+    blockquote {
+        background: transparent !important;
+        border-left: 2px solid var(--accent-color) !important;
+        padding-left: 1em !important;
+        color: var(--card-text-color-secondary) !important;
+    }
+
+    /* 代码块样式 - 更简洁 */
+    pre {
+        background: #f5f5f5 !important;
+        border: 1px solid #e0e0e0 !important;
+    }
+
+    /* 行内代码样式 */
+    code {
+        background: #f0f0f0 !important;
+        color: #d73a49 !important;
+        padding: 0.2em 0.4em;
+        font-size: 0.9em;
+    }
+
+    /* 代码高亮块 */
+    .highlight {
+        border: 1px solid #e8e8e8 !important;
+
+        &[data-lang="javascript"],
+        &[data-lang="js"],
+        &[data-lang="python"],
+        &[data-lang="html"],
+        &[data-lang="css"],
+        &[data-lang="scss"] {
+            background: #f5f5f5 !important;
+        }
+
+        pre {
+            background: transparent !important;
+            border: none !important;
+        }
+
+        .copyCodeButton {
+            background: #ffffff !important;
+            border: 1px solid #e0e0e0 !important;
+            color: var(--card-text-color-secondary) !important;
+
+            &:hover {
+                background: #f5f5f5 !important;
+            }
+        }
+    }
+
+    /* 表格样式 - 更简洁 */
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid var(--card-separator-color) !important;
+        padding: 0.75em 1em;
+    }
+
+    th {
+        background: transparent;
+        font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+        background: transparent !important;
+    }
+}
+
+/* ====================
+   文章列表样式
+   ==================== */
+
+.article-list {
+    .article-title {
+        font-weight: 600;
+    }
+
+    .article-summary {
+        color: var(--card-text-color-secondary);
+    }
+}
+
+/* ====================
+   标签样式
+   ==================== */
+
+.article-tags a,
+.tag {
+    background: transparent !important;
+    border: 1px solid var(--card-separator-color) !important;
+    color: var(--card-text-color-secondary) !important;
+    border-radius: 2px !important;
+
+    &:hover {
+        background: #f5f5f5 !important;
+        color: var(--card-text-color-main) !important;
+    }
+}
+
+/* ====================
+   分页样式
+   ==================== */
+
+.pagination {
+    .pagination-item {
+        background: transparent !important;
+        border: 1px solid var(--card-separator-color) !important;
+
+        &:hover {
+            background: #f5f5f5 !important;
+        }
+    }
+}
+
+/* ====================
+   目录样式 (TOC)
+   ==================== */
+
+.widget--toc {
+    border: 1px solid var(--card-separator-color) !important;
+    box-shadow: var(--shadow-l1) !important;
+
+    #TableOfContents {
+        li.active-class > a {
+            border-left: 2px solid var(--accent-color) !important;
+        }
+    }
+}
+
+/* ====================
+   页脚样式
+   ==================== */
+
+.footer {
+    .footer-separator {
+        background: var(--card-separator-color);
+    }
+}
+
+/* ====================
+   搜索页面样式
+   ==================== */
+
+.search-page .search-results {
+    .article-summary {
+        color: var(--card-text-color-secondary);
+    }
+}
+
+/* ====================
+   响应式调整
+   ==================== */
+
+@media (max-width: 768px) {
+    :root {
+        --card-padding: 20px;
+        --section-separation: 30px;
+    }
+}
+
+/* ====================
+   链接样式
+   ==================== */
+
+a {
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: var(--accent-color);
+    }
+}
+
+/* ====================
+   表单元素样式
+   ==================== */
+
+input[type="text"],
+input[type="search"],
+textarea,
+select {
+    border: 1px solid var(--card-separator-color) !important;
+    background: var(--card-background) !important;
+    border-radius: 2px !important;
+
+    &:focus {
+        outline: none;
+        border-color: var(--accent-color) !important;
+    }
+}
+
+/* ====================
+   按钮样式
+   ==================== */
+
+button,
+.btn {
+    border: 1px solid var(--card-separator-color) !important;
+    background: transparent !important;
+    border-radius: 2px !important;
+
+    &:hover {
+        background: #f5f5f5 !important;
+    }
+}
+
+/* ====================
+   暗色模式特定样式
+   ==================== */
+
+[data-scheme="dark"] {
+    .article-content {
+        pre {
+            background: #2a2a2a !important;
+            border-color: #3a3a3a !important;
+        }
+
+        code {
+            background: #2a2a2a !important;
+            color: #ff7b72 !important;
+        }
+
+        .highlight {
+            background: #2a2a2a !important;
+            border-color: #3a3a3a !important;
+
+            .copyCodeButton {
+                background: #3a3a3a !important;
+                border-color: #4a4a4a !important;
+                color: var(--card-text-color-secondary) !important;
+
+                &:hover {
+                    background: #4a4a4a !important;
+                }
+            }
+        }
+    }
+
+    button:hover,
+    .btn:hover,
+    .pagination-item:hover {
+        background: #2a2a2a !important;
+    }
+}
