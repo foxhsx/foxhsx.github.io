@@ -4,3 +4,4 @@ resources/*
 .agent
 .claude
 .shared
+.gemini
