@@ -4,7 +4,7 @@ date: 2026-02-12
 tags:
   - AI
   - AI 编程
-description: 
+description: oh-my-opencode 是 OpenCode 的最佳搭档插件，把代码助手升级成多智能体协作系统。12+ 个专业 Agent（Sisyphus、Prometheus、Oracle 等）自动拆解任务、并行开发、深度调试。从设计到测试一条龙，复杂项目也能全自动搞定。
 ---
 
 上篇文章主要带大家入门 OpenCode，在文末也说到了 oh-my-opencode，那它到底是什么呢？
