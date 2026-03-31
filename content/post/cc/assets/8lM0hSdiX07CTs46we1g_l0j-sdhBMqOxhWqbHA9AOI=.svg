@@ -1,0 +1,52 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 40px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #1f2937; }
+      .subtitle { font: 600 23px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #334155; }
+      .text { font: 18px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #334155; }
+      .small { font: 16px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #475569; }
+      .accent { font: 700 20px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #7c2d12; }
+      .line { stroke: #334155; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="#fffdf7"/>
+
+  <rect x="72" y="52" rx="26" ry="26" width="1056" height="796" fill="#fffaf0" stroke="#d6d3d1" stroke-width="3"/>
+  <rect x="102" y="88" rx="18" ry="18" width="276" height="58" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="148" y="126" class="accent">不是官方开源仓库</text>
+
+  <text x="104" y="210" class="title">Claude Code Sourcemap 更像一张学习卡</text>
+  <text x="104" y="248" class="subtitle">它不是把官方源码直接交到你手里，而是把发布物、运行产物、还原视图摆到了一起</text>
+
+  <rect x="104" y="300" rx="26" ry="26" width="992" height="136" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="138" y="352" class="subtitle">这个仓库是怎么来的？</text>
+  <text x="140" y="390" class="text">有人在 npm 包里发现了 `cli.js.map`，而 map 里本身就带着大量源码内容，</text>
+  <text x="140" y="422" class="text">于是社区顺着做了提取和整理，最后形成了这个 `claude-code-sourcemap` 仓库。</text>
+
+  <text x="104" y="492" class="title">真正该看的，是下面这三层</text>
+
+  <rect x="104" y="536" rx="22" ry="22" width="284" height="178" fill="#fef3c7" stroke="#ca8a04" stroke-width="3"/>
+  <text x="180" y="584" class="subtitle">发布包</text>
+  <text x="136" y="624" class="text">`claude-code-2.1.88.tgz`</text>
+  <text x="136" y="660" class="small">起点是公开 npm 发布物</text>
+  <text x="136" y="692" class="small">不是内部源码泄出</text>
+
+  <rect x="458" y="536" rx="22" ry="22" width="284" height="178" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="530" y="584" class="subtitle">运行产物</text>
+  <text x="496" y="624" class="text">`package/` · `cli.js`</text>
+  <text x="478" y="660" class="small">更像 install 后拿到的内容</text>
+  <text x="470" y="692" class="small">关键是 `cli.js.map` 里带着源码内容</text>
+
+  <rect x="812" y="536" rx="22" ry="22" width="284" height="178" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="882" y="584" class="subtitle">还原视图</text>
+  <text x="840" y="624" class="text">`restored-src/`</text>
+  <text x="822" y="660" class="small">把 map 里的源码内容提取出来</text>
+  <text x="850" y="692" class="small">更适合阅读和学习</text>
+
+  <path d="M388 626 C420 626, 432 626, 458 626" class="line"/>
+  <path d="M742 626 C772 626, 784 626, 812 626" class="line"/>
+
+  <rect x="242" y="756" rx="20" ry="20" width="716" height="62" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+  <text x="336" y="795" class="subtitle">结论：更适合学习，不适合直接复刻</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 40px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #1f2937; }
+      .subtitle { font: 600 23px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #334155; }
+      .text { font: 18px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #334155; }
+      .small { font: 16px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #475569; }
+      .strong { font: 700 22px 'Comic Sans MS', 'Marker Felt', sans-serif; fill: #7c2d12; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="#fffdf7"/>
+
+  <rect x="90" y="70" rx="22" ry="22" width="1020" height="116" fill="#fef3c7" stroke="#ca8a04" stroke-width="3"/>
+  <text x="214" y="118" class="title">别把它当“官方源码包”</text>
+  <text x="240" y="158" class="subtitle">更适合把它当成一份研究和学习 Claude Code 的高价值样本</text>
+
+  <rect x="90" y="234" rx="28" ry="28" width="464" height="468" fill="#fef2f2" stroke="#dc2626" stroke-width="3.5"/>
+  <text x="168" y="288" class="title">不要这样用</text>
+  <text x="134" y="346" class="subtitle">✕ 以为它就是官方原始仓库</text>
+  <text x="134" y="404" class="subtitle">✕ 以为 source map 还原 = 完整工程</text>
+  <text x="134" y="462" class="subtitle">✕ 直接拿去当官方源码底座</text>
+  <text x="134" y="520" class="subtitle">✕ 忽略缺失的构建链和工程清单</text>
+  <text x="134" y="578" class="subtitle">✕ 忽略版权和使用边界</text>
+
+  <rect x="646" y="234" rx="28" ry="28" width="464" height="468" fill="#ecfdf5" stroke="#16a34a" stroke-width="3.5"/>
+  <text x="724" y="288" class="title">更适合这样用</text>
+  <text x="692" y="346" class="subtitle">✓ 学 Claude Code 的系统分层</text>
+  <text x="692" y="404" class="subtitle">✓ 学 Agent Loop 和工具编排</text>
+  <text x="692" y="462" class="subtitle">✓ 学权限 / 审批 / worktree 设计</text>
+  <text x="692" y="520" class="subtitle">✓ 学状态管理、TUI 和扩展体系</text>
+  <text x="692" y="578" class="subtitle">✓ 参考它，做自己的 coding agent CLI</text>
+
+  <rect x="158" y="730" rx="24" ry="24" width="884" height="98" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="420" y="776" class="strong">一句话收尾</text>
+  <text x="336" y="812" class="subtitle">它更像解剖图，不像源码交付包</text>
+</svg>
