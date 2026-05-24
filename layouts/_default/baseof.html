@@ -9,23 +9,15 @@
     </head>
     <body class="{{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
+        {{- partial "navbar.html" . -}}
 
-        {{/* The container is wider when there's any activated widget */}}
-        {{- $hasWidget := false -}}
-        {{- range .Site.Params.widgets -}}
-            {{- if gt (len .) 0 -}}
-                {{- $hasWidget = true -}}
-            {{- end -}}
-        {{- end -}}
-        <div class="container main-container flex on-phone--column {{ if $hasWidget }}extended{{ else }}compact{{ end }}">
-            {{- block "left-sidebar" . -}}
-                {{ partial "sidebar/left.html" . }}
-            {{- end -}}
-            {{- block "right-sidebar" . -}}{{ end }}
-            <main class="main full-width">
+        <div class="container main-container {{ if .Scratch.Get `hasWidget` }}has-sidebar{{ else }}no-sidebar{{ end }}">
+            <main class="main full-width {{ if .Scratch.Get `hasWidget` }}has-sidebar{{ end }}">
                 {{- block "main" . }}{{- end }}
             </main>
+            {{- block "right-sidebar" . -}}{{ end }}
         </div>
+        {{ partial "search-modal.html" . }}
         {{ partial "footer/include.html" . }}
     </body>
 </html>

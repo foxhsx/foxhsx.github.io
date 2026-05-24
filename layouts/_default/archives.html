@@ -1,0 +1,30 @@
+{{ define "body-class" }}template-archives{{ end }}
+{{ define "main" }}
+    <div class="archive-page">
+        <div class="archive-title-wrapper">
+            <h1 class="archive-page-title">{{ .Title }}</h1>
+        </div>
+
+        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+        {{ $filtered := ($pages | intersect $notHidden) }}
+
+        <div class="archive-year-list">
+            {{ range $filtered.GroupByDate "2006" }}
+            <div class="archive-year-group">
+                <h2 class="archive-year-title">{{ .Key }}</h2>
+                <div class="archive-posts">
+                    {{ range .Pages }}
+                    <a href="{{ .RelPermalink }}" class="archive-post-item">
+                        <span class="archive-post-date">{{ .Date.Format "01-02" }}</span>
+                        <span class="archive-post-title">{{ .Title }}</span>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
