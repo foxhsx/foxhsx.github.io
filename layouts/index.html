@@ -1,0 +1,27 @@
+{{ define "body-class" }}
+{{ end }}
+
+{{ define "main" }}
+    <div class="hero">
+        <h1 class="hero-title">{{ .Site.Params.sidebar.subtitle | default .Site.Title }}</h1>
+        <p class="hero-sub">{{ .Site.Params.description | default "Thoughts on software engineering, frontend development, and building for the web." }}</p>
+    </div>
+
+    <div class="section-header">
+        <h2 class="section-heading">Latest Posts</h2>
+    </div>
+
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+    {{ $filtered := ($pages | intersect $notHidden) }}
+    {{ $pag := .Paginate ($filtered) }}
+
+    <section class="article-list">
+        {{ range $index, $element := $pag.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+    {{- partialCached "footer/footer" . -}}
+{{ end }}

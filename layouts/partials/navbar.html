@@ -1,0 +1,87 @@
+<nav class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-brand">
+            <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
+        </div>
+
+        <div class="navbar-right">
+            <ol class="navbar-nav" id="navbar-menu">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                {{ $url := .URL }}
+                {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+                {{ if not $active }}
+                    {{ $currentPath := $currentPage.RelPermalink }}
+                    {{ if and (strings.HasPrefix $currentPath $url) (gt (len $url) 1) }}
+                        {{ $active = true }}
+                    {{ end }}
+                {{ end }}
+                <li {{ if $active }}class="current"{{ end }}>
+                    <a href="{{ .URL }}" {{ if .Params.newTab }}target="_blank" rel="noopener"{{ end }}>
+                        {{ $icon := default .Pre .Params.Icon }}
+                        {{ with $icon }}
+                            {{ partial "helper/icon" . }}
+                        {{ end }}
+                        <span>{{ .Name }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ol>
+
+            {{ if .Site.Params.widgets.homepage }}
+                {{ range .Site.Params.widgets.homepage }}
+                    {{ if eq .type "search" }}
+                    <button class="navbar-action-btn" id="search-trigger" title="{{ T `search` }}" aria-label="{{ T `search` }}">
+                        {{ partial "helper/icon" "search" }}
+                    </button>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ if (default false .Site.Params.colorScheme.toggle) }}
+            <button class="navbar-action-btn navbar-dark-toggle" id="dark-mode-toggle" aria-label="{{ T `darkMode` }}">
+                {{ partial "helper/icon" "moon" }}
+                {{ partial "helper/icon" "sun" }}
+            </button>
+            {{ end }}
+
+            <button class="navbar-action-btn hamburger hamburger--spin navbar-hamburger" type="button" id="toggle-menu" aria-label="{{ T `toggleMenu` }}">
+                {{ partial "helper/icon" "menu-2" }}
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="navbar-mobile-menu" id="mobile-menu">
+    <ol>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ $url := .URL }}
+        {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+        {{ if not $active }}
+            {{ $currentPath := $currentPage.RelPermalink }}
+            {{ if and (strings.HasPrefix $currentPath $url) (gt (len $url) 1) }}
+                {{ $active = true }}
+            {{ end }}
+        {{ end }}
+        <li{{ if $active }} class="current"{{ end }}>
+            <a href="{{ .URL }}" {{ if .Params.newTab }}target="_blank" rel="noopener"{{ end }}>
+                {{ $icon := default .Pre .Params.Icon }}
+                {{ with $icon }}
+                    {{ partial "helper/icon" . }}
+                {{ end }}
+                <span>{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ol>
+    <div class="mobile-menu-bottom">
+        {{ if (default false .Site.Params.colorScheme.toggle) }}
+        <button class="navbar-action-btn navbar-dark-toggle" aria-label="{{ T `darkMode` }}">
+            {{ partial "helper/icon" "moon" }}
+            {{ partial "helper/icon" "sun" }}
+            <span style="margin-left:8px;font-size:1.4rem;">{{ T "darkMode" }}</span>
+        </button>
+        {{ end }}
+    </div>
+</div>

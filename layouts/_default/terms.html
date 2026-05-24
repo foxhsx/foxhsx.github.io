@@ -1,0 +1,36 @@
+{{ define "body-class" }}template-tags{{ end }}
+
+{{ define "main" }}
+<div class="tag-page">
+    <div class="tag-page-title-wrapper">
+        <h1 class="tag-page-title">{{ .Title }}</h1>
+    </div>
+
+    {{ $allTags := .Site.Taxonomies.tags }}
+    {{ $firstTag := "" }}
+    {{ range first 1 $allTags.Alphabetical }}
+        {{ $firstTag = .Page.Title }}
+    {{ end }}
+
+    <div class="tag-filter-row">
+        {{ range $allTags.Alphabetical }}
+            {{ $tagPage := .Page }}
+            {{ $isActive := eq $tagPage.Title $firstTag }}
+            <a href="{{ $tagPage.RelPermalink }}"
+               class="tag-filter-pill{{ if $isActive }} active{{ end }}">
+                {{ $tagPage.Title }}<span class="tag-count">({{ .Count }})</span>
+            </a>
+        {{ end }}
+    </div>
+
+    {{ $firstTagPage := .Site.GetPage (printf "/tags/%s" (urlize $firstTag)) }}
+
+    <section class="article-list">
+        {{ range $firstTagPage.Pages }}
+            {{ partial "article-list/default" . }}
+        {{ end }}
+    </section>
+</div>
+
+{{ partialCached "footer/footer" . }}
+{{ end }}

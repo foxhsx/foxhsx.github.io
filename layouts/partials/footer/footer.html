@@ -1,0 +1,7 @@
+<footer class="site-footer">
+    <div class="footer-divider"></div>
+    <div class="footer-content">
+        <p class="copyright">&copy; {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}{{ .Site.Params.footer.since }} - {{ end }}{{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}. Built with Markdown &amp; Hugo.</p>
+        <p class="powerby">Powered by Hugo &bull; Deployed on GitHub Pages</p>
+    </div>
+</footer>

@@ -1,23 +1,31 @@
 ---
 title: '友情链接'
+layout: links
+slug: 'links'
+description: '有需要的小伙伴可以联系我添加友链～'
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
+    description: The world's largest software development platform.
     website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+    color: "#24292e"
   - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+    description: A typed superset of JavaScript that compiles to plain JavaScript.
     website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-menu:
-    main: 
-        weight: -50
-        params:
-            icon: link
-
-comments: false
+    color: "#3178c6"
+  - title: Storybook
+    description: Build UIs without the grunt work. Develop and test UI components.
+    website: https://storybook.js.org
+    color: "#ff4785"
+  - title: Vite
+    description: Next generation frontend tooling. It's fast.
+    website: https://vitejs.dev
+    color: "#646cff"
+  - title: React
+    description: A JavaScript library for building user interfaces.
+    website: https://react.dev
+    color: "#61dafb"
+  - title: Node.js
+    description: A JavaScript runtime built on Chrome's V8 engine.
+    website: https://nodejs.org
+    color: "#3178c6"
 ---
-
-暂时没有友链。
-
-有需要的小伙伴可以添加右侧的微信联系站长添加～

@@ -173,14 +173,6 @@ params:
                   captionB: 微信
         page:
             - type: toc
-            - type: wechat
-              params:
-                  personalLocal: true
-                  officialAccountLocal: true
-                  officialAccountImage: /img/officialAccountImage.jpg
-                  personal: /img/personal.jpg
-                  captionA: 公众号
-                  captionB: 微信
 
     opengraph:
         twitter:
@@ -213,7 +205,31 @@ params:
 ### See https://stack.jimmycai.com/config/menu
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main: []
+    main:
+        - identifier: archives
+          name: 归档
+          url: /archives/
+          weight: -70
+          params:
+              icon: archives
+        - identifier: tags
+          name: 标签
+          url: /tags/
+          weight: -65
+          params:
+              icon: tag
+        - identifier: about
+          name: 关于
+          url: /about/
+          weight: -40
+          params:
+              icon: user
+        - identifier: links
+          name: 友链
+          url: /links/
+          weight: -50
+          params:
+              icon: link
 
     social:
         - identifier: github
