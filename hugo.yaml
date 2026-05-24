@@ -1,6 +1,6 @@
 baseurl: https://blog.ihsxu.com
 languageCode: zh-cn
-theme: hugo-theme-stack
+theme: hugo-theme-paper
 title: 三金
 copyright: Coder 小站
 timeZone: Asia/Shanghai
@@ -25,7 +25,7 @@ languages:
 services:
     # Change it to your Disqus shortname before using
     disqus:
-        shortname: "hugo-theme-stack"
+        shortname: "hugo-theme-paper"
     # GA Tracking ID
     googleAnalytics:
         id: G-21TT6S3V8K

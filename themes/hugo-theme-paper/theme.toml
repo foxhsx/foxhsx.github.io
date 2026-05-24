@@ -1,0 +1,13 @@
+name = "Paper"
+license = "MIT"
+licenselink = "https://github.com/foxhsx/hugo-theme-paper/blob/main/LICENSE"
+description = "A clean, minimal, developer-first Hugo theme focused on content readability"
+homepage = "https://github.com/foxhsx/hugo-theme-paper"
+demosite = "https://foxhsx.github.io/"
+tags = ["blog", "minimal", "clean", "developer", "responsive", "dark-mode"]
+features = ["blog", "tags", "categories", "search", "dark-mode", "toc"]
+min_version = "0.112.0"
+
+[author]
+  name = "foxhsx"
+  homepage = "https://foxhsx.github.io/"
