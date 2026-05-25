@@ -91,6 +91,8 @@ let Stack = {
         });
 
         new StackColorScheme(document.getElementById('dark-mode-toggle'));
+        const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
+        if (mobileToggle) new StackColorScheme(mobileToggle);
     }
 }
 

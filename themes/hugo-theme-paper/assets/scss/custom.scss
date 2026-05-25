@@ -337,9 +337,17 @@ a {
     @include respond(md) {
         display: none;
     }
+
+    &.is-active svg {
+        color: var(--accent-color);
+    }
 }
 
 /* Mobile menu overlay */
+body.show-menu {
+    overflow: hidden;
+}
+
 .navbar-mobile-menu {
     display: none;
     position: fixed;
@@ -1715,14 +1723,6 @@ button:not(.navbar-action-btn):not(.code-block__copy):not(.search-modal-result-i
 
 .left-sidebar {
     display: none !important;
-}
-
-/* ====================
-   Hamburger (mobile) override
-   ==================== */
-
-.hamburger {
-    display: none;
 }
 
 /* ====================

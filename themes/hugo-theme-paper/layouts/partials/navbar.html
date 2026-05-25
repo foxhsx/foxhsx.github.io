@@ -45,14 +45,14 @@
             </button>
             {{ end }}
 
-            <button class="navbar-action-btn hamburger hamburger--spin navbar-hamburger" type="button" id="toggle-menu" aria-label="{{ T `toggleMenu` }}">
+            <button class="navbar-action-btn hamburger hamburger--spin navbar-hamburger" type="button" id="toggle-menu" aria-label="{{ T `toggleMenu` }}" aria-expanded="false">
                 {{ partial "helper/icon" "menu-2" }}
             </button>
         </div>
     </div>
 </nav>
 
-<div class="navbar-mobile-menu" id="mobile-menu">
+<div class="navbar-mobile-menu" id="mobile-menu" aria-hidden="true">
     <ol>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
@@ -77,7 +77,7 @@
     </ol>
     <div class="mobile-menu-bottom">
         {{ if (default false .Site.Params.colorScheme.toggle) }}
-        <button class="navbar-action-btn navbar-dark-toggle" aria-label="{{ T `darkMode` }}">
+        <button class="navbar-action-btn navbar-dark-toggle" id="dark-mode-toggle-mobile" aria-label="{{ T `darkMode` }}">
             {{ partial "helper/icon" "moon" }}
             {{ partial "helper/icon" "sun" }}
             <span style="margin-left:8px;font-size:1.4rem;">{{ T "darkMode" }}</span>
