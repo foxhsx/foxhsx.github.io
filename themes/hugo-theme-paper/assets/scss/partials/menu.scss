@@ -7,8 +7,10 @@
  */
 
 .hamburger {
-    padding-top: 10px;
-    display: inline-block;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
@@ -100,10 +102,6 @@
 #toggle-menu {
     background: none;
     border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
     cursor: pointer;
 
     [dir="rtl"] & {
