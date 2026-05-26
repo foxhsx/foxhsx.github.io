@@ -351,8 +351,10 @@ a {
 }
 
 /* Mobile menu overlay */
+html.show-menu,
 body.show-menu {
     overflow: hidden;
+    height: 100%;
 }
 
 .navbar-mobile-menu {
@@ -404,6 +406,12 @@ body.show-menu {
         display: flex;
         flex-direction: column;
         gap: 12px;
+
+        .navbar-dark-toggle {
+            width: auto;
+            justify-content: flex-start;
+            gap: 8px;
+        }
     }
 }
 
