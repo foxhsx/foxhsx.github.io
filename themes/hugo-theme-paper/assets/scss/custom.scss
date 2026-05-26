@@ -7,7 +7,6 @@
    Font Imports
    ==================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "chroma-catppuccin";
 
 /* ====================
@@ -286,7 +285,11 @@ a {
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 6px;
+
+    @include respond(md) {
+        gap: 24px;
+    }
 }
 
 .navbar-action-btn {
@@ -334,12 +337,24 @@ a {
 /* Mobile menu toggle */
 .navbar-hamburger {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
     @include respond(md) {
         display: none;
+    }
+
+    &.is-active svg {
+        color: var(--accent-color);
     }
 }
 
 /* Mobile menu overlay */
+body.show-menu {
+    overflow: hidden;
+}
+
 .navbar-mobile-menu {
     display: none;
     position: fixed;
@@ -1715,14 +1730,6 @@ button:not(.navbar-action-btn):not(.code-block__copy):not(.search-modal-result-i
 
 .left-sidebar {
     display: none !important;
-}
-
-/* ====================
-   Hamburger (mobile) override
-   ==================== */
-
-.hamburger {
-    display: none;
 }
 
 /* ====================
