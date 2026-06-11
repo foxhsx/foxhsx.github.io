@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-paper"]
+	path = themes/hugo-theme-paper
+	url = git@github.com:foxhsx/hugo-theme-paper.git
