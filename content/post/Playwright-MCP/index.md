@@ -1,4 +1,10 @@
-# AI 自动化测试探索（一）：Playwright MCP
+---
+title: AI 自动化测试探索（一）：Playwright MCP
+date: 2026-06-14
+tags:
+  - AI
+description: 介绍 Playwright MCP 配合 Claude Code 实现 AI 自动化测试的实战经验，涵盖用户级安装、自然语言驱动操作，以及通过浏览器插件复用已登录会话实现免登测试，并客观分析 token 消耗大、依赖模型能力、内存占用高等缺陷，建议横向对比同类工具择优。
+---
 
 Hi\~这里是三金。
 
