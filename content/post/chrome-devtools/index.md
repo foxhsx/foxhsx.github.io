@@ -3,7 +3,7 @@ title: AI 自动化测试探索（二）：Chrome-devtools MCP
 date: 2026-06-29
 tags:
   - AI
-descriptions: Chrome 官方推出的 chrome-devtools MCP，让 AI 可直接操作 Chrome 浏览器，支持网络分析、性能追踪、DOM 调试和自动化测试。本文对比 Playwright MCP，从安装配置、基础使用到连接已有浏览器实例，一步步带你体验这款原生工具——更省 token、无需额外插件，还能做性能分析和样式调整，是 E2E 自动化测试的高性价比新选择。
+description: Chrome 官方推出的 chrome-devtools MCP，让 AI 可直接操作 Chrome 浏览器，支持网络分析、性能追踪、DOM 调试和自动化测试。本文对比 Playwright MCP，从安装配置、基础使用到连接已有浏览器实例，一步步带你体验这款原生工具——更省 token、无需额外插件，还能做性能分析和样式调整，是 E2E 自动化测试的高性价比新选择。
 ---
 
 Hi\~这里是三金。
